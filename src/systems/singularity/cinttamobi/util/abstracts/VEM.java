@@ -1,9 +1,12 @@
-package systems.singularity.cinttamobi.util;
+package systems.singularity.cinttamobi.util.abstracts;
+
+import systems.singularity.cinttamobi.util.Person;
 
 /**
  * Created by phts on 16/06/16.
  */
 public abstract class VEM {
+    protected double balance;
     private String number;
     private Person person;
 
@@ -13,6 +16,7 @@ public abstract class VEM {
         // Verify if number is not null
         this.number = number;
         this.person = person;
+        this.balance = 0;
     }
 
     public String getNumber() {
@@ -21,6 +25,10 @@ public abstract class VEM {
 
     public Person getPerson() {
         return person;
+    }
+
+    public double getBalance() {
+        return balance;
     }
 
     public abstract void credit(int value);
