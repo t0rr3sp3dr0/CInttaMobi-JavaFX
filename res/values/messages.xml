@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="app_name">BuildWare</entry>
+    <entry key="developer_name">Singularity Systems</entry>
+    <entry key="app_version">0.0.1a</entry>
+    <entry key="instance_licensedTo">No One</entry>
+    <entry key="minWidth">640</entry>
+    <entry key="prefWidth">800</entry>
+    <entry key="maxWidth">Infinity</entry>
+    <entry key="minHeight">480</entry>
+    <entry key="prefHeight">600</entry>
+    <entry key="maxHeight">Infinity</entry>
+    <entry key="fornecedoresCadastro">Cadastro de Fornecedores</entry>
+    <entry key="trabalhadoresCadastro">Cadastro de Trabalhadores</entry>
+    <entry key="materiaisCadastro">Cadastro de Materiais</entry>
+    <entry key="connectionPreferences">Connection Settings</entry>
+</properties>

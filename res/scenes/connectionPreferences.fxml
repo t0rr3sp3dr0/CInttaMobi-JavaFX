@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+      fx:controller="systems.singularity.cinttamobi.gui.ConnectionPreferencesController">
+    <children>
+        <HBox>
+            <children>
+                <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="Domain">
+                    <HBox.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="domainTextField" HBox.hgrow="ALWAYS">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <HBox>
+            <children>
+                <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="Port">
+                    <HBox.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="portTextField" HBox.hgrow="ALWAYS">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <HBox>
+            <children>
+                <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="User">
+                    <HBox.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="userTextField" HBox.hgrow="ALWAYS">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <HBox>
+            <children>
+                <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="Password">
+                    <HBox.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+                    </HBox.margin>
+                </Label>
+                <PasswordField fx:id="passwordPasswordField" HBox.hgrow="ALWAYS">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </HBox.margin>
+                </PasswordField>
+            </children>
+        </HBox>
+        <HBox>
+            <children>
+                <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="Database">
+                    <HBox.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="databaseTextField" HBox.hgrow="ALWAYS">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <HBox>
+            <children>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="commitButton" text="Commit Changes">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+</VBox>
