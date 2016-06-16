@@ -9,7 +9,6 @@ import systems.singularity.cinttamobi.util.StageTools;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.time.Year;
 import java.util.Properties;
 import java.util.ResourceBundle;
@@ -72,8 +71,6 @@ public class MainController implements Initializable {
     public VBox wellcomeBox;
     public Label wellcomeLabel;
 
-    private int level = -1;
-    private int tries = 0;
     private Properties messages = new Properties();
     private StageTools stageTools = new StageTools();
 
@@ -107,63 +104,5 @@ public class MainController implements Initializable {
         stageTools.setupMenuItem("connectionPreferences", connectionPreferencesMenuItem);
 
         tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.SELECTED_TAB);
-
-        username.setOnAction(event -> {
-            if (username.getText() == null || username.getText().length() == 0)
-                StageTools.alert(Alert.AlertType.WARNING, null, "Usuário é um campo obrigatório", null, true);
-            else
-                password.requestFocus();
-        });
-        password.setOnAction(event -> {
-            if (password.getText() == null || password.getText().length() == 0)
-                StageTools.alert(Alert.AlertType.WARNING, null, "Senha é um campo obrigatório", null, true);
-            else
-                loginButton.fire();
-        });
-
-        if (level == -1) {
-            menuBar.setDisable(true);
-            wellcomeBox.setVisible(false);
-            loginBox.setVisible(true);
-            loginButton.setOnAction(event -> {
-                if (username.getText() == null || username.getText().length() == 0) {
-                    StageTools.alert(Alert.AlertType.WARNING, null, "Usuário é um campo obrigatório", null, true);
-                    tries++;
-                } else if (password.getText() == null || password.getText().length() == 0) {
-                    StageTools.alert(Alert.AlertType.WARNING, null, "Senha é um campo obrigatório", null, true);
-                    tries++;
-                } else {
-                    try {
-                        User user = new User(-1, username.getText(), password.getText(), null);
-                        if ((user.getLogin().equals("user") && user.getPassword().equals("pass")) || new Users().verifyCredentials(user)) {
-                            menuBar.setDisable(false);
-                            wellcomeBox.setVisible(true);
-                            loginBox.setVisible(false);
-                            wellcomeLabel.setText(wellcomeLabel.getText().replace("{{USER}}", "Johnny Appleseed"));
-                        } else {
-                            StageTools.alert(Alert.AlertType.ERROR, null, "Acesso Negado", "Usuário e senha não coincidem ou são inválidos", true);
-                            tries++;
-                            password.setText(null);
-                            password.requestFocus();
-                        }
-                    } catch (SQLException | ClassNotFoundException e) {
-                        StageTools.exception(e, true);
-                    }
-                }
-                if (tries >= 4) {
-                    StageTools.alert(Alert.AlertType.ERROR, null, "Você excedeu o número máximo de tentativas", "Por motivos de segurança a aplicação será agora encerrada", true);
-
-                    Stage stage = (Stage) menuBar.getScene().getWindow();
-                    stage.close();
-                }
-            });
-        } else {
-            menuBar.setDisable(false);
-            wellcomeBox.setVisible(true);
-            loginBox.setVisible(false);
-            wellcomeLabel.setText(wellcomeLabel.getText().replace("{{USER}}", "Johnny Appleseed"));
-
-            level = 0;
-        }
     }
 }

@@ -1,15 +1,6 @@
 package systems.singularity.cinttamobi.util;
 
 public class ArraysUtil {
-
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
-    }
-
     @SuppressWarnings("unchecked")
     public static <E extends Comparable<E>> void bubbleSort(E[] array, boolean order) {
         boolean swapped = true;
@@ -46,5 +37,4 @@ public class ArraysUtil {
         for (int i = 0; i < array.length; i++)
             array[i] = e[array.length - i - 1];
     }
-
 }
