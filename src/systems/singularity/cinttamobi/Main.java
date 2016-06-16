@@ -15,9 +15,9 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
-import systems.singularity.cinttamobi.util.AsyncCallable;
-import systems.singularity.cinttamobi.util.EventsTimeline;
-import systems.singularity.cinttamobi.util.StageTools;
+import systems.singularity.cinttamobi.util.gui.AsyncCallable;
+import systems.singularity.cinttamobi.util.gui.EventsTimeline;
+import systems.singularity.cinttamobi.util.gui.StageTools;
 
 import java.util.Optional;
 import java.util.Properties;
@@ -112,12 +112,6 @@ public class Main extends Application {
                 ((Label) splashScreen.lookup("#version")).setText(String.format("Version %s", resourceBundle.getString("app.version")));
                 ((Label) splashScreen.lookup("#licensedTo")).setText(String.format("Licensed to %s", resourceBundle.getString("instance.licensedTo")));
             });
-//            eventsTimeline.add(event -> progressStatus.setText("Verificando Conexão com o Banco de Dados"), 250);
-//            eventsTimeline.add(event -> {
-//                boolean verifyConnection = ConnectionFactory.verifyConnection(prefs.get("domainConnection", "localhost"), prefs.get("portConnection", "3306"), prefs.get("databaseConnection", "mysql"), prefs.get("userConnection", "root"), prefs.get("passwordConnection", "root"));
-//                if (!verifyConnection)
-//                    StageTools.alert(Alert.AlertType.ERROR, null, "Conexão com Banco de Dados Falhou", "Verifique sua conexão com o servidor e tente novamente", false);
-//            });
             eventsTimeline.add(event -> progressStatus.setText("Carregando User Interface"), 250);
             eventsTimeline.add(event -> {
                 Timeline timeline = new Timeline();

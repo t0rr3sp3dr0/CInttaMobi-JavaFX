@@ -1,4 +1,4 @@
-package systems.singularity.cinttamobi.util;
+package systems.singularity.cinttamobi.util.gui;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;

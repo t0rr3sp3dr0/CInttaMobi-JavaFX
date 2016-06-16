@@ -5,7 +5,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import systems.singularity.cinttamobi.util.StageTools;
+import systems.singularity.cinttamobi.util.gui.StageTools;
 
 import java.io.IOException;
 import java.net.URL;
