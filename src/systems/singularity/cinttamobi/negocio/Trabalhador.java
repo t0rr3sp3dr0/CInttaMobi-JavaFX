@@ -1,4 +1,4 @@
-package systems.singularity.cinttamobi.util;
+package systems.singularity.cinttamobi.negocio;
 
 import java.util.Date;
 

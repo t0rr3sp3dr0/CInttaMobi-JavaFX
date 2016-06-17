@@ -1,4 +1,4 @@
-package systems.singularity.cinttamobi.util;
+package systems.singularity.cinttamobi.negocio;
 
 import systems.singularity.cinttamobi.abstracts.VEM;
 import systems.singularity.cinttamobi.exceptions.SaldoInsuficienteException;

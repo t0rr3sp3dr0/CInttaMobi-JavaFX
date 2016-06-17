@@ -1,11 +1,11 @@
-package systems.singularity.cinttamobi.gui;
+package systems.singularity.cinttamobi.fachada;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import systems.singularity.cinttamobi.util.gui.StageTools;
+import systems.singularity.cinttamobi.negocio.gui.StageTools;
 
 import java.io.IOException;
 import java.net.URL;

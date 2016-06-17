@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <SplitPane xmlns:fx="http://javafx.com/fxml/1" dividerPositions="0.5" orientation="VERTICAL"
            xmlns="http://javafx.com/javafx/8"
-           fx:controller="systems.singularity.cinttamobi.gui.TrabalhadoresCadastroController">
+           fx:controller="systems.singularity.cinttamobi.fachada.TrabalhadoresCadastroController">
     <items>
         <VBox>
             <children>

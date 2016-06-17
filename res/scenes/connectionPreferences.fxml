@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
-      fx:controller="systems.singularity.cinttamobi.gui.ConnectionPreferencesController">
+      fx:controller="systems.singularity.cinttamobi.fachada.ConnectionPreferencesController">
     <children>
         <HBox>
             <children>
