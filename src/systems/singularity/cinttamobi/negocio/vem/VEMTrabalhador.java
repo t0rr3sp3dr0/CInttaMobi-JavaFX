@@ -2,6 +2,7 @@ package systems.singularity.cinttamobi.negocio.vem;
 
 import systems.singularity.cinttamobi.abstracts.VEM;
 import systems.singularity.cinttamobi.exceptions.SaldoInsuficienteException;
+import systems.singularity.cinttamobi.exceptions.TipoVEMInvalidoException;
 import systems.singularity.cinttamobi.exceptions.ValorInvalidoException;
 import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 import systems.singularity.cinttamobi.negocio.pessoas.Trabalhador;
@@ -11,10 +12,10 @@ import systems.singularity.cinttamobi.negocio.pessoas.Trabalhador;
  */
 public class VEMTrabalhador extends VEM {
 
-    public VEMTrabalhador(String number, Pessoa person) {
+    public VEMTrabalhador(String number, Pessoa person) throws TipoVEMInvalidoException{
         super(number, person);
         if(!(person instanceof Trabalhador))
-            throw new RuntimeException("Não é trabalhador! Vagabundo! CFSH!");
+            throw new TipoVEMInvalidoException();
     }
 
     @Override
