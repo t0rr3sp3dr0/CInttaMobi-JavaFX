@@ -1,5 +1,6 @@
 package systems.singularity.cinttamobi.negocio.pessoas;
 
+import systems.singularity.cinttamobi.exceptions.CPFInvalidoException;
 import systems.singularity.cinttamobi.exceptions.CarteiraEstudanteInvalidaException;
 
 import java.util.Date;
@@ -14,7 +15,7 @@ public class Estudante extends Pessoa {
 
     private String studentID;
 
-    public Estudante(String name, Date birth, String cpf, String studentID) throws CarteiraEstudanteInvalidaException {
+    public Estudante(String name, Date birth, String cpf, String studentID) throws CPFInvalidoException, CarteiraEstudanteInvalidaException{
         // Verify if student ID exists
         super(name, birth, cpf);
         if (studentID == null)

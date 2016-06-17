@@ -15,6 +15,8 @@ public class Pessoa {
 
     public Pessoa(String name, Date birth, String cpf) throws CPFInvalidoException {
         // Verify if CPF already exists
+        if (System.currentTimeMillis() - birth.getTime() < 0)
+            throw new RuntimeException("Você não nasceu ainda. Certeza que se sente bem?");
         if(cpf == null)
             throw new CPFInvalidoException();
         this.name = name;

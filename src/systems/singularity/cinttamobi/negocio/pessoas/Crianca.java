@@ -1,5 +1,7 @@
 package systems.singularity.cinttamobi.negocio.pessoas;
 
+import systems.singularity.cinttamobi.exceptions.CPFInvalidoException;
+
 import java.util.Date;
 
 /**
@@ -7,7 +9,15 @@ import java.util.Date;
  */
 public class Crianca extends Pessoa {
 
-    public Crianca(String name, Date birth, String cpf) {
+    public Crianca(String name, Date birth, String cpf) throws CPFInvalidoException {
         super(name, birth, cpf);
+        double years = Math.abs(System.currentTimeMillis() - birth.getTime())
+                / (365.25 * 24 * 60 * 60 * 1000);
+        // Milisegundos atual - Milisegundos do nascimento
+        // dividido por dias * horas * segundos * milisegundos
+
+        if (years > 6)
+            throw new RuntimeException("Não conta como criança, Sr. Jackson!");
+
     }
 }
