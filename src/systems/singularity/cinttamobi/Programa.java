@@ -15,9 +15,9 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
-import systems.singularity.cinttamobi.util.gui.AsyncCallable;
-import systems.singularity.cinttamobi.util.gui.EventsTimeline;
-import systems.singularity.cinttamobi.util.gui.StageTools;
+import systems.singularity.cinttamobi.negocio.gui.AsyncCallable;
+import systems.singularity.cinttamobi.negocio.gui.EventsTimeline;
+import systems.singularity.cinttamobi.negocio.gui.StageTools;
 
 import java.util.Optional;
 import java.util.Properties;

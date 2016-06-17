@@ -1,4 +1,4 @@
-package systems.singularity.cinttamobi.repositorios;
+package systems.singularity.cinttamobi.dados;
 
 import systems.singularity.cinttamobi.interfaces.Repository;
 

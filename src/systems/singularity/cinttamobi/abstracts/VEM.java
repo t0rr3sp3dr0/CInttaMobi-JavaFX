@@ -1,6 +1,6 @@
 package systems.singularity.cinttamobi.abstracts;
 
-import systems.singularity.cinttamobi.util.Pessoa;
+import systems.singularity.cinttamobi.negocio.Pessoa;
 
 /**
  * Created by phts on 16/06/16.

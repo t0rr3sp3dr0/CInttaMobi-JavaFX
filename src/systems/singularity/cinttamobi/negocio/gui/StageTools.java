@@ -1,4 +1,4 @@
-package systems.singularity.cinttamobi.util.gui;
+package systems.singularity.cinttamobi.negocio.gui;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

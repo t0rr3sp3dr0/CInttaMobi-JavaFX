@@ -1,13 +1,14 @@
-package systems.singularity.cinttamobi.util;
+package systems.singularity.cinttamobi.negocio;
 
 import systems.singularity.cinttamobi.abstracts.VEM;
 
 /**
- * Created by phts on 16/06/16.
+ * Created by esvm on 17/06/16.
  */
-public class VEMComum extends VEM {
-    public VEMComum(String number) {
-        super(number, null);
+public class VEMTrabalhador extends VEM {
+
+    public VEMTrabalhador(String number, Pessoa person) {
+        super(number, person);
     }
 
     @Override

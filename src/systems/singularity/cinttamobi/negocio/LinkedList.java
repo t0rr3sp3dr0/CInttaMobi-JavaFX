@@ -1,4 +1,4 @@
-package systems.singularity.cinttamobi.util;
+package systems.singularity.cinttamobi.negocio;
 
 /**
  * Created by phts on 02/06/16.

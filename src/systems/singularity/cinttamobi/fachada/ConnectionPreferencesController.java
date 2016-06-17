@@ -1,4 +1,4 @@
-package systems.singularity.cinttamobi.gui;
+package systems.singularity.cinttamobi.fachada;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
