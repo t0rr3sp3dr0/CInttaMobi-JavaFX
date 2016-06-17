@@ -3,7 +3,7 @@ package systems.singularity.cinttamobi.util;
 import systems.singularity.cinttamobi.abstracts.VEM;
 
 /**
- * Created by lvrma on 16/06/16.
+ * Created by Lucas Valença on 16/06/16.
  */
 public class VEMEstudante extends VEM {
 
