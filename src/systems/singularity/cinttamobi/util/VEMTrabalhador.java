@@ -13,11 +13,17 @@ public class VEMTrabalhador extends VEM {
 
     @Override
     public void credit(int value) {
-
+        if (value <= 0)
+            throw new RuntimeException("Valor inválido");
+        this.balance += value;
     }
 
     @Override
     public void debit(int value) {
-
+        if (value <= 0)
+            throw new RuntimeException("Valor inválido");
+        else if (value > this.getBalance())
+            throw new RuntimeException("Saldo insuficiente");
+        this.balance -= value;
     }
 }
