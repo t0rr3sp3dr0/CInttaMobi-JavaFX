@@ -1,17 +1,20 @@
-package systems.singularity.cinttamobi.negocio;
+package systems.singularity.cinttamobi.negocio.vem;
 
 import systems.singularity.cinttamobi.abstracts.VEM;
 import systems.singularity.cinttamobi.exceptions.SaldoInsuficienteException;
 import systems.singularity.cinttamobi.exceptions.ValorInvalidoException;
+import systems.singularity.cinttamobi.negocio.pessoas.Estudante;
+import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 
 /**
  * Created by Lucas Valença on 16/06/16.
  */
 public class VEMEstudante extends VEM {
 
-    public VEMEstudante(String number, Pessoa person, String studentID) {
-      // Verify if student ID exists
+    public VEMEstudante(String number, Pessoa person) {
         super(number, person);
+        if(!(person instanceof Estudante))
+            throw new RuntimeException("Não é estudante! Vagabundo! CFSH!");
     }
 
     @Override

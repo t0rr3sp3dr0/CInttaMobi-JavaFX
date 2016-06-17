@@ -3,6 +3,7 @@ package systems.singularity.cinttamobi.abstracts;
 import systems.singularity.cinttamobi.exceptions.SaldoInsuficienteException;
 import systems.singularity.cinttamobi.exceptions.ValorInvalidoException;
 import systems.singularity.cinttamobi.negocio.Pessoa;
+import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 
 /**
  * Created by phts on 16/06/16.

@@ -1,6 +1,7 @@
-package systems.singularity.cinttamobi.negocio;
+package systems.singularity.cinttamobi.negocio.vem;
 
 import systems.singularity.cinttamobi.abstracts.VEM;
+import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 
 /**
  * Created by phts on 17/06/16.
