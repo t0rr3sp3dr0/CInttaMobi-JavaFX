@@ -15,4 +15,8 @@ public class Estudante extends Pessoa {
         this.studentID = studentID;
     }
 
+    public String getStudentID() {
+        return studentID;
+    }
+
 }

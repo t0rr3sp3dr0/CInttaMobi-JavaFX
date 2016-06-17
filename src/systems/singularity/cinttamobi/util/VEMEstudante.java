@@ -7,17 +7,24 @@ import systems.singularity.cinttamobi.abstracts.VEM;
  */
 public class VEMEstudante extends VEM {
 
-    public VEMEstudante(String number, Pessoa person) {
+    public VEMEstudante(String number, Pessoa person, String studentID) {
+      // Verify if student ID exists
         super(number, person);
     }
 
     @Override
-    public void credit(int value) {
-
+    public void credit(double value) {
+        if (value <= 0)
+            throw new RuntimeException("Valor inválido");
+        this.balance += value;
     }
 
     @Override
-    public void debit(int value) {
-
+    public void debit(double value) {
+        if (value <= 0)
+            throw new RuntimeException("Valor inválido");
+        else if (value/2 > this.getBalance())
+            throw new RuntimeException("Saldo insuficiente");
+        this.balance -= value/2;
     }
 }

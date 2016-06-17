@@ -32,7 +32,7 @@ public abstract class VEM {
         return balance;
     }
 
-    public abstract void credit(int value);
+    public abstract void credit(double value);
 
-    public abstract void debit(int value);
+    public abstract void debit(double value);
 }

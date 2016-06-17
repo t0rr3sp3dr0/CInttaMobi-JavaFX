@@ -11,14 +11,14 @@ public class VEMComum extends VEM {
     }
 
     @Override
-    public void credit(int value) {
+    public void credit(double value) {
         if (value <= 0)
             throw new RuntimeException("Valor inválido");
         this.balance += value;
     }
 
     @Override
-    public void debit(int value) {
+    public void debit(double value) {
         if (value <= 0)
             throw new RuntimeException("Valor inválido");
         else if (value > this.getBalance())
