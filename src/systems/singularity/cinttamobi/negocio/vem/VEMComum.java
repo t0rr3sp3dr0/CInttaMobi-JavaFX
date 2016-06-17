@@ -12,7 +12,6 @@ public class VEMComum extends VEM {
         super(number, null);
     }
 
-
     @Override
     public void credit(double value) throws ValorInvalidoException {
         if (value <= 0)
