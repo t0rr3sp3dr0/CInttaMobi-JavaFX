@@ -1,6 +1,7 @@
 package systems.singularity.cinttamobi.negocio.pessoas;
 
 import systems.singularity.cinttamobi.exceptions.CPFInvalidoException;
+import systems.singularity.cinttamobi.exceptions.IdadeInvalidaException;
 
 import java.util.Date;
 
@@ -13,10 +14,10 @@ public class Pessoa {
     private Date birth;
     private String cpf;
 
-    public Pessoa(String name, Date birth, String cpf) throws CPFInvalidoException {
+    public Pessoa(String name, Date birth, String cpf) throws CPFInvalidoException, IdadeInvalidaException {
         // Verify if CPF already exists
         if (System.currentTimeMillis() - birth.getTime() < 0)
-            throw new RuntimeException("Você não nasceu ainda. Certeza que se sente bem?");
+            throw new IdadeInvalidaException();
         if(cpf == null)
             throw new CPFInvalidoException();
         this.name = name;

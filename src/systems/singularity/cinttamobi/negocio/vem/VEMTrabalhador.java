@@ -1,6 +1,8 @@
 package systems.singularity.cinttamobi.negocio.vem;
 
 import systems.singularity.cinttamobi.abstracts.VEM;
+import systems.singularity.cinttamobi.exceptions.SaldoInsuficienteException;
+import systems.singularity.cinttamobi.exceptions.ValorInvalidoException;
 import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 import systems.singularity.cinttamobi.negocio.pessoas.Trabalhador;
 
@@ -16,18 +18,18 @@ public class VEMTrabalhador extends VEM {
     }
 
     @Override
-    public void credit(double value) {
+    public void credit(double value) throws ValorInvalidoException {
         if (value <= 0)
-            throw new RuntimeException("Valor inválido");
+            throw new ValorInvalidoException();
         this.balance += value;
     }
 
     @Override
-    public void debit(double value) {
+    public void debit(double value) throws ValorInvalidoException, SaldoInsuficienteException {
         if (value <= 0)
-            throw new RuntimeException("Valor inválido");
+            throw new ValorInvalidoException();
         else if (value > this.getBalance())
-            throw new RuntimeException("Saldo insuficiente");
+            throw new SaldoInsuficienteException();
         this.balance -= value;
     }
 }

@@ -1,5 +1,6 @@
 package systems.singularity.cinttamobi.abstracts;
 
+import systems.singularity.cinttamobi.exceptions.OperacaoInvalidaException;
 import systems.singularity.cinttamobi.exceptions.SaldoInsuficienteException;
 import systems.singularity.cinttamobi.exceptions.ValorInvalidoException;
 import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
@@ -34,7 +35,7 @@ public abstract class VEM {
         return balance;
     }
 
-    public abstract void credit(double value) throws ValorInvalidoException;
+    public abstract void credit(double value) throws ValorInvalidoException, OperacaoInvalidaException;
 
     public abstract void debit(double value) throws ValorInvalidoException, SaldoInsuficienteException;
 }

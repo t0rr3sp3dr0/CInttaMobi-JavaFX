@@ -1,6 +1,9 @@
 package systems.singularity.cinttamobi.negocio.vem;
 
 import systems.singularity.cinttamobi.abstracts.VEM;
+import systems.singularity.cinttamobi.exceptions.OperacaoInvalidaException;
+import systems.singularity.cinttamobi.exceptions.SaldoInsuficienteException;
+import systems.singularity.cinttamobi.exceptions.ValorInvalidoException;
 import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 
 /**
@@ -12,12 +15,16 @@ public class VEMIdoso extends VEM {
     }
 
     @Override
-    public void credit(double value) {
-        throw new RuntimeException("Operação Inválida");
+    public void credit(double value) throws OperacaoInvalidaException {
+        throw new OperacaoInvalidaException();
     }
 
     @Override
-    public void debit(double value) {
+    public void debit(double value){
+
+
 
     }
+
+
 }
