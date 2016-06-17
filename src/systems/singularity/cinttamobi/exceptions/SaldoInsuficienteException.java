@@ -6,6 +6,7 @@ package systems.singularity.cinttamobi.exceptions;
 public class SaldoInsuficienteException extends Exception {
 
     public SaldoInsuficienteException() {
-        super("Crédito Insuficiente");
+        super("Crédito Insuficiente") ;
     }
+
 }
