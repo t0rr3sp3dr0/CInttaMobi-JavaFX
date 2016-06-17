@@ -1,4 +1,4 @@
-package systems.singularity.cinttamobi.Repositories.VEM;
+package systems.singularity.cinttamobi.repositorios;
 
 import systems.singularity.cinttamobi.interfaces.Repository;
 
@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by esvm on 17/06/16.
  */
-public class RepositorioVEMArray implements Repository {
+public class RepositorioVEMLista implements Repository {
     @Override
     public boolean exists(Object object) throws SQLException, ClassNotFoundException {
         return false;

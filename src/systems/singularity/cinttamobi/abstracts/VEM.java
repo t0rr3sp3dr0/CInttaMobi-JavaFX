@@ -1,6 +1,6 @@
-package systems.singularity.cinttamobi.util.abstracts;
+package systems.singularity.cinttamobi.abstracts;
 
-import systems.singularity.cinttamobi.util.Person;
+import systems.singularity.cinttamobi.util.Pessoa;
 
 /**
  * Created by phts on 16/06/16.
@@ -8,12 +8,13 @@ import systems.singularity.cinttamobi.util.Person;
 public abstract class VEM {
     protected double balance;
     private String number;
-    private Person person;
+    private Pessoa person;
 
-    public VEM(String number, Person person) {
+    public VEM(String number, Pessoa person) {
         // TO-DO
         // Verify if number or person already exists
-        // Verify if number is not null
+        if (number == null)
+            throw new RuntimeException("Número Inválido");
         this.number = number;
         this.person = person;
         this.balance = 0;
@@ -23,7 +24,7 @@ public abstract class VEM {
         return number;
     }
 
-    public Person getPerson() {
+    public Pessoa getPerson() {
         return person;
     }
 

@@ -9,7 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
-import systems.singularity.cinttamobi.Main;
+import systems.singularity.cinttamobi.Programa;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -47,7 +47,7 @@ public class StageTools {
     }
 
     public static void exception(Exception e, boolean wait) {
-        if (Main.isWaitOnExcept())
+        if (Programa.isWaitOnExcept())
             e.printStackTrace();
 
         Alert alert = new Alert(Alert.AlertType.ERROR);

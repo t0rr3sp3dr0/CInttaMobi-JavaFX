@@ -1,7 +1,7 @@
 package systems.singularity.cinttamobi.util.gui;
 
 import javafx.application.Platform;
-import systems.singularity.cinttamobi.Main;
+import systems.singularity.cinttamobi.Programa;
 
 import java.util.concurrent.Callable;
 
@@ -35,6 +35,6 @@ public class AsyncCallable extends Thread {
     }
 
     public AsyncCallable(Callable callable) {
-        this(callable, Main.isWaitOnExcept(), AsyncCallable.emptyRunnable, AsyncCallable.emptyRunnable);
+        this(callable, Programa.isWaitOnExcept(), AsyncCallable.emptyRunnable, AsyncCallable.emptyRunnable);
     }
 }

@@ -1,4 +1,4 @@
-package Exceptions;
+package systems.singularity.cinttamobi.exceptions;
 
 /**
  * Created by esvm on 17/06/16.

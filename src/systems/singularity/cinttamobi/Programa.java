@@ -24,7 +24,7 @@ import java.util.Properties;
 import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
 
-public class Main extends Application {
+public class Programa extends Application {
     private static boolean developerMode = true;
     private static boolean waitOnExcept = true;
 
@@ -103,7 +103,7 @@ public class Main extends Application {
 
         new AsyncCallable(() -> {
             Label progressStatus = (Label) splashScreen.lookup("#progressStatus");
-            Preferences prefs = Preferences.userNodeForPackage(Main.class);
+            Preferences prefs = Preferences.userNodeForPackage(Programa.class);
 
             EventsTimeline eventsTimeline = new EventsTimeline();
             EventsTimeline.setDelay(1000);

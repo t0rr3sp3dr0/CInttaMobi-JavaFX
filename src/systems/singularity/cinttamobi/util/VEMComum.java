@@ -1,6 +1,6 @@
 package systems.singularity.cinttamobi.util;
 
-import systems.singularity.cinttamobi.util.abstracts.VEM;
+import systems.singularity.cinttamobi.abstracts.VEM;
 
 /**
  * Created by phts on 16/06/16.

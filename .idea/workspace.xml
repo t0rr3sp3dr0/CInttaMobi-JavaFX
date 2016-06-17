@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Repositórios VEM">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Trabalhador.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/VEMTrabalhador.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Exceptions/SaldoInsuficienteException.java" afterPath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/exceptions/SaldoInsuficienteException.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/Main.java" afterPath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/Programa.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/Repositories/VEM/RepositorioVEMArray.java" afterPath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/repositorios/RepositorioVEMArray.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/Repositories/VEM/RepositorioVEMLista.java" afterPath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/repositorios/RepositorioVEMLista.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Person.java" afterPath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Pessoa.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Student.java" afterPath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Estudante.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/abstracts/VEM.java" afterPath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/abstracts/VEM.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Trabalhador.java" afterPath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Trabalhador.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/VEMComum.java" afterPath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/VEMComum.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/VEMEstudante.java" afterPath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/VEMEstudante.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/VEMTrabalhador.java" afterPath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/VEMTrabalhador.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/gui/AsyncCallable.java" afterPath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/gui/AsyncCallable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/gui/StageTools.java" afterPath="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/gui/StageTools.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,119 +76,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RepositorioVEMArray.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/Repositories/VEM/RepositorioVEMArray.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RepositorioVEMLista.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/Repositories/VEM/RepositorioVEMLista.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SaldoInsuficienteException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Exceptions/SaldoInsuficienteException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding>
-                <element signature="e#162#163#0" expanded="true" />
-                <element signature="e#207#208#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Person.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Person.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-              <folding>
-                <element signature="e#520#521#0" expanded="true" />
-                <element signature="e#546#547#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VEM.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/abstracts/VEM.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-              <folding>
-                <element signature="e#666#667#0" expanded="true" />
-                <element signature="e#696#697#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Student.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Student.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VEMComum.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="VEMComum.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/VEMComum.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="468">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VEMEstudante.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/VEMEstudante.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VEMTrabalhador.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/VEMTrabalhador.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding>
-                <element signature="e#244#245#0" expanded="true" />
-                <element signature="e#281#282#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Trabalhador.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Trabalhador.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding>
-                <element signature="e#212#213#0" expanded="true" />
-                <element signature="e#251#252#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -226,8 +131,6 @@
         <option value="$PROJECT_DIR$/src/systems/singularity/cinttamobi/gui/MainController.java" />
         <option value="$PROJECT_DIR$/src/systems/singularity/cinttamobi/gui/ConnectionPreferencesController.java" />
         <option value="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/VEM.java" />
-        <option value="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/abstracts/VEM.java" />
-        <option value="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/VEMComum.java" />
         <option value="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Repositories/VEM/RepositorioVEMArray.java" />
         <option value="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Repositories/RepositorioVEMArray.java" />
         <option value="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Repositories/RepositorioVEMLista.java" />
@@ -236,6 +139,8 @@
         <option value="$PROJECT_DIR$/src/systems/singularity/cinttamobi/Repositories/VEM/RepositorioVEMLista.java" />
         <option value="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Trabalhador.java" />
         <option value="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/VEMTrabalhador.java" />
+        <option value="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/abstracts/VEM.java" />
+        <option value="$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/VEMComum.java" />
       </list>
     </option>
   </component>
@@ -250,8 +155,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
     <option name="y" value="-4" />
-    <option name="width" value="1855" />
-    <option name="height" value="1084" />
+    <option name="width" value="1535" />
+    <option name="height" value="904" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -283,7 +188,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -317,138 +221,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cinttamobi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CInttaMobi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CInttaMobi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cinttamobi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CInttaMobi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CInttaMobi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cinttamobi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="abstracts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CInttaMobi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CInttaMobi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cinttamobi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Repositories" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CInttaMobi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CInttaMobi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cinttamobi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="interfaces" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CInttaMobi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CInttaMobi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cinttamobi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CInttaMobi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CInttaMobi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Exceptions" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -522,8 +294,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -538,21 +311,24 @@
     <property name="dynamic.classpath" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
-    <configuration default="false" name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Programa">
+    <configuration default="false" name="Programa" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="systems.singularity.cinttamobi.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="systems.singularity.cinttamobi.Main" />
+      <option name="MAIN_CLASS_NAME" value="systems.singularity.cinttamobi.Programa" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -824,11 +600,11 @@
     </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Main (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Programa" />
     </list>
     <recent_temporary>
       <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Programa" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -893,24 +669,27 @@
     <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
-    <editor active="true" />
+    <frame x="65" y="-4" width="1535" height="904" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3275218" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24905661" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24885994" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -918,11 +697,8 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32774192" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -958,11 +734,34 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/VEMEstudante.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/VEMTrabalhador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Trabalhador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/LinkedList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1944">
           <caret line="112" column="31" selection-start-line="112" selection-start-column="31" selection-end-line="112" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -976,43 +775,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/Repositories/VEM/RepositorioVEMArray.java">
+    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/repositorios/RepositorioVEMArray.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/repositorios/RepositorioVEMLista.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/Repositories/VEM/RepositorioVEMLista.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Person.java">
+    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Pessoa.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
           <folding>
-            <element signature="e#520#521#0" expanded="true" />
-            <element signature="e#546#547#0" expanded="true" />
+            <element signature="e#405#406#0" expanded="false" />
+            <element signature="e#432#433#0" expanded="false" />
+            <element signature="e#462#463#0" expanded="false" />
+            <element signature="e#490#491#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/abstracts/VEM.java">
+    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/abstracts/VEM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
-          <folding>
-            <element signature="e#666#667#0" expanded="true" />
-            <element signature="e#696#697#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1050,7 +848,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/Programa.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1638">
           <caret line="119" column="17" selection-start-line="114" selection-start-column="39" selection-end-line="119" selection-end-column="17" />
@@ -1061,29 +859,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Person.java">
+    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Pessoa.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <element signature="e#520#521#0" expanded="true" />
-            <element signature="e#546#547#0" expanded="true" />
+            <element signature="e#405#406#0" expanded="false" />
+            <element signature="e#432#433#0" expanded="false" />
+            <element signature="e#462#463#0" expanded="false" />
+            <element signature="e#490#491#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/abstracts/VEM.java">
+    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/abstracts/VEM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-          <folding>
-            <element signature="e#666#667#0" expanded="true" />
-            <element signature="e#696#697#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1123,7 +919,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/Programa.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
@@ -1134,7 +930,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1145,31 +940,31 @@
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml" />
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
     <entry file="file://$PROJECT_DIR$/res/scenes/connectionPreferences.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/scenes/fornecedoresCadastro.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/scenes/fornecedoresCadastro.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/AsyncCallable.java" />
     <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/ComboBoxAutoComplete.java" />
     <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/EventsTimeline.java" />
-    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/Programa.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1638">
           <caret line="119" column="17" selection-start-line="114" selection-start-column="39" selection-end-line="119" selection-end-column="17" />
@@ -1217,81 +1012,49 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1944">
           <caret line="112" column="31" selection-start-line="112" selection-start-column="31" selection-end-line="112" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exceptions/SaldoInsuficienteException.java">
+    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/exceptions/SaldoInsuficienteException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
+        <state relative-caret-position="162">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#162#163#0" expanded="true" />
-            <element signature="e#207#208#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/Repositories/VEM/RepositorioVEMArray.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/Repositories/VEM/RepositorioVEMLista.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-          <folding>
-            <element signature="e#520#521#0" expanded="true" />
-            <element signature="e#546#547#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/VEMComum.java">
+    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/repositorios/RepositorioVEMArray.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/repositorios/RepositorioVEMLista.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Trabalhador.java">
+    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Pessoa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="414">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
           <folding>
-            <element signature="e#212#213#0" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
+            <element signature="e#405#406#0" expanded="false" />
+            <element signature="e#432#433#0" expanded="false" />
+            <element signature="e#462#463#0" expanded="false" />
+            <element signature="e#490#491#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/abstracts/VEM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="e#666#667#0" expanded="true" />
-            <element signature="e#696#697#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Student.java">
+    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Estudante.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
@@ -1309,21 +1072,115 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/VEMTrabalhador.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="e#244#245#0" expanded="true" />
-            <element signature="e#281#282#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="162">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/Trabalhador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/abstracts/VEM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/systems/singularity/cinttamobi/util/VEMComum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>JavaFXApp</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>CInttaMobi</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>
