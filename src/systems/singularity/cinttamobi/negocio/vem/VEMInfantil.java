@@ -4,14 +4,18 @@ import systems.singularity.cinttamobi.abstracts.VEM;
 import systems.singularity.cinttamobi.exceptions.OperacaoInvalidaException;
 import systems.singularity.cinttamobi.exceptions.SaldoInsuficienteException;
 import systems.singularity.cinttamobi.exceptions.ValorInvalidoException;
+import systems.singularity.cinttamobi.negocio.pessoas.Crianca;
 import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 
 /**
  * Created by phts on 17/06/16.
  */
 public class VEMInfantil extends VEM {
+
     public VEMInfantil(String number, Pessoa person) {
         super(number, person);
+        if(!(person instanceof Crianca))
+            throw new RuntimeException("Não é crianca! Safado! CFSH!");
     }
 
     @Override
@@ -21,7 +25,6 @@ public class VEMInfantil extends VEM {
 
     @Override
     public void debit(double value){
-
     }
 
 
