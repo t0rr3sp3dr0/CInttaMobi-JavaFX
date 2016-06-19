@@ -27,7 +27,7 @@ public final class ControladorVEM{
         ControladorVEM.tipo = tipo;
     }
 
-    public boolean exists(Object object) {
+    public static boolean exists(String object) {
         if(tipo.equals("array"))
             return repositorioArray.exists(object);
         else if (tipo.equals("lista"))
@@ -35,27 +35,27 @@ public final class ControladorVEM{
         return false;
     }
 
-    public void insert(Object object) {
+    public static void insert(Object object) {
         if(tipo.equals("array"))
             repositorioArray.insert(object);
         else if (tipo.equals("lista"))
             repositorioLista.insert(object);
     }
 
-    public void update(Object object) {
+    public static void update(Object object) {
         if(tipo.equals("array"))
             repositorioArray.update(object);
         else if (tipo.equals("lista"))
             repositorioLista.update(object);
     }
 
-    public void remove(Object object) {
+    public static void remove(Object object) {
         if(tipo.equals("array"))
             repositorioArray.remove(object);
         else if (tipo.equals("lista"))
             repositorioLista.remove(object);
     }
-    public static Object search(Object object){
+    public static Object search(String object){
         if(tipo.equals("array"))
            return repositorioArray.search(object);
         else if (tipo.equals("lista"))

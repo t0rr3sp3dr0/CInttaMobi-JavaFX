@@ -20,7 +20,7 @@ public class RepositorioListaVEM implements Repositorios{
     }
 
     @Override
-    public VEM search(Object id) {
+    public VEM search(String id) {
         return null;
     }
 
@@ -79,7 +79,7 @@ public class RepositorioListaVEM implements Repositorios{
     }
 
     @Override
-    public boolean exists(Object value) {
+    public boolean exists(String value) {
         ListaEncadeadaVEM aux = root;
         while (aux != null) {
             if (aux.getValue().getNumber().equals(value))

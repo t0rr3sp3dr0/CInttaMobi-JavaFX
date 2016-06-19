@@ -9,7 +9,7 @@ public class RepositorioArrayVEM implements Repositorios{
 
 
     @Override
-    public boolean exists(Object object) {
+    public boolean exists(String object) {
         return false;
     }
 
@@ -29,7 +29,7 @@ public class RepositorioArrayVEM implements Repositorios{
     }
 
     @Override
-    public Object search(Object object) {
+    public Object search(String object) {
         return null;
     }
 }
