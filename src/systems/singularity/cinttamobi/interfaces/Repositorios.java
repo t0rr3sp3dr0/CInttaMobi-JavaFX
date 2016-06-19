@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface Repositorios {
 
-    boolean exists(String id);
+    boolean exists(Object object);
 
     void insert(Object object);
 
@@ -17,6 +17,6 @@ public interface Repositorios {
 
     void remove(Object object);
 
-    Object search(String id);
+    Object search(Object object);
 
 }

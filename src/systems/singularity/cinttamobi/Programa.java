@@ -15,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
+import systems.singularity.cinttamobi.negocio.ControladorVEM;
 import systems.singularity.cinttamobi.negocio.gui.AsyncCallable;
 import systems.singularity.cinttamobi.negocio.gui.EventsTimeline;
 import systems.singularity.cinttamobi.negocio.gui.StageTools;
@@ -111,6 +112,7 @@ public class Programa extends Application {
                 ResourceBundle resourceBundle = ResourceBundle.getBundle("values.main");
                 ((Label) splashScreen.lookup("#version")).setText(String.format("Version %s", resourceBundle.getString("app.version")));
                 ((Label) splashScreen.lookup("#licensedTo")).setText(String.format("Licensed to %s", resourceBundle.getString("instance.licensedTo")));
+
             });
             eventsTimeline.add(event -> progressStatus.setText("Carregando User Interface"), 250);
             eventsTimeline.add(event -> {
