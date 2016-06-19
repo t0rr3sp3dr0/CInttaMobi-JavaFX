@@ -75,56 +75,11 @@ public class RepositorioListaVEM implements Repositorios{
         }
     }
 
-    public void remove(ListaEncadeadaVEM link) {
-        if (root.equals(link))
-            root = root.getNext();
-        else {
-            ListaEncadeadaVEM previous = root;
-            ListaEncadeadaVEM aux = root.getNext();
-            while (aux != null) {
-                if (aux.equals(link)) {
-                    previous.setNext(aux.getNext());
-                    return;
-                }
-                previous = aux;
-                aux = aux.getNext();
-            }
-        }
-    }
-
     @Override
     public boolean exists(String value) {
-        ListaEncadeadaVEM aux = root;
-        while (aux != null) {
-            if (aux.getValue().getNumber().equals(value))
-                return true;
-            else
-                aux = aux.getNext();
-        }
+        if (search(value) != null)
+            return true;
         return false;
-    }
-
-    public void invert() {
-        ListaEncadeadaVEM aux = root;
-        RepositorioListaVEM invert = new RepositorioListaVEM(aux.getValue());
-        this.remove(aux);
-
-        while (root != null) {
-            aux = root;
-            invert.insert(aux.getValue());
-            this.remove(aux);
-        }
-        this.root = invert.root;
-    }
-
-    public int getSize() {
-        ListaEncadeadaVEM aux = root;
-        int cont = 0;
-        while (aux != null) {
-            cont++;
-            aux = aux.getNext();
-        }
-        return cont;
     }
 
 }
