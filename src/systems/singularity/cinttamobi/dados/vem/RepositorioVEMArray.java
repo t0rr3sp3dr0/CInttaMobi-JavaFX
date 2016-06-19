@@ -7,7 +7,7 @@ import systems.singularity.cinttamobi.negocio.ControladorVEM;
 /**
  * Created by lvrma on 19/06/16.
  */
-public class RepositorioArrayVEM implements Repositorios {
+public class RepositorioVEMArray implements Repositorios {
 
     private VEM[] array = new VEM[0];
 
@@ -34,8 +34,10 @@ public class RepositorioArrayVEM implements Repositorios {
     public void update(Object objectTemp) {
         VEM object = (VEM) objectTemp;
         for (int i = 0; i < array.length; i++)
-            if (array[i].getNumber().equals(object.getNumber()))
+            if (array[i].getNumber().equals(object.getNumber())) {
                 array[i] = object;
+                return;
+            }
     }
 
     @Override

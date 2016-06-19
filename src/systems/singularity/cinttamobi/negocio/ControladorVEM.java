@@ -2,11 +2,10 @@ package systems.singularity.cinttamobi.negocio;
 
 import systems.singularity.cinttamobi.Programa;
 import systems.singularity.cinttamobi.abstracts.VEM;
-import systems.singularity.cinttamobi.dados.vem.RepositorioArrayVEM;
-import systems.singularity.cinttamobi.dados.vem.RepositorioListaVEM;
+import systems.singularity.cinttamobi.dados.vem.RepositorioVEMArray;
+import systems.singularity.cinttamobi.dados.vem.RepositorioVEMLista;
 import systems.singularity.cinttamobi.exceptions.RepositorioInvalidoException;
 import systems.singularity.cinttamobi.exceptions.VEMInexistenteException;
-import systems.singularity.cinttamobi.interfaces.Repositorios;
 
 import java.util.prefs.Preferences;
 
@@ -16,8 +15,8 @@ import java.util.prefs.Preferences;
 public final class ControladorVEM {
     private static String tipo;
 
-    private static RepositorioListaVEM repositorioLista = new RepositorioListaVEM();
-    private static RepositorioArrayVEM repositorioArray = new RepositorioArrayVEM();
+    private static RepositorioVEMLista repositorioLista = new RepositorioVEMLista();
+    private static RepositorioVEMArray repositorioArray = new RepositorioVEMArray();
 
     private ControladorVEM() {
     }

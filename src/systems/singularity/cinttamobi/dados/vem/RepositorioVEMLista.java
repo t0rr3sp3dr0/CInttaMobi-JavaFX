@@ -6,15 +6,15 @@ import systems.singularity.cinttamobi.interfaces.Repositorios;
 /**
  * Created by lvrma on 19/06/16.
  */
-public class RepositorioListaVEM implements Repositorios{
+public class RepositorioVEMLista implements Repositorios{
 
     private ListaEncadeadaVEM root;
 
-    public RepositorioListaVEM() {
+    public RepositorioVEMLista() {
         root = null;
     }
 
-    public RepositorioListaVEM(VEM value) {
+    public RepositorioVEMLista(VEM value) {
         root = new ListaEncadeadaVEM(value);
         root.setNext(null);
     }
