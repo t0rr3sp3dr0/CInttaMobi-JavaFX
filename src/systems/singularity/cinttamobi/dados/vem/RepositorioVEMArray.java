@@ -2,7 +2,6 @@ package systems.singularity.cinttamobi.dados.vem;
 
 import systems.singularity.cinttamobi.abstracts.VEM;
 import systems.singularity.cinttamobi.interfaces.Repositorios;
-import systems.singularity.cinttamobi.negocio.ControladorVEM;
 
 /**
  * Created by lvrma on 19/06/16.

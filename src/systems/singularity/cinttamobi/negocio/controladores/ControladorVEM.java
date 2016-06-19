@@ -18,12 +18,12 @@ public final class ControladorVEM {
     private static RepositorioVEMLista repositorioLista = new RepositorioVEMLista();
     private static RepositorioVEMArray repositorioArray = new RepositorioVEMArray();
 
-    private ControladorVEM() {
-    }
-
     static {
         Preferences prefs = Preferences.userNodeForPackage(Programa.class);
         tipo = prefs.get("repo", null);
+    }
+
+    private ControladorVEM() {
     }
 
     public static boolean exists(String object) {
