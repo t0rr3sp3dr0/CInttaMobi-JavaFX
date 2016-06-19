@@ -1,4 +1,4 @@
-package systems.singularity.cinttamobi.negocio;
+package systems.singularity.cinttamobi.negocio.controladores;
 
 import systems.singularity.cinttamobi.Programa;
 import systems.singularity.cinttamobi.abstracts.VEM;

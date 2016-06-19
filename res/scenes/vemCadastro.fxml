@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<SplitPane xmlns:fx="http://javafx.com/fxml/1" dividerPositions="0.5" orientation="VERTICAL"
+           xmlns="http://javafx.com/javafx/8"
+           fx:controller="systems.singularity.cinttamobi.fachada.VEMCadastroController">
+    <items>
+        <VBox>
+            <children>
+                <TableView fx:id="vemTableView" minHeight="120.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="numberVEMTableColumn" minWidth="128.0" prefWidth="128.0"
+                                     text="Número do VEM"/>
+                        <TableColumn fx:id="typeVEMTableColumn" minWidth="128.0" prefWidth="128.0" text="Tipo do VEM"/>
+                        <TableColumn fx:id="ownerNameTableColumn" minWidth="256.0" prefWidth="256.0"
+                                     text="Nome do Titular"/>
+                        <TableColumn fx:id="ownerCPFTableColumn" minWidth="128.0" prefWidth="128.0"
+                                     text="CPF do Titular"/>
+                    </columns>
+                </TableView>
+                <HBox>
+                    <children>
+                        <ToolBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" HBox.hgrow="ALWAYS">
+                            <items>
+                                <Button fx:id="addVEMButton" mnemonicParsing="false">
+                                    <graphic>
+                                        <ImageView fitHeight="17.0" fitWidth="17.0">
+                                            <image>
+                                                <Image url="@/icons/ic_add.png"/>
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="editVEMButton" mnemonicParsing="false">
+                                    <graphic>
+                                        <ImageView fitHeight="17.0" fitWidth="17.0">
+                                            <image>
+                                                <Image url="@/icons/ic_edit.png"/>
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="saveVEMButton" mnemonicParsing="false">
+                                    <graphic>
+                                        <ImageView fitHeight="17.0" fitWidth="17.0">
+                                            <image>
+                                                <Image url="@/icons/ic_save.png"/>
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </items>
+                        </ToolBar>
+                        <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" HBox.hgrow="ALWAYS">
+                            <items>
+                                <Button fx:id="deleteVEMButton" mnemonicParsing="false">
+                                    <graphic>
+                                        <ImageView fitHeight="17.0" fitWidth="17.0">
+                                            <image>
+                                                <Image url="@/icons/ic_delete.png"/>
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </items>
+                        </ToolBar>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <VBox HBox.hgrow="ALWAYS">
+                    <children>
+                        <HBox minWidth="0.0" prefWidth="0.0">
+                            <children>
+                                <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="Número">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="numberVEMTextField" HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox minWidth="0.0" prefWidth="0.0">
+                            <children>
+                                <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="Tipo">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <ComboBox fx:id="typeVEMComboBox" maxWidth="Infinity" HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                    </HBox.margin>
+                                </ComboBox>
+                            </children>
+                        </HBox>
+                        <HBox minWidth="0.0" prefWidth="0.0">
+                            <children>
+                                <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="Titular">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="ownerNameTextField" HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="80.0" minWidth="0.0" prefWidth="0.0">
+                            <children>
+                                <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="Nascimento">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <DatePicker fx:id="ownerBirthDatePicker" maxWidth="Infinity" HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                    </HBox.margin>
+                                </DatePicker>
+                            </children>
+                        </HBox>
+                        <HBox minWidth="0.0" prefWidth="0.0">
+                            <children>
+                                <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="CPF">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="ownerCPFTextField" HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="150.0" minWidth="0.0" prefWidth="0.0">
+                            <children>
+                                <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="{{ EXTRA }}">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="ownerExtraTextField" HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox HBox.hgrow="ALWAYS">
+                    <children>
+                        <HBox minWidth="0.0" prefWidth="0.0">
+                            <children>
+                                <ImageView fitHeight="150.0" pickOnBounds="true" preserveRatio="true"
+                                           HBox.hgrow="ALWAYS"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </items>
+</SplitPane>

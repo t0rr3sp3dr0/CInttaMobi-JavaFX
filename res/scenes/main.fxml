@@ -1,205 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
+<?import javafx.embed.swing.SwingNode?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.VBox?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="Infinity" maxWidth="Infinity" minHeight="480.0" minWidth="640.0"
-      prefHeight="600.0"
-      prefWidth="800.0" xmlns="http://javafx.com/javafx/8"
+      prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8"
       fx:controller="systems.singularity.cinttamobi.fachada.MainController">
     <children>
-        <HBox>
-            <children>
-                <MenuBar fx:id="menuBar" HBox.hgrow="ALWAYS">
-                    <menus>
-                        <Menu fx:id="mainMenu" mnemonicParsing="false" text="{{APP_NAME}}">
-                            <items>
-                                <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" text="About {{APP_NAME}}"/>
-                                <SeparatorMenuItem mnemonicParsing="false"/>
-                                <!--<MenuItem fx:id="remindersMenuItem" mnemonicParsing="false" text="Reminders"/>-->
-                                <Menu fx:id="preferencesMenu" mnemonicParsing="false" text="Preferences">
-                                    <items>
-                                        <MenuItem fx:id="logMenuItem" mnemonicParsing="false" text="Logs"/>
-                                        <MenuItem fx:id="usersMenuItem" mnemonicParsing="false" text="Users"/>
-                                        <SeparatorMenuItem fx:id="developerSeparator" mnemonicParsing="false"/>
-                                        <Menu fx:id="developerMenu" mnemonicParsing="false" text="Developer Tools">
-                                            <items>
-                                                <MenuItem fx:id="connectionPreferencesMenuItem" mnemonicParsing="false"
-                                                          text="Connection Preferences"/>
-                                            </items>
-                                        </Menu>
-                                    </items>
-                                </Menu>
-                                <SeparatorMenuItem mnemonicParsing="false"/>
-                                <MenuItem fx:id="quitMenuItem" mnemonicParsing="false" text="Quit {{APP_NAME}}"/>
-                            </items>
-                        </Menu>
-                        <Menu fx:id="cadastroMenu" mnemonicParsing="false" text="Cadastro">
-                            <items>
-                                <MenuItem fx:id="fornecedoresCadastroMenuItem" mnemonicParsing="false"
-                                          text="Fornecedores"/>
-                                <MenuItem fx:id="trabalhadoresCadastroMenuItem" mnemonicParsing="false"
-                                          text="Trabalhadores"/>
-                                <MenuItem fx:id="obrasCadastroMenuItem" mnemonicParsing="false" text="Obras"/>
-                                <MenuItem fx:id="comprasCadastroMenuItem" mnemonicParsing="false" text="Compras"/>
-                                <MenuItem fx:id="materiaisCadastroMenuItem" mnemonicParsing="false" text="Materiais"/>
-                                <MenuItem fx:id="cargosEFuncoesCadastroMenuItem" mnemonicParsing="false"
-                                          text="Cargos e Funções"/>
-                                <MenuItem fx:id="prestadoresDeServicoCadastroMenuItem" mnemonicParsing="false"
-                                          text="Prestadores de Serviço"/>
-                                <MenuItem fx:id="destinosERecolhimentosCadastroMenuItem" mnemonicParsing="false"
-                                          text="Destinos e Recolhimentos"/>
-                                <MenuItem fx:id="corretorCadastroMenuItem" mnemonicParsing="false" text="Corretor"/>
-                                <MenuItem fx:id="imobiliariaCadastroMenuItem" mnemonicParsing="false"
-                                          text="Imobiliária"/>
-                                <MenuItem fx:id="imoveisCadastroMenuItem" mnemonicParsing="false" text="Imóveis"/>
-                                <MenuItem fx:id="clientesCadastroMenuItem" mnemonicParsing="false" text="Clientes"/>
-                            </items>
-                        </Menu>
-                        <Menu fx:id="estoqueMenu" mnemonicParsing="false" text="Estoque">
-                            <items>
-                                <MenuItem fx:id="entradaEstoqueMenuItem" mnemonicParsing="false" text="Entrada"/>
-                                <MenuItem fx:id="saidaEstoqueMenuItem" mnemonicParsing="false" text="Saida"/>
-                            </items>
-                        </Menu>
-                        <Menu fx:id="caixaMenu" mnemonicParsing="false" text="Fluxo de Caixa">
-                            <items>
-                                <Menu fx:id="pagamentosMenu" mnemonicParsing="false" text="Pagamentos">
-                                    <items>
-                                        <Menu fx:id="encargosTrabalhistasMenu" mnemonicParsing="false"
-                                              text="Encargos Trabalhistas">
-                                            <items>
-                                                <MenuItem fx:id="recolhimentoDeFGTSPagamentosMenuItem"
-                                                          mnemonicParsing="false" text="FGTS"/>
-                                                <MenuItem fx:id="recolhimentoDeINSSPagamentosMenuItem"
-                                                          mnemonicParsing="false" text="INSS"/>
-                                            </items>
-                                        </Menu>
-                                        <MenuItem fx:id="trabalhadoresPagamentosMenuItem" mnemonicParsing="false"
-                                                  text="Folha de Pagamento"/>
-                                        <MenuItem fx:id="tributosPagamentosMenuItem" mnemonicParsing="false"
-                                                  text="Tributos"/>
-                                        <MenuItem fx:id="diversosPagamentosMenuItem" mnemonicParsing="false"
-                                                  text="Diversos"/>
-                                    </items>
-                                </Menu>
-                                <MenuItem fx:id="entradasDeCapitalCaixaMenuItem" mnemonicParsing="false"
-                                          text="Entradas de Capital"/>
-                                <MenuItem fx:id="contasAReceberCaixaMenuItem" mnemonicParsing="false"
-                                          text="Contas a Receber"/>
-                                <MenuItem fx:id="saldoDeCapitalCaixaMenuItem" mnemonicParsing="false"
-                                          text="Saida de Capital"/>
-                                <MenuItem fx:id="contasAPagarCaixaMenuItem" mnemonicParsing="false"
-                                          text="Contas a Pagar"/>
-                                <!--<MenuItem fx:id="capitalLiquidoCaixaMenuItem" mnemonicParsing="false" text="Capital Líquido"/>-->
-                                <MenuItem fx:id="despesasFixasCaixaMenuItem" mnemonicParsing="false"
-                                          text="Despesas Fixas"/>
-                                <!--<MenuItem fx:id="pesquisaValoresCaixaMenuItem" mnemonicParsing="false" text="Pesquisa Valores"/>-->
-                            </items>
-                        </Menu>
-                        <Menu fx:id="documentosMenu" mnemonicParsing="false" text="Documentos">
-                            <items>
-                                <MenuItem fx:id="contratosDeVendaDocumentosMenuItem" mnemonicParsing="false"
-                                          text="Contratos de Venda"/>
-                                <MenuItem fx:id="contratosDeCompraDocumentosMenuItem" mnemonicParsing="false"
-                                          text="Contratos de Compra"/>
-                                <MenuItem fx:id="autorizacoesDeVendaDocumentosMenuItem" mnemonicParsing="false"
-                                          text="Autorizações de Venda"/>
-                                <MenuItem fx:id="reciboAvulsoDocumentosMenuItem" mnemonicParsing="false"
-                                          text="Recibo Avulso"/>
-                                <MenuItem fx:id="contratoDePrestacaoDeServicoDocumentosMenuItem" mnemonicParsing="false"
-                                          text="Contrato de Prestação de Serviço"/>
-                                <MenuItem fx:id="cartaAoTrabalhadorDocumentosMenuItem" mnemonicParsing="false"
-                                          text="Carta ao Trabalhador"/>
-                                <MenuItem fx:id="relatorioDeEstoqueDocumentosMenuItem" mnemonicParsing="false"
-                                          text="Relatório de Estoque"/>
-                                <MenuItem fx:id="relatorioDeDespesasDocumentosMenuItem" mnemonicParsing="false"
-                                          text="Relatório de Despesas"/>
-                            </items>
-                        </Menu>
-                    </menus>
-                </MenuBar>
-            </children>
-        </HBox>
         <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE"
                  VBox.vgrow="ALWAYS">
             <tabs>
-                <Tab fx:id="mainTab" closable="false" text="BuildWare">
+                <Tab fx:id="mainTab" closable="false" text="CInttaMobi">
                     <content>
-                        <StackPane prefHeight="150.0" prefWidth="200.0">
-                            <children>
-                                <VBox fx:id="loginBox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0"
-                                      visible="true">
-                                    <children>
-                                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true"
-                                                   preserveRatio="true">
-                                            <image>
-                                                <Image url="@/images/logo.png"/>
-                                            </image>
-                                            <VBox.margin>
-                                                <Insets bottom="8.0"/>
-                                            </VBox.margin>
-                                        </ImageView>
-                                        <TextField fx:id="username" maxWidth="200.0" promptText="Usuário">
-                                            <VBox.margin>
-                                                <Insets top="8.0"/>
-                                            </VBox.margin>
-                                        </TextField>
-                                        <PasswordField fx:id="password" maxWidth="200.0" promptText="Senha">
-                                            <VBox.margin>
-                                                <Insets top="8.0"/>
-                                            </VBox.margin>
-                                        </PasswordField>
-                                        <Button fx:id="loginButton" mnemonicParsing="false" text="Entrar">
-                                            <VBox.margin>
-                                                <Insets top="8.0"/>
-                                            </VBox.margin>
-                                        </Button>
-                                    </children>
-                                </VBox>
-                                <VBox fx:id="wellcomeBox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0"
-                                      visible="false">
-                                    <children>
-                                        <ImageView fitHeight="225.0" fitWidth="300.0" pickOnBounds="true"
-                                                   preserveRatio="true">
-                                            <image>
-                                                <Image url="@/images/logo.png"/>
-                                            </image>
-                                        </ImageView>
-                                        <Label fx:id="wellcomeLabel" text="Bem-vindo, {{USER}}!">
-                                            <VBox.margin>
-                                                <Insets top="16.0"/>
-                                            </VBox.margin>
-                                            <font>
-                                                <Font size="17.0"/>
-                                            </font>
-                                        </Label>
-                                    </children>
-                                    <StackPane.margin>
-                                        <Insets/>
-                                    </StackPane.margin>
-                                </VBox>
-                            </children>
-                        </StackPane>
+                        <SwingNode fx:id="swingNode"/>
                     </content>
                 </Tab>
             </tabs>
         </TabPane>
-        <!--<HBox VBox.vgrow="NEVER" visible="true">-->
-        <!--<children>-->
-        <!--<StackPane HBox.hgrow="ALWAYS">-->
-        <!--<children>-->
-        <!--<ProgressBar fx:id="progressBar" maxWidth="Infinity" progress="-1.0">-->
-        <!--<padding>-->
-        <!--<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />-->
-        <!--</padding>-->
-        <!--</ProgressBar>-->
-        <!--</children>-->
-        <!--</StackPane>-->
-        <!--</children>-->
-        <!--</HBox>-->
     </children>
 </VBox>
