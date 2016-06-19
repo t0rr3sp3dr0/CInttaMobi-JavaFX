@@ -2,6 +2,7 @@ package systems.singularity.cinttamobi.negocio.pessoas;
 
 import systems.singularity.cinttamobi.exceptions.CPFInvalidoException;
 import systems.singularity.cinttamobi.exceptions.IdadeInvalidaException;
+import systems.singularity.cinttamobi.negocio.Validador;
 
 import java.util.Date;
 
@@ -15,11 +16,16 @@ public class Pessoa {
     private String cpf;
 
     public Pessoa(String name, Date birth, String cpf) throws CPFInvalidoException, IdadeInvalidaException {
-        // Verify if CPF already exists
         if (System.currentTimeMillis() - birth.getTime() < 0)
             throw new IdadeInvalidaException();
-        if(cpf == null)
+
+        if (cpf != null) {
+            cpf = cpf.replaceAll("\\D+", "");
+            if(cpf.length() != 11)
+                throw new CPFInvalidoException();
+        } else
             throw new CPFInvalidoException();
+
         this.name = name;
         this.birth = birth;
         this.cpf = cpf;

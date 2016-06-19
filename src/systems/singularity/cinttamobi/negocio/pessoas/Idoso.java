@@ -13,12 +13,11 @@ public class Idoso extends Pessoa {
 
     public Idoso(String name, Date birth, String cpf) throws CPFInvalidoException, IdadeInvalidaException{
         super(name, birth, cpf);
-        double years = Math.abs(System.currentTimeMillis() - birth.getTime())
-                / (365.25 * 24 * 60 * 60 * 1000);
+
         // Milisegundos atual - Milisegundos do nascimento
         // dividido por dias * horas * segundos * milisegundos
-
-        if(65 > years)
+        double years = Math.abs(System.currentTimeMillis() - birth.getTime()) / (365.25 * 24 * 60 * 60 * 1000);
+        if(years < 65)
             throw new IdadeInvalidaException();
     }
 }
