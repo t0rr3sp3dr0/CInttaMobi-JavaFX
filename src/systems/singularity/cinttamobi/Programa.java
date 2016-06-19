@@ -117,7 +117,7 @@ public class Programa extends Application {
                 ((Label) splashScreen.lookup("#licensedTo")).setText(String.format("Licensed to %s", resourceBundle.getString("instance.licensedTo")));
 
                 try {
-                    BufferedReader in = new BufferedReader(new FileReader("config.txt"));
+                    BufferedReader in = new BufferedReader(new FileReader(Programa.class.getResource("config.txt").getPath()));
                     prefs.put("repo", in.readLine());
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
