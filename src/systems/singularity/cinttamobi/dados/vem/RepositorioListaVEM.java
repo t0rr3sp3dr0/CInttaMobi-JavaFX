@@ -21,6 +21,13 @@ public class RepositorioListaVEM implements Repositorios{
 
     @Override
     public VEM search(String id) {
+        ListaEncadeadaVEM aux = root;
+        while (aux != null) {
+            if (aux.getValue().getNumber().equals(id))
+                return aux.getValue();
+            else
+                aux = aux.getNext();
+        }
         return null;
     }
 
@@ -40,6 +47,13 @@ public class RepositorioListaVEM implements Repositorios{
     @Override
     public void update(Object objectTemp) {
         VEM object = (VEM) objectTemp;
+        ListaEncadeadaVEM aux = root;
+        while (aux != null) {
+            if (aux.getValue().getNumber().equals(object.getNumber()))
+                aux.setValue(object);
+            else
+                aux = aux.getNext();
+        }
     }
 
     @Override
