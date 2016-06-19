@@ -7,8 +7,9 @@ import java.util.List;
  * Created by lvrma on 02/05/16.
  * © 2016 Singularity Systems
  */
-public interface Colecao {
-    boolean exists(Object object);
+public interface Repositorios {
+
+    boolean exists(String id);
 
     void insert(Object object);
 
@@ -16,5 +17,6 @@ public interface Colecao {
 
     void remove(Object object);
 
-    Object search(Object object);
+    Object search(String id);
+
 }
