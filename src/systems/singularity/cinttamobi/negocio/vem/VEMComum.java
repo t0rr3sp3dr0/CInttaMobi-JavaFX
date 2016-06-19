@@ -2,13 +2,14 @@ package systems.singularity.cinttamobi.negocio.vem;
 
 import systems.singularity.cinttamobi.abstracts.VEM;
 import systems.singularity.cinttamobi.exceptions.SaldoInsuficienteException;
+import systems.singularity.cinttamobi.exceptions.VEMInvalidoException;
 import systems.singularity.cinttamobi.exceptions.ValorInvalidoException;
 
 /**
  * Created by phts on 16/06/16.
  */
 public class VEMComum extends VEM {
-    public VEMComum(String number) {
+    public VEMComum(String number) throws VEMInvalidoException {
         super(number, null);
     }
 
