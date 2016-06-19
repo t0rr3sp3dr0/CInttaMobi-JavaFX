@@ -26,10 +26,6 @@ public final class ControladorVEM {
         tipo = prefs.get("repo", null);
     }
 
-    public static void setTipo(String tipo) {
-        ControladorVEM.tipo = tipo;
-    }
-
     public static boolean exists(String object) {
         if (tipo.equals("array"))
             return repositorioArray.exists(object);
