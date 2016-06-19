@@ -4,6 +4,8 @@ import systems.singularity.cinttamobi.Programa;
 import systems.singularity.cinttamobi.abstracts.VEM;
 import systems.singularity.cinttamobi.dados.vem.RepositorioArrayVEM;
 import systems.singularity.cinttamobi.dados.vem.RepositorioListaVEM;
+import systems.singularity.cinttamobi.exceptions.RepositorioInvalidoException;
+import systems.singularity.cinttamobi.exceptions.VEMInexistenteException;
 import systems.singularity.cinttamobi.interfaces.Repositorios;
 
 import java.util.prefs.Preferences;
@@ -37,44 +39,44 @@ public final class ControladorVEM {
         return false;
     }
 
-    public static void insert(Object objectTemp) {
+    public static void insert(Object objectTemp) throws VEMInexistenteException {
         VEM object = (VEM) objectTemp;
         if (exists(object.getNumber())) {
             if (tipo.equals("array"))
                 repositorioArray.insert(object);
             else if (tipo.equals("lista"))
                 repositorioLista.insert(object);
-        } else throw new RuntimeException("Objeto nao existe!");
+        } else throw new VEMInexistenteException();
     }
 
-    public static void update(Object objectTemp) {
+    public static void update(Object objectTemp) throws VEMInexistenteException {
         VEM object = (VEM) objectTemp;
         if (exists(object.getNumber())) {
             if (tipo.equals("array"))
                 repositorioArray.update(object);
             else if (tipo.equals("lista"))
                 repositorioLista.update(object);
-        } else throw new RuntimeException("Objeto nao existe!");
+        } else throw new VEMInexistenteException();
     }
 
-    public static void remove(Object objectTemp) {
+    public static void remove(Object objectTemp) throws VEMInexistenteException {
         VEM object = (VEM) objectTemp;
         if (exists(object.getNumber())) {
             if (tipo.equals("array"))
                 repositorioArray.remove(object);
             else if (tipo.equals("lista"))
                 repositorioLista.remove(object);
-        } else throw new RuntimeException("Objeto nao existe!");
+        } else throw new VEMInexistenteException();
     }
 
-    public static Object search(String object) {
+    public static Object search(String object) throws RepositorioInvalidoException, VEMInexistenteException {
         if (exists(object)) {
             if (tipo.equals("array"))
                 return repositorioArray.search(object);
             else if (tipo.equals("lista"))
                 return repositorioLista.search(object);
-            else throw new RuntimeException("Tipo de repositorio Invalido!");
-        } else throw new RuntimeException("Objeto nao existe!");
+            else throw new RepositorioInvalidoException();
+        } else throw new VEMInexistenteException();
     }
 
 
