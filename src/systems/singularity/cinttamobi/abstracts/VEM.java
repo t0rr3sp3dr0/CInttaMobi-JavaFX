@@ -2,6 +2,7 @@ package systems.singularity.cinttamobi.abstracts;
 
 import systems.singularity.cinttamobi.exceptions.OperacaoInvalidaException;
 import systems.singularity.cinttamobi.exceptions.SaldoInsuficienteException;
+import systems.singularity.cinttamobi.exceptions.VEMInvalidoException;
 import systems.singularity.cinttamobi.exceptions.ValorInvalidoException;
 import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 
@@ -13,11 +14,11 @@ public abstract class VEM {
     private String number;
     private Pessoa person;
 
-    public VEM(String number, Pessoa person) {
+    public VEM(String number, Pessoa person) throws VEMInvalidoException {
         // TO-DO
         // Verify if number or person already exists
         if (number == null)
-            throw new RuntimeException("Número Inválido");
+            throw new VEMInvalidoException();
         this.number = number;
         this.person = person;
         this.balance = 0;

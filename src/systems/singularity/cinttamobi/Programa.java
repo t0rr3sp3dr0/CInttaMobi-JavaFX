@@ -19,6 +19,10 @@ import systems.singularity.cinttamobi.negocio.gui.AsyncCallable;
 import systems.singularity.cinttamobi.negocio.gui.EventsTimeline;
 import systems.singularity.cinttamobi.negocio.gui.StageTools;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Optional;
 import java.util.Properties;
 import java.util.ResourceBundle;
@@ -113,6 +117,16 @@ public class Programa extends Application {
                 ResourceBundle resourceBundle = ResourceBundle.getBundle("values.main");
                 ((Label) splashScreen.lookup("#version")).setText(String.format("Version %s", resourceBundle.getString("app.version")));
                 ((Label) splashScreen.lookup("#licensedTo")).setText(String.format("Licensed to %s", resourceBundle.getString("instance.licensedTo")));
+
+                try {
+                    BufferedReader in = new BufferedReader(new FileReader(Programa.class.getResource("config.txt").getPath()));
+                    prefs.put("repo", in.readLine());
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
             });
             eventsTimeline.add(event -> progressStatus.setText("Carregando User Interface"), 250);
             eventsTimeline.add(event -> {

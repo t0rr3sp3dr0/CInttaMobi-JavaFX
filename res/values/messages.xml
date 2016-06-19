@@ -11,8 +11,5 @@
     <entry key="minHeight">480</entry>
     <entry key="prefHeight">600</entry>
     <entry key="maxHeight">Infinity</entry>
-    <entry key="fornecedoresCadastro">Cadastro de Fornecedores</entry>
-    <entry key="trabalhadoresCadastro">Cadastro de Trabalhadores</entry>
-    <entry key="materiaisCadastro">Cadastro de Materiais</entry>
-    <entry key="connectionPreferences">Connection Settings</entry>
+    <entry key="vemCadastro">Cadastro de VEMs</entry>
 </properties>
