@@ -1,7 +1,6 @@
 package systems.singularity.cinttamobi.dados.pessoa;
 
 import systems.singularity.cinttamobi.interfaces.RepositoriosPessoa;
-import systems.singularity.cinttamobi.interfaces.RepositoriosVEM;
 import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 
 import java.util.ArrayList;
@@ -17,7 +16,7 @@ public class RepositorioPessoaArray implements RepositoriosPessoa {
     public boolean exists(String id) {
         for (Pessoa item: this.pessoas)
         {
-            if(item.getCpf().equals(id))
+            if(item.getCPF().equals(id))
             {
                 return true;
             }
@@ -44,7 +43,7 @@ public class RepositorioPessoaArray implements RepositoriosPessoa {
     public void update(Pessoa object) {
 
         for (int i = 0; i < this.pessoas.length; i++) {
-            if(object.getCpf().equals(this.pessoas[i].getCpf()))
+            if(object.getCPF().equals(this.pessoas[i].getCPF()))
             {
                 this.pessoas[i] = object;
                 return;
@@ -58,7 +57,7 @@ public class RepositorioPessoaArray implements RepositoriosPessoa {
         Pessoa[] aux = new Pessoa[this.pessoas.length - 1];
 
         for (int i = 0; i < this.pessoas.length; i++) {
-            if(object.getCpf().equals(this.pessoas[i].getCpf()))
+            if(object.getCPF().equals(this.pessoas[i].getCPF()))
                 this.pessoas[i] = this.pessoas[this.pessoas.length - 1];
         }
 
@@ -75,7 +74,7 @@ public class RepositorioPessoaArray implements RepositoriosPessoa {
 
         for(Pessoa item: this.pessoas)
         {
-            if(item.getCpf().equals(id))
+            if(item.getCPF().equals(id))
             {
                 return item;
             }

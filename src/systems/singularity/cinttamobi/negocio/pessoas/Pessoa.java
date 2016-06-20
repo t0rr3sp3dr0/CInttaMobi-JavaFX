@@ -39,7 +39,7 @@ public class Pessoa {
         return birth;
     }
 
-    public String getCpf() {
+    public String getCPF() {
         return cpf;
     }
 }

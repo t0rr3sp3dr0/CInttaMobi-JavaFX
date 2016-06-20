@@ -1,11 +1,10 @@
 package systems.singularity.cinttamobi.abstracts;
 
-import systems.singularity.cinttamobi.enums.TiposVEM;
 import systems.singularity.cinttamobi.exceptions.OperacaoInvalidaException;
 import systems.singularity.cinttamobi.exceptions.SaldoInsuficienteException;
 import systems.singularity.cinttamobi.exceptions.VEMInvalidoException;
 import systems.singularity.cinttamobi.exceptions.ValorInvalidoException;
-import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
+import systems.singularity.cinttamobi.negocio.pessoas.*;
 
 /**
  * Created by phts on 16/06/16.
@@ -14,7 +13,6 @@ public abstract class VEM {
     protected double balance;
     private String number;
     private Pessoa person;
-
 
     public VEM(String number, Pessoa person) throws VEMInvalidoException {
         // TO-DO
@@ -41,4 +39,34 @@ public abstract class VEM {
     public abstract void credit(double value) throws ValorInvalidoException, OperacaoInvalidaException;
 
     public abstract void debit(double value) throws ValorInvalidoException, SaldoInsuficienteException;
+
+    // Os metodos abaixo são utilizados única e exclusivamente
+    // para popular a TableView no JavaFX
+
+    public String getT() {
+        if (person instanceof Crianca)
+            return "Infantil";
+        else if (person instanceof Estudante)
+            return "Estudante";
+        else if (person instanceof Idoso)
+            return "Idoso";
+        else if (person instanceof Trabalhador)
+            return "Trabalhador";
+        else
+            return "Comum";
+    }
+
+    public String getN() {
+        if (person != null)
+            return person.getName();
+        else
+            return "Não se aplica";
+    }
+
+    public String getC() {
+        if (person != null)
+            return person.getCPF();
+        else
+            return "Não se aplica";
+    }
 }

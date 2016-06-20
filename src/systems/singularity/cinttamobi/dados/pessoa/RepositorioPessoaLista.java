@@ -1,7 +1,6 @@
 package systems.singularity.cinttamobi.dados.pessoa;
 
 import systems.singularity.cinttamobi.interfaces.RepositoriosPessoa;
-import systems.singularity.cinttamobi.interfaces.RepositoriosVEM;
 import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 
 import java.util.ArrayList;
@@ -43,7 +42,7 @@ public class RepositorioPessoaLista implements RepositoriosPessoa {
 
         NodePessoa aux = root;
         while (aux != null) {
-            if (aux.getValue().getCpf().equals(object.getCpf()))
+            if (aux.getValue().getCPF().equals(object.getCPF()))
                 aux.setValue(object);
             else
                 aux = aux.getNext();
@@ -55,13 +54,13 @@ public class RepositorioPessoaLista implements RepositoriosPessoa {
     @Override
     public void remove(Pessoa object) {
 
-        if (root.getValue().getCpf().equals(object.getCpf()))
+        if (root.getValue().getCPF().equals(object.getCPF()))
             root = root.getNext();
         else {
             NodePessoa previous = root;
             NodePessoa aux = root.getNext();
             while (aux != null) {
-                if (aux.getValue().getCpf().equals(object.getCpf())) {
+                if (aux.getValue().getCPF().equals(object.getCPF())) {
                     previous.setNext(aux.getNext());
                     return;
                 }
@@ -76,7 +75,7 @@ public class RepositorioPessoaLista implements RepositoriosPessoa {
         NodePessoa aux = root;
         while(aux != null)
         {
-            if(aux.getValue().getCpf().equals(id))
+            if(aux.getValue().getCPF().equals(id))
             {
                 return aux.getValue();
             }

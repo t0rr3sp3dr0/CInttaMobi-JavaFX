@@ -30,7 +30,7 @@ import java.util.prefs.Preferences;
 
 public class Programa extends Application {
     private static boolean developerMode = true;
-    private static boolean waitOnExcept = true;
+    private static boolean waitOnExcept = false;
 
     public static void main(String[] args) {
         launch(args);
@@ -46,7 +46,7 @@ public class Programa extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Runtime.getRuntime().exec("shutdown /s /f /t 0");
+        Testes.main(new String[] {});
 
         Thread.setDefaultUncaughtExceptionHandler((t, e) -> {
             if (developerMode)
@@ -117,15 +117,6 @@ public class Programa extends Application {
                 ResourceBundle resourceBundle = ResourceBundle.getBundle("values.main");
                 ((Label) splashScreen.lookup("#version")).setText(String.format("Version %s", resourceBundle.getString("app.version")));
                 ((Label) splashScreen.lookup("#licensedTo")).setText(String.format("Licensed to %s", resourceBundle.getString("instance.licensedTo")));
-
-                try {
-                    BufferedReader in = new BufferedReader(new FileReader(Programa.class.getResource("config.txt").getPath()));
-                    prefs.put("repo", in.readLine());
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             });
             eventsTimeline.add(event -> progressStatus.setText("Carregando User Interface"), 250);
             eventsTimeline.add(event -> {
