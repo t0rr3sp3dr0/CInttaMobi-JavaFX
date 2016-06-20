@@ -3,6 +3,7 @@ package systems.singularity.cinttamobi.negocio;
 import systems.singularity.cinttamobi.Programa;
 import systems.singularity.cinttamobi.dados.pessoa.RepositorioPessoaArray;
 import systems.singularity.cinttamobi.dados.pessoa.RepositorioPessoaLista;
+import systems.singularity.cinttamobi.exceptions.PessoaExistenteException;
 import systems.singularity.cinttamobi.exceptions.PessoaInexistenteException;
 import systems.singularity.cinttamobi.exceptions.RepositorioInvalidoException;
 import systems.singularity.cinttamobi.interfaces.RepositoriosPessoa;
@@ -31,12 +32,12 @@ public final class NegociosPessoa {
     }
 
 
-    public void insert(Pessoa object) throws PessoaInexistenteException {
+    public void insert(Pessoa object) throws PessoaExistenteException {
 
-        if (exists(object.getCpf())) {
+        if (!exists(object.getCpf())) {
             repositorio.insert(object);
         } else
-            throw new PessoaInexistenteException();
+            throw new PessoaExistenteException();
     }
 
     public void update(Pessoa object) throws PessoaInexistenteException {

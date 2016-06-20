@@ -2,11 +2,13 @@ package systems.singularity.cinttamobi.negocio;
 
 import systems.singularity.cinttamobi.Programa;
 import systems.singularity.cinttamobi.exceptions.RepositorioInvalidoException;
+import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.prefs.Preferences;
 
 /**
@@ -14,6 +16,7 @@ import java.util.prefs.Preferences;
  */
 public class Fachada {
 
+    private String tipo = "";
     private static Fachada ourInstance = new Fachada();
 
     public static Fachada getInstance() {
@@ -39,4 +42,41 @@ public class Fachada {
             e.printStackTrace();
         }
     }
+
+    public void cadastrarVEM(String numero, Pessoa pessoa)
+    {
+
+
+
+    }
+
+    public void cadastrarPessoa()
+    {
+
+    }
+
+    public void cadastrarOnibus()
+    {
+
+    }
+
+    public void creditarVEM()
+    {
+
+    }
+
+    public void debitarVEM()
+    {
+
+    }
+
+
+
+
+
+
+
+
+
+
 }

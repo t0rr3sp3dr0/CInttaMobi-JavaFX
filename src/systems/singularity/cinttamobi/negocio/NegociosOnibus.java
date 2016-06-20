@@ -3,6 +3,7 @@ package systems.singularity.cinttamobi.negocio;
 import systems.singularity.cinttamobi.Programa;
 import systems.singularity.cinttamobi.dados.onibus.RepositorioOnibusArray;
 import systems.singularity.cinttamobi.dados.onibus.RepositorioOnibusLista;
+import systems.singularity.cinttamobi.exceptions.OnibusExistenteException;
 import systems.singularity.cinttamobi.exceptions.OnibusInexistenteException;
 import systems.singularity.cinttamobi.exceptions.RepositorioInvalidoException;
 import systems.singularity.cinttamobi.interfaces.RepositoriosOnibus;
@@ -30,12 +31,11 @@ public final class NegociosOnibus {
     }
 
 
-    public void insert(Onibus object) throws OnibusInexistenteException {
-
-        if (exists(object.getId())) {
+    public void insert(Onibus object) throws OnibusExistenteException {
+        if (!exists(object.getId())) {
             repositorio.insert(object);
         } else
-            throw new OnibusInexistenteException();
+            throw new OnibusExistenteException();
     }
 
     public void update(Onibus object) throws OnibusInexistenteException {
