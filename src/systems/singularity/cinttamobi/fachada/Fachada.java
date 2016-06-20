@@ -1,18 +1,16 @@
-package systems.singularity.cinttamobi.negocio;
+package systems.singularity.cinttamobi.fachada;
 
 import systems.singularity.cinttamobi.Programa;
 import systems.singularity.cinttamobi.abstracts.VEM;
-import systems.singularity.cinttamobi.enums.TiposVEM;
 import systems.singularity.cinttamobi.exceptions.*;
-import systems.singularity.cinttamobi.negocio.pessoas.*;
-import systems.singularity.cinttamobi.negocio.vem.*;
+import systems.singularity.cinttamobi.negocio.NegociosOnibus;
+import systems.singularity.cinttamobi.negocio.NegociosPessoa;
+import systems.singularity.cinttamobi.negocio.NegociosVEM;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.prefs.Preferences;
 
 /**
  * Created by esvm on 20/06/16.
