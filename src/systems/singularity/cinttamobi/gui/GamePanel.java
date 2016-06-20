@@ -1,5 +1,6 @@
 package systems.singularity.cinttamobi.gui;
 
+import javafx.scene.input.KeyCode;
 import systems.singularity.cinttamobi.Programa;
 
 import javax.swing.*;
@@ -47,7 +48,11 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener, Co
 
     public void componentShown(ComponentEvent arg0) {}
 
-    public void keyPressed(KeyEvent arg0) {}
+    public void keyPressed(KeyEvent arg0) {
+        System.out.println("AAAAA");
+        if(arg0.getKeyCode() == KeyEvent.VK_A)
+            System.out.println("Left key");
+    }
 
     public void keyReleased(KeyEvent arg0) {}
 
