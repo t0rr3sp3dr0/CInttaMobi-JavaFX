@@ -15,7 +15,7 @@ import java.util.prefs.Preferences;
 /**
  * Created by phts on 19/06/16.
  */
-public final class NegociosOnibus {
+public class NegociosOnibus {
     private RepositoriosOnibus repositorio;
 
     public NegociosOnibus(String tipo) throws RepositorioInvalidoException {

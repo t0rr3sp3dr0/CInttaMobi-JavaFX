@@ -17,6 +17,7 @@ public class Idoso extends Pessoa {
         // Milisegundos atual - Milisegundos do nascimento
         // dividido por dias * horas * segundos * milisegundos
         double years = Math.abs(System.currentTimeMillis() - birth.getTime()) / (365.25 * 24 * 60 * 60 * 1000);
+        System.out.println(years);
         if(years < 65)
             throw new IdadeInvalidaException();
     }

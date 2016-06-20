@@ -8,6 +8,7 @@ import systems.singularity.cinttamobi.negocio.NegociosPessoa;
 import systems.singularity.cinttamobi.negocio.NegociosVEM;
 import systems.singularity.cinttamobi.negocio.Onibus;
 import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
+import systems.singularity.cinttamobi.negocio.vem.VEMComum;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -47,7 +48,8 @@ public class Fachada {
     }
 
     public void cadastrarVEM(VEM vem) throws PessoaExistenteException, VEMExistenteException {
-        negociosPessoa.insert(vem.getPerson());
+        if (!(vem instanceof VEMComum))
+            negociosPessoa.insert(vem.getPerson());
         negociosVEM.insert(vem);
     }
 

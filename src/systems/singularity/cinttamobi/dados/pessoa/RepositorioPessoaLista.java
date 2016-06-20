@@ -23,9 +23,9 @@ public class RepositorioPessoaLista implements RepositoriosPessoa {
 
     @Override
     public void insert(Pessoa object) {
-        if(this.root.getValue() == null)
+        if(this.root == null)
         {
-            this.root.setValue((Pessoa) object);
+            this.root = new NodePessoa(object);
         }
         else
         {
@@ -34,7 +34,7 @@ public class RepositorioPessoaLista implements RepositoriosPessoa {
             {
                 aux = aux.getNext();
             }
-            aux.setNext(new NodePessoa((Pessoa) object));
+            aux.setNext(new NodePessoa(object));
         }
     }
 

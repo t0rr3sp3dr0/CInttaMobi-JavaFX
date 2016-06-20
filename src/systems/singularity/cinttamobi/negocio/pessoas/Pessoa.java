@@ -2,9 +2,9 @@ package systems.singularity.cinttamobi.negocio.pessoas;
 
 import systems.singularity.cinttamobi.exceptions.CPFInvalidoException;
 import systems.singularity.cinttamobi.exceptions.IdadeInvalidaException;
-import systems.singularity.cinttamobi.negocio.Validador;
 
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by pedro on 5/2/16.
@@ -16,7 +16,7 @@ public class Pessoa {
     private String cpf;
 
     public Pessoa(String name, Date birth, String cpf) throws CPFInvalidoException, IdadeInvalidaException {
-        if (System.currentTimeMillis() - birth.getTime() < 0)
+        if (birth.getTime() > System.currentTimeMillis())
             throw new IdadeInvalidaException();
 
         if (cpf != null) {

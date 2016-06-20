@@ -23,7 +23,9 @@ public final class RepositorioOnibusLista implements RepositoriosOnibus {
 
     @Override
     public boolean exists(String id) {
-        if (this.value.getId().equals(id))
+        if (this.value == null)
+            return false;
+        else if (this.value.getId().equals(id))
             return true;
         else if (this.node == null)
             return false;
@@ -35,7 +37,7 @@ public final class RepositorioOnibusLista implements RepositoriosOnibus {
     public void insert(Onibus object) {
 
         if (this.value == null)
-            this.value = value;
+            this.value = object;
         else if (this.node == null) {
             this.node = new RepositorioOnibusLista(value);
             this.node.parent = this;

@@ -15,7 +15,7 @@ import java.util.prefs.Preferences;
 /**
  * Created by caesa on 19/06/2016.
  */
-public final class NegociosPessoa {
+public class NegociosPessoa {
 
     private RepositoriosPessoa repositorio;
 
