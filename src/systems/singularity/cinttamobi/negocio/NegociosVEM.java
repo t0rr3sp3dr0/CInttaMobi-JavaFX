@@ -1,14 +1,12 @@
 package systems.singularity.cinttamobi.negocio;
 
-import systems.singularity.cinttamobi.Programa;
 import systems.singularity.cinttamobi.abstracts.VEM;
 import systems.singularity.cinttamobi.dados.vem.RepositorioVEMArray;
 import systems.singularity.cinttamobi.dados.vem.RepositorioVEMLista;
 import systems.singularity.cinttamobi.exceptions.RepositorioInvalidoException;
+import systems.singularity.cinttamobi.exceptions.VEMExistenteException;
 import systems.singularity.cinttamobi.exceptions.VEMInexistenteException;
 import systems.singularity.cinttamobi.interfaces.RepositoriosVEM;
-
-import java.util.prefs.Preferences;
 
 /**
  * Created by lvrma on 19/06/16.
@@ -31,12 +29,12 @@ public class NegociosVEM {
     }
 
 
-    public void insert(VEM object) throws VEMInexistenteException {
+    public void insert(VEM object) throws VEMExistenteException {
 
-        if (exists(object.getNumber())) {
+        if (!exists(object.getNumber())) {
             repositorio.insert(object);
         } else
-            throw new VEMInexistenteException();
+            throw new VEMExistenteException();
     }
 
     public void update(VEM object) throws VEMInexistenteException {
