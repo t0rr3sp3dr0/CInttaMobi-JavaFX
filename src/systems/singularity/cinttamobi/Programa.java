@@ -32,6 +32,8 @@ public class Programa extends Application {
     private static boolean developerMode = true;
     private static boolean waitOnExcept = true;
 
+    public static String tipo = "";
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -120,6 +122,7 @@ public class Programa extends Application {
 
                 try {
                     BufferedReader in = new BufferedReader(new FileReader(Programa.class.getResource("config.txt").getPath()));
+                    tipo = in.readLine();
                     prefs.put("repo", in.readLine());
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
