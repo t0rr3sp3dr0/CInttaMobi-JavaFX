@@ -64,8 +64,10 @@ public class RepositorioVEMLista implements RepositoriosVEM {
 
         LinkVEM aux = root;
         while (aux != null) {
-            if (aux.getValue().getNumber().equals(object.getNumber()))
+            if (aux.getValue().getNumber().equals(object.getNumber())) {
                 aux.setValue(object);
+                return;
+            }
             else
                 aux = aux.getNext();
         }

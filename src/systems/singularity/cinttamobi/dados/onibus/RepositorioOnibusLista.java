@@ -95,7 +95,8 @@ public final class RepositorioOnibusLista implements RepositoriosOnibus {
     @Override
     public ArrayList toList() {
         ArrayList<Onibus> list = new ArrayList<>();
-        for (int i = 0; i < size(); i++)
+        int size = size();
+        for (int i = 0; i < size; i++)
             list.add(get(i));
         return list;
     }

@@ -2,6 +2,7 @@ package systems.singularity.cinttamobi.fachada;
 
 import systems.singularity.cinttamobi.Programa;
 import systems.singularity.cinttamobi.abstracts.VEM;
+import systems.singularity.cinttamobi.enums.Linhas;
 import systems.singularity.cinttamobi.exceptions.*;
 import systems.singularity.cinttamobi.negocio.NegociosOnibus;
 import systems.singularity.cinttamobi.negocio.NegociosPessoa;
@@ -58,7 +59,7 @@ public class Fachada {
         negociosVEM.remove(vem);
     }
 
-    public List listVEM() {
+    public List<VEM> listVEM() {
         return negociosVEM.toList();
     }
 
@@ -70,7 +71,7 @@ public class Fachada {
         negociosOnibus.remove(onibus);
     }
 
-    public List listOnibus() {
+    public List<Onibus> listOnibus() {
         return negociosOnibus.toList();
     }
 
@@ -80,9 +81,9 @@ public class Fachada {
         negociosVEM.update(vem);
     }
 
-    public void debitarVEM(String id, double value) throws RepositorioInvalidoException, VEMInexistenteException, ValorInvalidoException, SaldoInsuficienteException {
+    public void debitarVEM(String id, Onibus onibus) throws RepositorioInvalidoException, VEMInexistenteException, ValorInvalidoException, SaldoInsuficienteException {
         VEM vem = negociosVEM.search(id);
-        vem.debit(value);
+        vem.debit(onibus.getLinha().getRing().getPrice());
         negociosVEM.update(vem);
     }
 }

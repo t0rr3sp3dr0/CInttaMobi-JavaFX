@@ -1,6 +1,7 @@
 package systems.singularity.cinttamobi;
 
 import jdk.nashorn.internal.runtime.regexp.joni.CodeRangeBuffer;
+import systems.singularity.cinttamobi.abstracts.VEM;
 import systems.singularity.cinttamobi.enums.Linhas;
 import systems.singularity.cinttamobi.exceptions.*;
 import systems.singularity.cinttamobi.fachada.Fachada;
@@ -327,5 +328,167 @@ public class Testes {
         }
 
         System.out.println(fachada.listVEM().toString());
+
+        for (int i = 0; i < fachada.listVEM().size(); i++) {
+            System.out.println(i);
+            VEM vem = fachada.listVEM().get(i);
+            System.out.println(vem);
+
+            try {
+                fachada.creditarVEM(vem.getNumber(), 5);
+            } catch (RepositorioInvalidoException e) {
+                e.printStackTrace();
+            } catch (VEMInexistenteException e) {
+                e.printStackTrace();
+            } catch (OperacaoInvalidaException e) {
+                e.printStackTrace();
+            } catch (ValorInvalidoException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(0));
+            } catch (RepositorioInvalidoException e) {
+                e.printStackTrace();
+            } catch (VEMInexistenteException e) {
+                e.printStackTrace();
+            } catch (ValorInvalidoException e) {
+                e.printStackTrace();
+            } catch (SaldoInsuficienteException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(1));
+            } catch (RepositorioInvalidoException e) {
+                e.printStackTrace();
+            } catch (VEMInexistenteException e) {
+                e.printStackTrace();
+            } catch (ValorInvalidoException e) {
+                e.printStackTrace();
+            } catch (SaldoInsuficienteException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(2));
+            } catch (RepositorioInvalidoException e) {
+                e.printStackTrace();
+            } catch (VEMInexistenteException e) {
+                e.printStackTrace();
+            } catch (ValorInvalidoException e) {
+                e.printStackTrace();
+            } catch (SaldoInsuficienteException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(3));
+            } catch (RepositorioInvalidoException e) {
+                e.printStackTrace();
+            } catch (VEMInexistenteException e) {
+                e.printStackTrace();
+            } catch (ValorInvalidoException e) {
+                e.printStackTrace();
+            } catch (SaldoInsuficienteException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(0));
+            } catch (RepositorioInvalidoException e) {
+                e.printStackTrace();
+            } catch (VEMInexistenteException e) {
+                e.printStackTrace();
+            } catch (ValorInvalidoException e) {
+                e.printStackTrace();
+            } catch (SaldoInsuficienteException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(1));
+            } catch (RepositorioInvalidoException e) {
+                e.printStackTrace();
+            } catch (VEMInexistenteException e) {
+                e.printStackTrace();
+            } catch (ValorInvalidoException e) {
+                e.printStackTrace();
+            } catch (SaldoInsuficienteException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(2));
+            } catch (RepositorioInvalidoException e) {
+                e.printStackTrace();
+            } catch (VEMInexistenteException e) {
+                e.printStackTrace();
+            } catch (ValorInvalidoException e) {
+                e.printStackTrace();
+            } catch (SaldoInsuficienteException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(3));
+            } catch (RepositorioInvalidoException e) {
+                e.printStackTrace();
+            } catch (VEMInexistenteException e) {
+                e.printStackTrace();
+            } catch (ValorInvalidoException e) {
+                e.printStackTrace();
+            } catch (SaldoInsuficienteException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(0));
+            } catch (RepositorioInvalidoException e) {
+                e.printStackTrace();
+            } catch (VEMInexistenteException e) {
+                e.printStackTrace();
+            } catch (ValorInvalidoException e) {
+                e.printStackTrace();
+            } catch (SaldoInsuficienteException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(1));
+            } catch (RepositorioInvalidoException e) {
+                e.printStackTrace();
+            } catch (VEMInexistenteException e) {
+                e.printStackTrace();
+            } catch (ValorInvalidoException e) {
+                e.printStackTrace();
+            } catch (SaldoInsuficienteException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(2));
+            } catch (RepositorioInvalidoException e) {
+                e.printStackTrace();
+            } catch (VEMInexistenteException e) {
+                e.printStackTrace();
+            } catch (ValorInvalidoException e) {
+                e.printStackTrace();
+            } catch (SaldoInsuficienteException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(3));
+            } catch (RepositorioInvalidoException e) {
+                e.printStackTrace();
+            } catch (VEMInexistenteException e) {
+                e.printStackTrace();
+            } catch (ValorInvalidoException e) {
+                e.printStackTrace();
+            } catch (SaldoInsuficienteException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
