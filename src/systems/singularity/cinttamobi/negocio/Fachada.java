@@ -14,7 +14,6 @@ import java.util.prefs.Preferences;
  */
 public class Fachada {
 
-    private String tipo = "";
     private static Fachada ourInstance = new Fachada();
 
     public static Fachada getInstance() {
@@ -26,14 +25,12 @@ public class Fachada {
     private NegociosVEM negociosVEM;
 
     private Fachada() {
-        BufferedReader in = null;
         try {
-            in = new BufferedReader(new FileReader(Programa.class.getResource("config.txt").getPath()));
-            tipo = in.readLine();
+            BufferedReader in = new BufferedReader(new FileReader(Programa.class.getResource("config.txt").getPath()));
+            String tipo = in.readLine();
             negociosOnibus = new NegociosOnibus(tipo);
             negociosPessoa = new NegociosPessoa(tipo);
             negociosVEM = new NegociosVEM(tipo);
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -42,15 +39,4 @@ public class Fachada {
             e.printStackTrace();
         }
     }
-
-
-
-
-
-
-
-
-
-
-
 }
