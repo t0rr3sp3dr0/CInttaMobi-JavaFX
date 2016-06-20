@@ -50,8 +50,17 @@ public class Fachada {
         negociosVEM.insert(vem);
     }
 
+    public void removerVEM(VEM vem) throws PessoaInexistenteException, VEMInexistenteException {
+        negociosPessoa.remove(vem.getPerson());
+        negociosVEM.remove(vem);
+    }
+
     public void cadastrarOnibus(Onibus onibus) throws OnibusExistenteException {
         negociosOnibus.insert(onibus);
+    }
+
+    public void removeOnibus(Onibus onibus) throws OnibusInexistenteException {
+        negociosOnibus.remove(onibus);
     }
 
     public void creditarVEM(String id, double value) throws RepositorioInvalidoException, VEMInexistenteException, OperacaoInvalidaException, ValorInvalidoException {
