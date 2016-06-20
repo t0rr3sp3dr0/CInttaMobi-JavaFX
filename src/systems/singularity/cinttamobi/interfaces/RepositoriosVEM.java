@@ -1,5 +1,7 @@
 package systems.singularity.cinttamobi.interfaces;
 
+import systems.singularity.cinttamobi.abstracts.VEM;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,17 +9,17 @@ import java.util.List;
  * Created by lvrma on 02/05/16.
  * © 2016 Singularity Systems
  */
-public interface Repositorios {
+public interface RepositoriosVEM {
 
     boolean exists(String id);
 
-    void insert(Object object);
+    void insert(VEM object);
 
-    void update(Object object);
+    void update(VEM object);
 
-    void remove(Object object);
+    void remove(VEM object);
 
-    Object search(String id);
+    VEM search(String id);
 
     ArrayList toList();
 

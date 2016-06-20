@@ -1,15 +1,14 @@
 package systems.singularity.cinttamobi.dados.vem;
 
 import systems.singularity.cinttamobi.abstracts.VEM;
-import systems.singularity.cinttamobi.interfaces.Repositorios;
+import systems.singularity.cinttamobi.interfaces.RepositoriosVEM;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by lvrma on 19/06/16.
  */
-public class RepositorioVEMArray implements Repositorios {
+public class RepositorioVEMArray implements RepositoriosVEM {
 
     private VEM[] array = new VEM[0];
 
@@ -21,8 +20,8 @@ public class RepositorioVEMArray implements Repositorios {
     }
 
     @Override
-    public void insert(Object objectTemp) {
-        VEM object = (VEM) objectTemp;
+    public void insert(VEM object) {
+
         VEM[] temp = new VEM[array.length + 1];
 
         for (int i = 0; i < array.length; i++)
@@ -33,8 +32,8 @@ public class RepositorioVEMArray implements Repositorios {
     }
 
     @Override
-    public void update(Object objectTemp) {
-        VEM object = (VEM) objectTemp;
+    public void update(VEM object) {
+
         for (int i = 0; i < array.length; i++)
             if (array[i].getNumber().equals(object.getNumber())) {
                 array[i] = object;
@@ -43,8 +42,8 @@ public class RepositorioVEMArray implements Repositorios {
     }
 
     @Override
-    public void remove(Object objectTemp) {
-        VEM object = (VEM) objectTemp;
+    public void remove(VEM object) {
+
         VEM[] temp = new VEM[array.length - 1];
 
         for (int i = 0; i < array.length; i++)
@@ -58,7 +57,7 @@ public class RepositorioVEMArray implements Repositorios {
     }
 
     @Override
-    public Object search(String object) {
+    public VEM search(String object) {
         for (int i = 0; i < array.length; i++)
             if (array[i].getNumber().equals(object))
                 return array[i];

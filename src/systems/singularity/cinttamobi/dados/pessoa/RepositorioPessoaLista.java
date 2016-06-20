@@ -1,15 +1,15 @@
 package systems.singularity.cinttamobi.dados.pessoa;
 
-import systems.singularity.cinttamobi.interfaces.Repositorios;
+import systems.singularity.cinttamobi.interfaces.RepositoriosPessoa;
+import systems.singularity.cinttamobi.interfaces.RepositoriosVEM;
 import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by caesa on 19/06/2016.
  */
-public class RepositorioPessoaLista implements Repositorios{
+public class RepositorioPessoaLista implements RepositoriosPessoa {
 
     private NodePessoa root;
 
@@ -22,7 +22,7 @@ public class RepositorioPessoaLista implements Repositorios{
     }
 
     @Override
-    public void insert(Object object) {
+    public void insert(Pessoa object) {
         if(this.root.getValue() == null)
         {
             this.root.setValue((Pessoa) object);
@@ -39,12 +39,12 @@ public class RepositorioPessoaLista implements Repositorios{
     }
 
     @Override
-    public void update(Object object) {
-        Pessoa pessoa = (Pessoa) object;
+    public void update(Pessoa object) {
+
         NodePessoa aux = root;
         while (aux != null) {
-            if (aux.getValue().getCpf().equals(pessoa.getCpf()))
-                aux.setValue(pessoa);
+            if (aux.getValue().getCpf().equals(object.getCpf()))
+                aux.setValue(object);
             else
                 aux = aux.getNext();
         }
@@ -53,15 +53,15 @@ public class RepositorioPessoaLista implements Repositorios{
     }
 
     @Override
-    public void remove(Object object) {
-        Pessoa pessoa = (Pessoa) object;
-        if (root.getValue().getCpf().equals(pessoa.getCpf()))
+    public void remove(Pessoa object) {
+
+        if (root.getValue().getCpf().equals(object.getCpf()))
             root = root.getNext();
         else {
             NodePessoa previous = root;
             NodePessoa aux = root.getNext();
             while (aux != null) {
-                if (aux.getValue().getCpf().equals(pessoa.getCpf())) {
+                if (aux.getValue().getCpf().equals(object.getCpf())) {
                     previous.setNext(aux.getNext());
                     return;
                 }
@@ -72,13 +72,13 @@ public class RepositorioPessoaLista implements Repositorios{
     }
 
     @Override
-    public Object search(String id) {
+    public Pessoa search(String id) {
         NodePessoa aux = root;
         while(aux != null)
         {
             if(aux.getValue().getCpf().equals(id))
             {
-                return aux;
+                return aux.getValue();
             }
             aux = aux.getNext();
         }

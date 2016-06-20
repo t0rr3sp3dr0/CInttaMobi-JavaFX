@@ -1,15 +1,15 @@
 package systems.singularity.cinttamobi.dados.onibus;
 
-import systems.singularity.cinttamobi.interfaces.Repositorios;
+import systems.singularity.cinttamobi.interfaces.RepositoriosOnibus;
+import systems.singularity.cinttamobi.interfaces.RepositoriosVEM;
 import systems.singularity.cinttamobi.negocio.Onibus;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by phts on 19/06/16.
  */
-public class RepositorioOnibusArray implements Repositorios {
+public class RepositorioOnibusArray implements RepositoriosOnibus {
     private Onibus[] onibus = {};
 
     public RepositorioOnibusArray() {
@@ -24,7 +24,7 @@ public class RepositorioOnibusArray implements Repositorios {
     }
 
     @Override
-    public void insert(Object object) {
+    public void insert(Onibus object) {
         Onibus[] onibus = new Onibus[this.onibus.length + 1];
         for (int i = 0; i < this.onibus.length; i++)
             onibus[i] = this.onibus[i];
@@ -33,17 +33,17 @@ public class RepositorioOnibusArray implements Repositorios {
     }
 
     @Override
-    public void update(Object object) {
-        Onibus onibus = (Onibus) object;
+    public void update(Onibus object) {
+
         for (int i = 0; i < this.onibus.length; i++)
-            if (this.onibus[i].getId().equals(onibus.getId())) {
-                this.onibus[i] = onibus;
+            if (this.onibus[i].getId().equals(object.getId())) {
+                this.onibus[i] = object;
                 return;
             }
     }
 
     @Override
-    public void remove(Object object) {
+    public void remove(Onibus object) {
         Onibus[] onibus = new Onibus[this.onibus.length - 1];
         for (int i = 0, j = 0; i < this.onibus.length; i++)
             if (!this.onibus[i].getId().equals(((Onibus) object).getId())) {
@@ -54,7 +54,7 @@ public class RepositorioOnibusArray implements Repositorios {
     }
 
     @Override
-    public Object search(String id) {
+    public Onibus search(String id) {
         for (Onibus onibus : this.onibus)
             if (onibus.getId().equals(id))
                 return onibus;

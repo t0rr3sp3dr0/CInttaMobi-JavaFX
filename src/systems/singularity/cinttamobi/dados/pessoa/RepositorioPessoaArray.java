@@ -1,16 +1,15 @@
 package systems.singularity.cinttamobi.dados.pessoa;
 
-import systems.singularity.cinttamobi.interfaces.Repositorios;
+import systems.singularity.cinttamobi.interfaces.RepositoriosPessoa;
+import systems.singularity.cinttamobi.interfaces.RepositoriosVEM;
 import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Created by caesa on 19/06/2016.
  */
-public class RepositorioPessoaArray implements Repositorios {
+public class RepositorioPessoaArray implements RepositoriosPessoa {
 
     private Pessoa[] pessoas = new Pessoa[0];
 
@@ -28,7 +27,7 @@ public class RepositorioPessoaArray implements Repositorios {
     }
 
     @Override
-    public void insert(Object object) {
+    public void insert(Pessoa object) {
 
         Pessoa[] aux = new Pessoa[this.pessoas.length + 1];
 
@@ -42,26 +41,24 @@ public class RepositorioPessoaArray implements Repositorios {
     }
 
     @Override
-    public void update(Object object) {
+    public void update(Pessoa object) {
 
-        Pessoa pessoa = (Pessoa) object;
         for (int i = 0; i < this.pessoas.length; i++) {
-            if(pessoa.getCpf().equals(this.pessoas[i].getCpf()))
+            if(object.getCpf().equals(this.pessoas[i].getCpf()))
             {
-                this.pessoas[i] = pessoa;
+                this.pessoas[i] = object;
                 return;
             }
         }
     }
 
     @Override
-    public void remove(Object object) {
-        Pessoa pessoa = (Pessoa) object;
+    public void remove(Pessoa object) {
 
         Pessoa[] aux = new Pessoa[this.pessoas.length - 1];
 
         for (int i = 0; i < this.pessoas.length; i++) {
-            if(pessoa.getCpf().equals(this.pessoas[i].getCpf()))
+            if(object.getCpf().equals(this.pessoas[i].getCpf()))
                 this.pessoas[i] = this.pessoas[this.pessoas.length - 1];
         }
 
@@ -74,7 +71,7 @@ public class RepositorioPessoaArray implements Repositorios {
     }
 
     @Override
-    public Object search(String id) {
+    public Pessoa search(String id) {
 
         for(Pessoa item: this.pessoas)
         {
@@ -93,8 +90,6 @@ public class RepositorioPessoaArray implements Repositorios {
         for (int i = 0; i < this.pessoas.length; i++) {
             pessoasLista.add(this.pessoas[i]);
         }
-
-
 
         return pessoasLista;
     }

@@ -1,15 +1,14 @@
 package systems.singularity.cinttamobi.dados.vem;
 
 import systems.singularity.cinttamobi.abstracts.VEM;
-import systems.singularity.cinttamobi.interfaces.Repositorios;
+import systems.singularity.cinttamobi.interfaces.RepositoriosVEM;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by lvrma on 19/06/16.
  */
-public class RepositorioVEMLista implements Repositorios{
+public class RepositorioVEMLista implements RepositoriosVEM {
 
     private LinkVEM root;
 
@@ -48,8 +47,8 @@ public class RepositorioVEMLista implements Repositorios{
     }
 
     @Override
-    public void insert(Object valueTemp) {
-        VEM value = (VEM) valueTemp;
+    public void insert(VEM value) {
+
         if (root == null) {
             root = new LinkVEM(value);
             root.setNext(null);
@@ -61,8 +60,8 @@ public class RepositorioVEMLista implements Repositorios{
     }
 
     @Override
-    public void update(Object objectTemp) {
-        VEM object = (VEM) objectTemp;
+    public void update(VEM object) {
+
         LinkVEM aux = root;
         while (aux != null) {
             if (aux.getValue().getNumber().equals(object.getNumber()))
@@ -73,8 +72,8 @@ public class RepositorioVEMLista implements Repositorios{
     }
 
     @Override
-    public void remove(Object valueTemp) {
-        VEM value = (VEM) valueTemp;
+    public void remove(VEM value) {
+
         if (root.getValue().getNumber().equals(value.getNumber()))
             root = root.getNext();
         else {

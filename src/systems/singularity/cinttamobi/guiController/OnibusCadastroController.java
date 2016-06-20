@@ -1,19 +1,14 @@
-package systems.singularity.cinttamobi.fachada;
+package systems.singularity.cinttamobi.guiController;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import systems.singularity.cinttamobi.negocio.Onibus;
-import systems.singularity.cinttamobi.negocio.gui.StageTools;
 import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 
 
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 /**

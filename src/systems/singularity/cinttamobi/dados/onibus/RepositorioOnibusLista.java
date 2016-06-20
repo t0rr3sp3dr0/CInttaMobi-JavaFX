@@ -1,16 +1,15 @@
 package systems.singularity.cinttamobi.dados.onibus;
 
-import systems.singularity.cinttamobi.interfaces.Repositorios;
+import systems.singularity.cinttamobi.interfaces.RepositoriosOnibus;
+import systems.singularity.cinttamobi.interfaces.RepositoriosVEM;
 import systems.singularity.cinttamobi.negocio.Onibus;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by phts on 19/06/16.
  */
-public final class RepositorioOnibusLista implements Repositorios {
+public final class RepositorioOnibusLista implements RepositoriosOnibus {
     public RepositorioOnibusLista node;
     public RepositorioOnibusLista parent;
     public Onibus value;
@@ -33,8 +32,8 @@ public final class RepositorioOnibusLista implements Repositorios {
     }
 
     @Override
-    public void insert(Object object) {
-        Onibus value = (Onibus) object;
+    public void insert(Onibus object) {
+
         if (this.value == null)
             this.value = value;
         else if (this.node == null) {
@@ -45,31 +44,31 @@ public final class RepositorioOnibusLista implements Repositorios {
     }
 
     @Override
-    public void update(Object object) {
-        Onibus onibus = (Onibus) object;
-        if (this.value.getId().equals(onibus.getId()))
-            this.value = onibus;
+    public void update(Onibus object) {
+
+        if (this.value.getId().equals(object.getId()))
+            this.value = object;
         else if (this.node != null)
-            this.node.update(onibus);
+            this.node.update(object);
     }
 
     @Override
-    public void remove(Object object) {
-        Onibus onibus = (Onibus) object;
-        if (this.value.getId().equals(onibus.getId())) {
+    public void remove(Onibus object) {
+
+        if (this.value.getId().equals(object.getId())) {
             if (this.parent == null) {
                 this.value = this.node.value;
                 this.node = this.node.node;
             } else
                 this.parent.node = this.node;
         } else
-            this.node.remove(onibus);
+            this.node.remove(object);
     }
 
     @Override
-    public Object search(String id) {
+    public Onibus search(String id) {
         if (this.value.getId().equals(id))
-            return this;
+            return this.value;
         else if (this.node != null)
             return this.node.search(id);
         else
