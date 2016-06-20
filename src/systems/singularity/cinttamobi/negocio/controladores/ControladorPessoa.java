@@ -73,8 +73,12 @@ public final class ControladorPessoa {
                 return repositorioArray.search(object);
             else if (tipo.equals("lista"))
                 return repositorioLista.search(object);
-            else throw new RepositorioInvalidoException();
-        } else throw new PessoaInexistenteException();
+            else
+                throw new RepositorioInvalidoException();
+
+        }
+        else
+            throw new PessoaInexistenteException();
     }
 
 
