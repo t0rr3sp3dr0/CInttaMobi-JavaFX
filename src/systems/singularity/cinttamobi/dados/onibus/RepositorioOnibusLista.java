@@ -3,6 +3,7 @@ package systems.singularity.cinttamobi.dados.onibus;
 import systems.singularity.cinttamobi.interfaces.Repositorios;
 import systems.singularity.cinttamobi.negocio.Onibus;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -77,8 +78,12 @@ public final class RepositorioOnibusLista implements Repositorios {
 
 
     @Override
-    public List toList() {
-
-        return null;
+    public ArrayList toList() {
+        ArrayList<Onibus> onibusList = new ArrayList<>();
+        if(this.value != null){
+            onibusList.add(this.value);
+            onibusList = this.node.toList();
+        }
+        return onibusList;
     }
 }

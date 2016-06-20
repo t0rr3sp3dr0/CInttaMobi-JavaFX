@@ -1,5 +1,6 @@
 package systems.singularity.cinttamobi.interfaces;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,7 +19,7 @@ public interface Repositorios {
 
     Object search(String id);
 
-    List toList();
+    ArrayList toList();
 
 
 }

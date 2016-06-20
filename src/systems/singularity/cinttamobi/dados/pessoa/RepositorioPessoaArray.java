@@ -88,7 +88,7 @@ public class RepositorioPessoaArray implements Repositorios {
     }
 
     @Override
-    public List toList() {
+    public ArrayList toList() {
         ArrayList<Pessoa> pessoasLista = new ArrayList<>();
         for (int i = 0; i < this.pessoas.length; i++) {
             pessoasLista.add(this.pessoas[i]);

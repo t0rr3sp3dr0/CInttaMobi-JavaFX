@@ -87,7 +87,7 @@ public class RepositorioPessoaLista implements Repositorios{
     }
 
     @Override
-    public List toList() {
+    public ArrayList toList() {
         ArrayList<Pessoa> pessoasLista = new ArrayList<>();
 
         NodePessoa aux = root;

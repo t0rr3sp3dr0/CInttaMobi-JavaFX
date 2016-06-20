@@ -35,7 +35,7 @@ public class RepositorioVEMLista implements Repositorios{
     }
 
     @Override
-    public List toList() {
+    public ArrayList toList() {
         ArrayList<VEM> VEMs = new ArrayList<>();
         LinkVEM aux = root;
 

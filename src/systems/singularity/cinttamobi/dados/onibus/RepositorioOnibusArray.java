@@ -62,7 +62,7 @@ public class RepositorioOnibusArray implements Repositorios {
     }
 
     @Override
-    public List toList() {
+    public ArrayList toList() {
         ArrayList<Onibus> onibusList = new ArrayList<>();
         for (Onibus onibus: this.onibus)
             onibusList.add(onibus);

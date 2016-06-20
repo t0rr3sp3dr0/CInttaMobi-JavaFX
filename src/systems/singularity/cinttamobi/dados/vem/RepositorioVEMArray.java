@@ -66,7 +66,7 @@ public class RepositorioVEMArray implements Repositorios {
     }
 
     @Override
-    public List toList() {
+    public ArrayList toList() {
 
         ArrayList<VEM> VEMs = new ArrayList<>();
         for (int i = 0; i < array.length; i++)
