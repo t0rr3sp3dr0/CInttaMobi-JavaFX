@@ -2,7 +2,6 @@ package systems.singularity.cinttamobi.negocio.pessoas;
 
 import systems.singularity.cinttamobi.exceptions.CPFInvalidoException;
 import systems.singularity.cinttamobi.exceptions.IdadeInvalidaException;
-import systems.singularity.cinttamobi.negocio.Validador;
 
 import java.util.Date;
 
