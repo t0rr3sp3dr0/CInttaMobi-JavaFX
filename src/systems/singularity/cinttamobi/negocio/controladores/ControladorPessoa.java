@@ -20,7 +20,7 @@ public final class ControladorPessoa {
     private static RepositorioPessoaArray repositorioArray = new RepositorioPessoaArray();
 
 
-    public ControladorPessoa() {
+    private ControladorPessoa() {
     }
 
     static {
