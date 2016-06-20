@@ -54,7 +54,7 @@ public final class NegociosPessoa {
         } else throw new PessoaInexistenteException();
     }
 
-    public Object search(String id) throws RepositorioInvalidoException, PessoaInexistenteException {
+    public Pessoa search(String id) throws RepositorioInvalidoException, PessoaInexistenteException {
         if (exists(id)) {
             return repositorio.search(id);
 

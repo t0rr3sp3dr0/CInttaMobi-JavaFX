@@ -52,7 +52,7 @@ public final class NegociosOnibus {
         } else throw new OnibusInexistenteException();
     }
 
-    public Object search(String id) throws RepositorioInvalidoException, OnibusInexistenteException {
+    public Onibus search(String id) throws RepositorioInvalidoException, OnibusInexistenteException {
         if (exists(id)) {
             return repositorio.search(id);
 

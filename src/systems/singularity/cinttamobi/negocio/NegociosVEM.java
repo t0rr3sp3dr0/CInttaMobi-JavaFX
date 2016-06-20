@@ -51,7 +51,7 @@ public class NegociosVEM {
         } else throw new VEMInexistenteException();
     }
 
-    public Object search(String id) throws RepositorioInvalidoException, VEMInexistenteException {
+    public VEM search(String id) throws RepositorioInvalidoException, VEMInexistenteException {
         if (exists(id)) {
             return repositorio.search(id);
 
