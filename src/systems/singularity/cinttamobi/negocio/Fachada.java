@@ -46,34 +46,8 @@ public class Fachada {
         }
     }
 
-    public void cadastrarVEM(String numero, Pessoa pessoa, TiposVEM tiposVEM) throws TipoVEMInvalidoException, VEMInvalidoException, VEMExistenteException, PessoaExistenteException {
-        VEM vem = null;
-
-        if(pessoa instanceof Crianca && tiposVEM == TiposVEM.Infantil)
-        {
-            vem = new VEMInfantil(numero, pessoa);
-        }
-        else if(pessoa instanceof Idoso && tiposVEM == TiposVEM.Idoso)
-        {
-            vem = new VEMIdoso(numero, pessoa);
-        }
-        else if(pessoa instanceof Trabalhador && tiposVEM == TiposVEM.Trabalhador)
-        {
-            vem = new VEMTrabalhador(numero, pessoa);
-        }
-        else if(pessoa instanceof Estudante && tiposVEM == TiposVEM.Estudante)
-        {
-            vem = new VEMEstudante(numero, pessoa);
-        }
-        else if(tiposVEM == TiposVEM.Comum)
-        {
-            vem = new VEMInfantil(numero, null);
-        }
-        else
-        {
-            throw new TipoVEMInvalidoException();
-        }
-        negociosPessoa.insert(pessoa);
+    public void cadastrarVEM(VEM vem) throws PessoaExistenteException, VEMExistenteException {
+        negociosPessoa.insert(vem.getPerson());
         negociosVEM.insert(vem);
     }
 
