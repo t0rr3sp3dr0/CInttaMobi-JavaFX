@@ -12,4 +12,5 @@
     <entry key="prefHeight">600</entry>
     <entry key="maxHeight">Infinity</entry>
     <entry key="vemCadastro">Cadastro de VEMs</entry>
+    <entry key="onibusCadastro">Cadastro de Ônibus</entry>
 </properties>

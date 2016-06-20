@@ -31,5 +31,6 @@ public class MainController implements Initializable {
         tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.SELECTED_TAB);
 
         stageTools.newTab("vemCadastro", tabPane);
+        stageTools.newTab("onibusCadastro", tabPane);
     }
 }

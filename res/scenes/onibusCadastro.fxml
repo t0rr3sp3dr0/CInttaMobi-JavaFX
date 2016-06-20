@@ -1,54 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<SplitPane xmlns:fx="http://javafx.com/fxml/1" dividerPositions="0.5" orientation="VERTICAL"
-           xmlns="http://javafx.com/javafx/8"
-           fx:controller="systems.singularity.cinttamobi.fachada.FornecedoresCadastroController">
+
+<SplitPane dividerPositions="0.5" orientation="VERTICAL"
+           xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="systems.singularity.cinttamobi.fachada.OnibusCadastroController">
     <items>
         <VBox>
             <children>
-                <TableView fx:id="fornecedoresTableView" minHeight="120.0" VBox.vgrow="ALWAYS">
+                <TableView fx:id="onibusTableView" minHeight="120.0" VBox.vgrow="ALWAYS">
                     <columns>
-                        <TableColumn fx:id="fornecedoresTableColumn" minWidth="256.0" prefWidth="256.0"
-                                     text="Fornecedor"/>
-                        <TableColumn fx:id="cFornecedoresTableColumn" minWidth="128.0" prefWidth="128.0"
-                                     text="CPF/CNPJ"/>
-                        <TableColumn fx:id="phoneNumberFornecedoresTableColumn" minWidth="128.0" prefWidth="128.0"
-                                     text="Telefone"/>
-                        <TableColumn fx:id="emailFornecedoresTableColumn" minWidth="192.0" prefWidth="192.0"
-                                     text="e-mail"/>
+                        <TableColumn fx:id="idOnibusTableColumn" minWidth="104.0" prefWidth="139.0" text="Número da Linha" />
+                        <TableColumn fx:id="linhaOnibusTableColumn" minWidth="128.0" prefWidth="245.0" text="Linha" />
                     </columns>
                 </TableView>
                 <HBox>
                     <children>
                         <ToolBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" HBox.hgrow="ALWAYS">
                             <items>
-                                <Button fx:id="addFornecedoresButton" mnemonicParsing="false">
+                                <Button fx:id="addOnibusButton" mnemonicParsing="false">
                                     <graphic>
                                         <ImageView fitHeight="17.0" fitWidth="17.0">
                                             <image>
-                                                <Image url="@/icons/ic_add.png"/>
+                                                <Image url="@/icons/ic_add.png" />
                                             </image>
                                         </ImageView>
                                     </graphic>
                                 </Button>
-                                <Button fx:id="editFornecedoresButton" mnemonicParsing="false">
+                                <Button fx:id="editOnibusButton" mnemonicParsing="false">
                                     <graphic>
                                         <ImageView fitHeight="17.0" fitWidth="17.0">
                                             <image>
-                                                <Image url="@/icons/ic_edit.png"/>
+                                                <Image url="@/icons/ic_edit.png" />
                                             </image>
                                         </ImageView>
                                     </graphic>
                                 </Button>
-                                <Button fx:id="saveFornecedoresButton" mnemonicParsing="false">
+                                <Button fx:id="saveOnibusButton" mnemonicParsing="false">
                                     <graphic>
                                         <ImageView fitHeight="17.0" fitWidth="17.0">
                                             <image>
-                                                <Image url="@/icons/ic_save.png"/>
+                                                <Image url="@/icons/ic_save.png" />
                                             </image>
                                         </ImageView>
                                     </graphic>
@@ -57,11 +53,11 @@
                         </ToolBar>
                         <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" HBox.hgrow="ALWAYS">
                             <items>
-                                <Button fx:id="deleteFornecedoresButton" mnemonicParsing="false">
+                                <Button fx:id="deleteOnibusButton" mnemonicParsing="false">
                                     <graphic>
                                         <ImageView fitHeight="17.0" fitWidth="17.0">
                                             <image>
-                                                <Image url="@/icons/ic_delete.png"/>
+                                                <Image url="@/icons/ic_delete.png" />
                                             </image>
                                         </ImageView>
                                     </graphic>
@@ -82,395 +78,30 @@
                                     <children>
                                         <HBox>
                                             <children>
-                                                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
-                                                    <children>
-                                                        <Label alignment="CENTER_RIGHT" prefWidth="96.0"
-                                                               text="Fornecedor">
-                                                            <HBox.margin>
-                                                                <Insets bottom="10.0" left="5.0" right="5.0"
-                                                                        top="10.0"/>
-                                                            </HBox.margin>
-                                                        </Label>
-                                                        <TextField fx:id="nameFornecedoresTextField"
-                                                                   HBox.hgrow="ALWAYS">
-                                                            <HBox.margin>
-                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                                                            </HBox.margin>
-                                                        </TextField>
-                                                    </children>
-                                                </HBox>
+                                                  <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="Nº Linha">
+                                                      <HBox.margin>
+                                                          <Insets bottom="10.0" right="5.0" top="10.0" />
+                                                      </HBox.margin>
+                                                  </Label>
+                                                  <TextField fx:id="idOnibusTextField" HBox.hgrow="ALWAYS">
+                                                      <HBox.margin>
+                                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                      </HBox.margin>
+                                                  </TextField>
                                             </children>
                                         </HBox>
                                         <HBox>
                                             <children>
-                                                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
-                                                    <children>
-                                                        <Label alignment="CENTER_RIGHT" prefWidth="96.0"
-                                                               text="CPF/CNPJ">
-                                                            <HBox.margin>
-                                                                <Insets bottom="10.0" left="5.0" right="5.0"
-                                                                        top="10.0"/>
-                                                            </HBox.margin>
-                                                        </Label>
-                                                        <TextField fx:id="cFornecedoresTextField" HBox.hgrow="ALWAYS">
-                                                            <HBox.margin>
-                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                                                            </HBox.margin>
-                                                        </TextField>
-                                                    </children>
-                                                </HBox>
-                                                <HBox minWidth="0.0" prefWidth="0.0" visible="false"
-                                                      HBox.hgrow="ALWAYS">
-                                                    <children>
-                                                        <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="Label">
-                                                            <HBox.margin>
-                                                                <Insets bottom="10.0" left="5.0" right="5.0"
-                                                                        top="10.0"/>
-                                                            </HBox.margin>
-                                                        </Label>
-                                                        <TextField HBox.hgrow="ALWAYS">
-                                                            <HBox.margin>
-                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                                                            </HBox.margin>
-                                                        </TextField>
-                                                    </children>
-                                                </HBox>
-                                            </children>
-                                        </HBox>
-                                        <HBox>
-                                            <children>
-                                                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
-                                                    <children>
-                                                        <Label alignment="CENTER_RIGHT" prefWidth="96.0"
-                                                               text="Endereço">
-                                                            <HBox.margin>
-                                                                <Insets bottom="10.0" left="5.0" right="5.0"
-                                                                        top="10.0"/>
-                                                            </HBox.margin>
-                                                        </Label>
-                                                        <TextField fx:id="addressFornecedoresTextField"
-                                                                   HBox.hgrow="ALWAYS">
-                                                            <HBox.margin>
-                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                                                            </HBox.margin>
-                                                        </TextField>
-                                                    </children>
-                                                </HBox>
-                                                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
-                                                    <children>
-                                                        <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="Bairro">
-                                                            <HBox.margin>
-                                                                <Insets bottom="10.0" left="5.0" right="5.0"
-                                                                        top="10.0"/>
-                                                            </HBox.margin>
-                                                        </Label>
-                                                        <TextField fx:id="neighborhoodFornecedoresTextField"
-                                                                   HBox.hgrow="ALWAYS">
-                                                            <HBox.margin>
-                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                                                            </HBox.margin>
-                                                        </TextField>
-                                                    </children>
-                                                </HBox>
-                                            </children>
-                                        </HBox>
-                                        <HBox>
-                                            <children>
-                                                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
-                                                    <children>
-                                                        <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="Cidade">
-                                                            <HBox.margin>
-                                                                <Insets bottom="10.0" left="5.0" right="5.0"
-                                                                        top="10.0"/>
-                                                            </HBox.margin>
-                                                        </Label>
-                                                        <TextField fx:id="cityFornecedoresTextField"
-                                                                   HBox.hgrow="ALWAYS">
-                                                            <HBox.margin>
-                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                                                            </HBox.margin>
-                                                        </TextField>
-                                                    </children>
-                                                </HBox>
-                                                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
-                                                    <children>
-                                                        <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="CEP">
-                                                            <HBox.margin>
-                                                                <Insets bottom="10.0" left="5.0" right="5.0"
-                                                                        top="10.0"/>
-                                                            </HBox.margin>
-                                                        </Label>
-                                                        <TextField fx:id="zipCodeFornecedoresTextField"
-                                                                   HBox.hgrow="ALWAYS">
-                                                            <HBox.margin>
-                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                                                            </HBox.margin>
-                                                        </TextField>
-                                                    </children>
-                                                </HBox>
-                                            </children>
-                                        </HBox>
-                                        <HBox>
-                                            <children>
-                                                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
-                                                    <children>
-                                                        <Label alignment="CENTER_RIGHT" prefWidth="96.0"
-                                                               text="Telefone">
-                                                            <HBox.margin>
-                                                                <Insets bottom="10.0" left="5.0" right="5.0"
-                                                                        top="10.0"/>
-                                                            </HBox.margin>
-                                                        </Label>
-                                                        <TextField fx:id="phoneNumberFornecedoresTextField"
-                                                                   HBox.hgrow="ALWAYS">
-                                                            <HBox.margin>
-                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                                                            </HBox.margin>
-                                                        </TextField>
-                                                    </children>
-                                                </HBox>
-                                                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
-                                                    <children>
-                                                        <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="e-mail">
-                                                            <HBox.margin>
-                                                                <Insets bottom="10.0" left="5.0" right="5.0"
-                                                                        top="10.0"/>
-                                                            </HBox.margin>
-                                                        </Label>
-                                                        <TextField fx:id="emailFornecedoresTextField"
-                                                                   HBox.hgrow="ALWAYS">
-                                                            <HBox.margin>
-                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                                                            </HBox.margin>
-                                                        </TextField>
-                                                    </children>
-                                                </HBox>
-                                            </children>
-                                        </HBox>
-                                    </children>
-                                </VBox>
-                            </content>
-                        </Tab>
-                        <Tab text="Dados Bancários">
-                            <content>
-                                <VBox>
-                                    <children>
-                                        <HBox>
-                                            <children>
-                                                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
-                                                    <children>
-                                                        <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="Titular">
-                                                            <HBox.margin>
-                                                                <Insets bottom="10.0" left="5.0" right="5.0"
-                                                                        top="10.0"/>
-                                                            </HBox.margin>
-                                                        </Label>
-                                                        <TextField fx:id="ownerAccountFornecedoresTextField"
-                                                                   HBox.hgrow="ALWAYS">
-                                                            <HBox.margin>
-                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                                                            </HBox.margin>
-                                                        </TextField>
-                                                    </children>
-                                                </HBox>
-                                                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
-                                                    <children>
-                                                        <Label alignment="CENTER_RIGHT" prefWidth="96.0"
-                                                               text="CPF/CNPJ">
-                                                            <HBox.margin>
-                                                                <Insets bottom="10.0" left="5.0" right="5.0"
-                                                                        top="10.0"/>
-                                                            </HBox.margin>
-                                                        </Label>
-                                                        <TextField fx:id="cAccountFornecedoresTextField"
-                                                                   HBox.hgrow="ALWAYS">
-                                                            <HBox.margin>
-                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                                                            </HBox.margin>
-                                                        </TextField>
-                                                    </children>
-                                                </HBox>
-                                            </children>
-                                        </HBox>
-                                        <HBox>
-                                            <children>
-                                                <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="Banco">
-                                                    <HBox.margin>
-                                                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
-                                                    </HBox.margin>
-                                                </Label>
-                                                <ComboBox fx:id="bankAccountFornecedoresComboBox" maxWidth="Infinity"
-                                                          HBox.hgrow="ALWAYS">
-                                                    <HBox.margin>
-                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                                                    </HBox.margin>
-                                                </ComboBox>
-                                            </children>
-                                        </HBox>
-                                        <HBox>
-                                            <children>
-                                                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
-                                                    <children>
-                                                        <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="Agência">
-                                                            <HBox.margin>
-                                                                <Insets bottom="10.0" left="5.0" right="5.0"
-                                                                        top="10.0"/>
-                                                            </HBox.margin>
-                                                        </Label>
-                                                        <TextField fx:id="agencyAccountFornecedoresTextField"
-                                                                   HBox.hgrow="ALWAYS">
-                                                            <HBox.margin>
-                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                                                            </HBox.margin>
-                                                        </TextField>
-                                                    </children>
-                                                </HBox>
-                                                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
-                                                    <children>
-                                                        <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="Conta">
-                                                            <HBox.margin>
-                                                                <Insets bottom="10.0" left="5.0" right="5.0"
-                                                                        top="10.0"/>
-                                                            </HBox.margin>
-                                                        </Label>
-                                                        <TextField fx:id="numberAccountFornecedoresTextField"
-                                                                   HBox.hgrow="ALWAYS">
-                                                            <HBox.margin>
-                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                                                            </HBox.margin>
-                                                        </TextField>
-                                                    </children>
-                                                </HBox>
-                                            </children>
-                                        </HBox>
-                                    </children>
-                                </VBox>
-                            </content>
-                        </Tab>
-                        <Tab text="Contatos">
-                            <content>
-                                <VBox>
-                                    <children>
-                                        <HBox>
-                                            <children>
-                                                <TableView fx:id="contatosFornecedoresTableView" minHeight="80.0"
-                                                           prefHeight="120.0" HBox.hgrow="ALWAYS">
-                                                    <columns>
-                                                        <TableColumn fx:id="contatosFornecedoresTableColumn"
-                                                                     minWidth="256.0" prefWidth="256.0" text="Contato"/>
-                                                        <TableColumn fx:id="phoneNumberContatosFornecedoresTableColumn"
-                                                                     minWidth="128.0" prefWidth="128.0"
-                                                                     text="Telefone"/>
-                                                        <TableColumn fx:id="emailContatosFornecedoresTableColumn"
-                                                                     minWidth="192.0" prefWidth="192.0" text="e-mail"/>
-                                                    </columns>
-                                                </TableView>
-                                            </children>
-                                        </HBox>
-                                        <HBox>
-                                            <children>
-                                                <ToolBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0"
-                                                         HBox.hgrow="ALWAYS">
-                                                    <items>
-                                                        <Button fx:id="addContatosFornecedoresButton"
-                                                                mnemonicParsing="false">
-                                                            <graphic>
-                                                                <ImageView fitHeight="17.0" fitWidth="17.0">
-                                                                    <image>
-                                                                        <Image url="@/icons/ic_add.png"/>
-                                                                    </image>
-                                                                </ImageView>
-                                                            </graphic>
-                                                        </Button>
-                                                        <Button fx:id="editContatosFornecedoresButton"
-                                                                mnemonicParsing="false">
-                                                            <graphic>
-                                                                <ImageView fitHeight="17.0" fitWidth="17.0">
-                                                                    <image>
-                                                                        <Image url="@/icons/ic_edit.png"/>
-                                                                    </image>
-                                                                </ImageView>
-                                                            </graphic>
-                                                        </Button>
-                                                        <Button fx:id="saveContatosFornecedoresButton"
-                                                                mnemonicParsing="false">
-                                                            <graphic>
-                                                                <ImageView fitHeight="17.0" fitWidth="17.0">
-                                                                    <image>
-                                                                        <Image url="@/icons/ic_save.png"/>
-                                                                    </image>
-                                                                </ImageView>
-                                                            </graphic>
-                                                        </Button>
-                                                    </items>
-                                                </ToolBar>
-                                                <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0"
-                                                         HBox.hgrow="ALWAYS">
-                                                    <items>
-                                                        <Button fx:id="deleteContatosFornecedoresButton"
-                                                                mnemonicParsing="false">
-                                                            <graphic>
-                                                                <ImageView fitHeight="17.0" fitWidth="17.0">
-                                                                    <image>
-                                                                        <Image url="@/icons/ic_delete.png"/>
-                                                                    </image>
-                                                                </ImageView>
-                                                            </graphic>
-                                                        </Button>
-                                                    </items>
-                                                </ToolBar>
-                                            </children>
-                                        </HBox>
-                                        <HBox>
-                                            <children>
-                                                <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="Contato">
-                                                    <HBox.margin>
-                                                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
-                                                    </HBox.margin>
-                                                </Label>
-                                                <TextField fx:id="nameContatosFornecedoresTextField"
-                                                           HBox.hgrow="ALWAYS">
-                                                    <HBox.margin>
-                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                                                    </HBox.margin>
-                                                </TextField>
-                                            </children>
-                                        </HBox>
-                                        <HBox>
-                                            <children>
-                                                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
-                                                    <children>
-                                                        <Label alignment="CENTER_RIGHT" prefWidth="96.0"
-                                                               text="Telefone">
-                                                            <HBox.margin>
-                                                                <Insets bottom="10.0" left="5.0" right="5.0"
-                                                                        top="10.0"/>
-                                                            </HBox.margin>
-                                                        </Label>
-                                                        <TextField fx:id="phoneNumberContatosFornecedoresTextField"
-                                                                   HBox.hgrow="ALWAYS">
-                                                            <HBox.margin>
-                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                                                            </HBox.margin>
-                                                        </TextField>
-                                                    </children>
-                                                </HBox>
-                                                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
-                                                    <children>
-                                                        <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="e-mail">
-                                                            <HBox.margin>
-                                                                <Insets bottom="10.0" left="5.0" right="5.0"
-                                                                        top="10.0"/>
-                                                            </HBox.margin>
-                                                        </Label>
-                                                        <TextField fx:id="emailContatosFornecedoresTextField"
-                                                                   HBox.hgrow="ALWAYS">
-                                                            <HBox.margin>
-                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                                                            </HBox.margin>
-                                                        </TextField>
-                                                    </children>
-                                                </HBox>
+                                                  <Label alignment="CENTER_RIGHT" prefWidth="96.0" text="Linha">
+                                                      <HBox.margin>
+                                                          <Insets bottom="10.0" right="5.0" top="10.0" />
+                                                      </HBox.margin>
+                                                  </Label>
+                                                  <TextField fx:id="linhaOnibusTextField" HBox.hgrow="ALWAYS">
+                                                      <HBox.margin>
+                                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                      </HBox.margin>
+                                                  </TextField>
                                             </children>
                                         </HBox>
                                     </children>
