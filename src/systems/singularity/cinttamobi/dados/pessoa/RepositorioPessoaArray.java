@@ -12,9 +12,13 @@ public class RepositorioPessoaArray implements Repositorios {
 
     @Override
     public boolean exists(String id) {
-        if(search(id) != null)
-            return true;
-
+        for (Pessoa item: this.pessoas)
+        {
+            if(item.getCpf().equals(id))
+            {
+                return true;
+            }
+        }
         return false;
 
     }
@@ -22,13 +26,13 @@ public class RepositorioPessoaArray implements Repositorios {
     @Override
     public void insert(Object object) {
 
-        Pessoa[] aux = new Pessoa[pessoas.length + 1];
+        Pessoa[] aux = new Pessoa[this.pessoas.length + 1];
 
-        for (int i = 0; i < pessoas.length; i++) {
-            aux[i] = pessoas[i];
+        for (int i = 0; i < this.pessoas.length; i++) {
+            aux[i] = this.pessoas[i];
         }
 
-        aux[pessoas.length] = (Pessoa) object;
+        aux[this.pessoas.length] = (Pessoa) object;
         this.pessoas = aux;
 
     }
@@ -37,10 +41,10 @@ public class RepositorioPessoaArray implements Repositorios {
     public void update(Object object) {
 
         Pessoa pessoa = (Pessoa) object;
-        for (int i = 0; i < pessoas.length; i++) {
-            if(pessoa.getCpf().equals(pessoas[i].getCpf()))
+        for (int i = 0; i < this.pessoas.length; i++) {
+            if(pessoa.getCpf().equals(this.pessoas[i].getCpf()))
             {
-                pessoas[i] = pessoa;
+                this.pessoas[i] = pessoa;
                 return;
             }
         }
@@ -50,15 +54,15 @@ public class RepositorioPessoaArray implements Repositorios {
     public void remove(Object object) {
         Pessoa pessoa = (Pessoa) object;
 
-        Pessoa[] aux = new Pessoa[pessoas.length - 1];
+        Pessoa[] aux = new Pessoa[this.pessoas.length - 1];
 
-        for (int i = 0; i < pessoas.length; i++) {
-            if(pessoa.getCpf().equals(pessoas[i].getCpf()))
-                pessoas[i] = pessoas[pessoas.length - 1];
+        for (int i = 0; i < this.pessoas.length; i++) {
+            if(pessoa.getCpf().equals(this.pessoas[i].getCpf()))
+                this.pessoas[i] = this.pessoas[this.pessoas.length - 1];
         }
 
         for (int i = 0; i < aux.length; i++) {
-            aux[i] = pessoas[i];
+            aux[i] = this.pessoas[i];
         }
 
         this.pessoas = aux;
@@ -68,9 +72,12 @@ public class RepositorioPessoaArray implements Repositorios {
     @Override
     public Object search(String id) {
 
-        for (int i = 0; i < pessoas.length; i++) {
-            if(id.equals(pessoas[i].getCpf()))
-                return pessoas[i];
+        for(Pessoa item: this.pessoas)
+        {
+            if(item.getCpf().equals(id))
+            {
+                return item;
+            }
         }
 
         return null;
