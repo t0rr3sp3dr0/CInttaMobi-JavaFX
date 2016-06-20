@@ -34,6 +34,8 @@ public final class ControladorPessoa {
             return repositorioArray.exists(object);
         else if (tipo.equals("lista"))
             return repositorioLista.exists(object);
+
+
         return false;
     }
 
@@ -44,7 +46,9 @@ public final class ControladorPessoa {
                 repositorioArray.insert(object);
             else if (tipo.equals("lista"))
                 repositorioLista.insert(object);
-        } else throw new PessoaInexistenteException();
+        }
+        else
+            throw new PessoaInexistenteException();
     }
 
     public static void update(Object objectTemp) throws PessoaInexistenteException {
@@ -54,7 +58,9 @@ public final class ControladorPessoa {
                 repositorioArray.update(object);
             else if (tipo.equals("lista"))
                 repositorioLista.update(object);
-        } else throw new PessoaInexistenteException();
+        }
+        else
+            throw new PessoaInexistenteException();
     }
 
     public static void remove(Object objectTemp) throws PessoaInexistenteException {
@@ -64,22 +70,27 @@ public final class ControladorPessoa {
                 repositorioArray.remove(object);
             else if (tipo.equals("lista"))
                 repositorioLista.remove(object);
-        } else throw new PessoaInexistenteException();
-    }
-
-    public static Object search(String object) throws RepositorioInvalidoException, PessoaInexistenteException {
-        if (exists(object)) {
-            if (tipo.equals("array"))
-                return repositorioArray.search(object);
-            else if (tipo.equals("lista"))
-                return repositorioLista.search(object);
-            else
-                throw new RepositorioInvalidoException();
-
         }
         else
             throw new PessoaInexistenteException();
     }
 
-
+    public static Object search(String object) throws RepositorioInvalidoException, PessoaInexistenteException {
+        if (exists(object)) {
+            if (tipo.equals("array"))
+            {
+                return repositorioArray.search(object);
+            }
+            else if (tipo.equals("lista"))
+            {
+                return repositorioLista.search(object);
+            }
+            else
+            {
+                throw new RepositorioInvalidoException();
+            }
+        }
+        else
+            throw new PessoaInexistenteException();
+    }
 }
