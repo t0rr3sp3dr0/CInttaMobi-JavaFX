@@ -8,20 +8,20 @@ import systems.singularity.cinttamobi.interfaces.Repositorios;
  */
 public class RepositorioVEMLista implements Repositorios{
 
-    private ListaEncadeadaVEM root;
+    private LinkVEM root;
 
     public RepositorioVEMLista() {
         root = null;
     }
 
     public RepositorioVEMLista(VEM value) {
-        root = new ListaEncadeadaVEM(value);
+        root = new LinkVEM(value);
         root.setNext(null);
     }
 
     @Override
     public VEM search(String id) {
-        ListaEncadeadaVEM aux = root;
+        LinkVEM aux = root;
         while (aux != null) {
             if (aux.getValue().getNumber().equals(id))
                 return aux.getValue();
@@ -35,11 +35,11 @@ public class RepositorioVEMLista implements Repositorios{
     public void insert(Object valueTemp) {
         VEM value = (VEM) valueTemp;
         if (root == null) {
-            root = new ListaEncadeadaVEM(value);
+            root = new LinkVEM(value);
             root.setNext(null);
             return;
         }
-        ListaEncadeadaVEM link = new ListaEncadeadaVEM(value);
+        LinkVEM link = new LinkVEM(value);
         link.setNext(root);
         root = link;
     }
@@ -47,7 +47,7 @@ public class RepositorioVEMLista implements Repositorios{
     @Override
     public void update(Object objectTemp) {
         VEM object = (VEM) objectTemp;
-        ListaEncadeadaVEM aux = root;
+        LinkVEM aux = root;
         while (aux != null) {
             if (aux.getValue().getNumber().equals(object.getNumber()))
                 aux.setValue(object);
@@ -62,8 +62,8 @@ public class RepositorioVEMLista implements Repositorios{
         if (root.getValue().getNumber().equals(value.getNumber()))
             root = root.getNext();
         else {
-            ListaEncadeadaVEM previous = root;
-            ListaEncadeadaVEM aux = root.getNext();
+            LinkVEM previous = root;
+            LinkVEM aux = root.getNext();
             while (aux != null) {
                 if (aux.getValue().getNumber().equals(value.getNumber())) {
                     previous.setNext(aux.getNext());

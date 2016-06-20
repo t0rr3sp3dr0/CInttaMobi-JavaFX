@@ -5,12 +5,12 @@ import systems.singularity.cinttamobi.abstracts.VEM;
 /**
  * Created by lvrma on 19/06/16.
  */
-public class ListaEncadeadaVEM {
+public class LinkVEM {
 
     private VEM value;
-    private ListaEncadeadaVEM next;
+    private LinkVEM next;
 
-    public ListaEncadeadaVEM(VEM value) {
+    public LinkVEM(VEM value) {
         this.value = value;
     }
 
@@ -22,11 +22,11 @@ public class ListaEncadeadaVEM {
         this.value = value;
     }
 
-    public ListaEncadeadaVEM getNext() {
+    public LinkVEM getNext() {
         return next;
     }
 
-    public void setNext(ListaEncadeadaVEM next) {
+    public void setNext(LinkVEM next) {
         this.next = next;
     }
 
