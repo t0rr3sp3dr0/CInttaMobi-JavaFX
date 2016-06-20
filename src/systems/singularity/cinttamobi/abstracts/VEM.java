@@ -60,13 +60,13 @@ public abstract class VEM {
         if (person != null)
             return person.getName();
         else
-            return "Não se aplica";
+            return "Não se Aplica";
     }
 
     public String getC() {
         if (person != null)
             return person.getCPF();
         else
-            return "Não se aplica";
+            return "Não se Aplica";
     }
 }

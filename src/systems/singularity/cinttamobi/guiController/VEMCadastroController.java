@@ -11,6 +11,7 @@ import systems.singularity.cinttamobi.fachada.Fachada;
 import systems.singularity.cinttamobi.negocio.gui.AsyncCallable;
 
 import java.net.URL;
+import java.time.ZoneId;
 import java.util.ResourceBundle;
 
 /**
@@ -51,10 +52,25 @@ public class VEMCadastroController implements Initializable {
         SelectionModel selectionModel = vemTableView.getSelectionModel();
         selectionModel.selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue == null) {
-
+                clearFieldsContatos();
             } else {
-
+                VEM vem = (VEM) newValue;
+                numberVEMTextField.setText(vem.getNumber());
+                typeVEMComboBox.setValue(TiposVEM.valueOf(vem.getT().equals("") ? "_null" : vem.getT()));
+                ownerNameTextField.setText(vem.getN());
+                ownerBirthDatePicker.setValue(vem.getPerson().getBirth().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+                ownerCPFTextField
+                ownerExtraTextField
             }
         });
+    }
+
+    private void clearFieldsContatos() {
+        numberVEMTextField.setText("");
+        typeVEMComboBox.setValue(TiposVEM._null);
+        ownerNameTextField.setText("");
+        ownerBirthDatePicker.setValue(null);
+        ownerCPFTextField.setText("");
+        ownerExtraTextField.setText("");
     }
 }

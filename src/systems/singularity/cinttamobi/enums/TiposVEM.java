@@ -6,6 +6,7 @@ import systems.singularity.cinttamobi.negocio.vem.*;
  * Created by phts on 19/06/16.
  */
 public enum TiposVEM {
+    _null(null),
     Comum(VEMComum.class),
     Estudante(VEMEstudante.class),
     Idoso(VEMIdoso.class),
@@ -20,5 +21,10 @@ public enum TiposVEM {
 
     public Class getaClass() {
         return aClass;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString().replace("_null", "");
     }
 }
