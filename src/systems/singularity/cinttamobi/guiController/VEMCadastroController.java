@@ -5,11 +5,17 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.shape.ObservableFaceArray;
+import javafx.util.StringConverter;
 import systems.singularity.cinttamobi.abstracts.VEM;
 import systems.singularity.cinttamobi.enums.TiposVEM;
 import systems.singularity.cinttamobi.fachada.Fachada;
 import systems.singularity.cinttamobi.negocio.gui.AsyncCallable;
+import systems.singularity.cinttamobi.negocio.gui.ComboBoxAutoComplete;
+import systems.singularity.cinttamobi.negocio.pessoas.Estudante;
+import systems.singularity.cinttamobi.negocio.pessoas.Trabalhador;
+import systems.singularity.cinttamobi.negocio.vem.VEMEstudante;
 
+import java.net.Proxy;
 import java.net.URL;
 import java.time.ZoneId;
 import java.util.ResourceBundle;
@@ -53,14 +59,72 @@ public class VEMCadastroController implements Initializable {
         selectionModel.selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue == null) {
                 clearFieldsContatos();
+
+                ownerNameTextField.setVisible(false);
+                ownerBirthDatePicker.setVisible(false);
+                ownerCPFTextField.setVisible(false);
+                ownerExtraTextField.setVisible(false);
             } else {
                 VEM vem = (VEM) newValue;
                 numberVEMTextField.setText(vem.getNumber());
-                typeVEMComboBox.setValue(TiposVEM.valueOf(vem.getT().equals("") ? "_null" : vem.getT()));
-                ownerNameTextField.setText(vem.getN());
-                ownerBirthDatePicker.setValue(vem.getPerson().getBirth().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
-                ownerCPFTextField
-                ownerExtraTextField
+                TiposVEM tipoVEM = TiposVEM.valueOf(vem.getT().equals("") ? "_null" : vem.getT());
+                typeVEMComboBox.setValue(tipoVEM);
+                if (tipoVEM != TiposVEM.Comum) {
+                    ownerNameTextField.setText(vem.getPerson().getName());
+                    ownerBirthDatePicker.setValue(vem.getPerson().getBirth().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+                    ownerCPFTextField.setText(vem.getPerson().getCPF());
+
+                    ownerNameTextField.setVisible(true);
+                    ownerBirthDatePicker.setVisible(true);
+                    ownerCPFTextField.setVisible(true);
+                    if (tipoVEM == TiposVEM.Estudante) {
+                        ownerExtraTextField.setText(((Estudante) vem.getPerson()).getStudentID());
+                        ownerExtraTextField.setVisible(true);
+                    } else if (tipoVEM == TiposVEM.Trabalhador) {
+                        ownerExtraTextField.setText(((Trabalhador) vem.getPerson()).getNIS());
+                        ownerExtraTextField.setVisible(true);
+                    } else {
+                        ownerExtraTextField.setVisible(false);
+                    }
+                } else {
+                    ownerNameTextField.setVisible(false);
+                    ownerBirthDatePicker.setVisible(false);
+                    ownerCPFTextField.setVisible(false);
+                }
+            }
+        });
+
+        typeVEMComboBox.setItems(FXCollections.observableArrayList(TiposVEM.values()));
+        typeVEMComboBox.setConverter(new StringConverter<TiposVEM>() {
+            @Override
+            public String toString(TiposVEM object) {
+                return object.toString();
+            }
+
+            @Override
+            public TiposVEM fromString(String string) {
+                return null;
+            }
+        });
+        new ComboBoxAutoComplete<TiposVEM>(typeVEMComboBox);
+
+        SelectionModel selectionModel1 = typeVEMComboBox.getSelectionModel();
+        selectionModel1.selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue == TiposVEM._null || newValue == TiposVEM.Comum) {
+                ownerNameTextField.setVisible(false);
+                ownerBirthDatePicker.setVisible(false);
+                ownerCPFTextField.setVisible(false);
+                ownerExtraTextField.setVisible(false);
+            } else if (newValue == TiposVEM.Estudante || newValue == TiposVEM.Trabalhador) {
+                ownerNameTextField.setVisible(true);
+                ownerBirthDatePicker.setVisible(true);
+                ownerCPFTextField.setVisible(true);
+                ownerExtraTextField.setVisible(true);
+            } else {
+                ownerNameTextField.setVisible(true);
+                ownerBirthDatePicker.setVisible(true);
+                ownerCPFTextField.setVisible(true);
+                ownerExtraTextField.setVisible(false);
             }
         });
     }
