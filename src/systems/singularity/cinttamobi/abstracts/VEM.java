@@ -1,5 +1,6 @@
 package systems.singularity.cinttamobi.abstracts;
 
+import systems.singularity.cinttamobi.enums.TiposVEM;
 import systems.singularity.cinttamobi.exceptions.OperacaoInvalidaException;
 import systems.singularity.cinttamobi.exceptions.SaldoInsuficienteException;
 import systems.singularity.cinttamobi.exceptions.VEMInvalidoException;
@@ -13,6 +14,7 @@ public abstract class VEM {
     protected double balance;
     private String number;
     private Pessoa person;
+
 
     public VEM(String number, Pessoa person) throws VEMInvalidoException {
         // TO-DO

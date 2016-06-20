@@ -1,8 +1,11 @@
 package systems.singularity.cinttamobi.negocio;
 
 import systems.singularity.cinttamobi.Programa;
-import systems.singularity.cinttamobi.exceptions.RepositorioInvalidoException;
-import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
+import systems.singularity.cinttamobi.abstracts.VEM;
+import systems.singularity.cinttamobi.enums.TiposVEM;
+import systems.singularity.cinttamobi.exceptions.*;
+import systems.singularity.cinttamobi.negocio.pessoas.*;
+import systems.singularity.cinttamobi.negocio.vem.*;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -43,16 +46,35 @@ public class Fachada {
         }
     }
 
-    public void cadastrarVEM(String numero, Pessoa pessoa)
-    {
+    public void cadastrarVEM(String numero, Pessoa pessoa, TiposVEM tiposVEM) throws TipoVEMInvalidoException, VEMInvalidoException, VEMExistenteException, PessoaExistenteException {
+        VEM vem = null;
 
-
-
-    }
-
-    public void cadastrarPessoa()
-    {
-
+        if(pessoa instanceof Crianca && tiposVEM == TiposVEM.Infantil)
+        {
+            vem = new VEMInfantil(numero, pessoa);
+        }
+        else if(pessoa instanceof Idoso && tiposVEM == TiposVEM.Idoso)
+        {
+            vem = new VEMIdoso(numero, pessoa);
+        }
+        else if(pessoa instanceof Trabalhador && tiposVEM == TiposVEM.Trabalhador)
+        {
+            vem = new VEMTrabalhador(numero, pessoa);
+        }
+        else if(pessoa instanceof Estudante && tiposVEM == TiposVEM.Estudante)
+        {
+            vem = new VEMEstudante(numero, pessoa);
+        }
+        else if(tiposVEM == TiposVEM.Comum)
+        {
+            vem = new VEMInfantil(numero, null);
+        }
+        else
+        {
+            throw new TipoVEMInvalidoException();
+        }
+        negociosPessoa.insert(pessoa);
+        negociosVEM.insert(vem);
     }
 
     public void cadastrarOnibus()
