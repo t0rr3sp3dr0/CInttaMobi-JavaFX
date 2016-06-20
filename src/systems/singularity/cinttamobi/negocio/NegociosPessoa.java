@@ -9,6 +9,7 @@ import systems.singularity.cinttamobi.exceptions.RepositorioInvalidoException;
 import systems.singularity.cinttamobi.interfaces.RepositoriosPessoa;
 import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 
+import java.util.List;
 import java.util.prefs.Preferences;
 
 /**
@@ -61,5 +62,9 @@ public final class NegociosPessoa {
         }
         else
             throw new PessoaInexistenteException();
+    }
+
+    public List toList() {
+        return repositorio.toList();
     }
 }

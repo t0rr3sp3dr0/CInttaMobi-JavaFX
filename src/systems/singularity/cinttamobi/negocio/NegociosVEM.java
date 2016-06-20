@@ -8,6 +8,8 @@ import systems.singularity.cinttamobi.exceptions.VEMExistenteException;
 import systems.singularity.cinttamobi.exceptions.VEMInexistenteException;
 import systems.singularity.cinttamobi.interfaces.RepositoriosVEM;
 
+import java.util.List;
+
 /**
  * Created by lvrma on 19/06/16.
  */
@@ -60,4 +62,7 @@ public class NegociosVEM {
             throw new VEMInexistenteException();
     }
 
+    public List toList() {
+        return repositorio.toList();
+    }
 }

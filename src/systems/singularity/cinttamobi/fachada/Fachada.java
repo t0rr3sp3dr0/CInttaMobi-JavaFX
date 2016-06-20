@@ -13,6 +13,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by esvm on 20/06/16.
@@ -55,12 +56,20 @@ public class Fachada {
         negociosVEM.remove(vem);
     }
 
+    public List listVEM() {
+        return negociosVEM.toList();
+    }
+
     public void cadastrarOnibus(Onibus onibus) throws OnibusExistenteException {
         negociosOnibus.insert(onibus);
     }
 
     public void removeOnibus(Onibus onibus) throws OnibusInexistenteException {
         negociosOnibus.remove(onibus);
+    }
+
+    public List listOnibus() {
+        return negociosOnibus.toList();
     }
 
     public void creditarVEM(String id, double value) throws RepositorioInvalidoException, VEMInexistenteException, OperacaoInvalidaException, ValorInvalidoException {

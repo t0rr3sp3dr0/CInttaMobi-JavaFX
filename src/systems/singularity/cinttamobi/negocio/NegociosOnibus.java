@@ -9,6 +9,7 @@ import systems.singularity.cinttamobi.exceptions.RepositorioInvalidoException;
 import systems.singularity.cinttamobi.interfaces.RepositoriosOnibus;
 import systems.singularity.cinttamobi.negocio.Onibus;
 
+import java.util.List;
 import java.util.prefs.Preferences;
 
 /**
@@ -59,5 +60,9 @@ public final class NegociosOnibus {
         }
         else
             throw new OnibusInexistenteException();
+    }
+
+    public List toList() {
+        return repositorio.toList();
     }
 }
