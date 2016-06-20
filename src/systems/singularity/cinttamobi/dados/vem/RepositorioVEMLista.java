@@ -3,6 +3,9 @@ package systems.singularity.cinttamobi.dados.vem;
 import systems.singularity.cinttamobi.abstracts.VEM;
 import systems.singularity.cinttamobi.interfaces.Repositorios;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by lvrma on 19/06/16.
  */
@@ -29,6 +32,19 @@ public class RepositorioVEMLista implements Repositorios{
                 aux = aux.getNext();
         }
         return null;
+    }
+
+    @Override
+    public List toList() {
+        ArrayList<VEM> VEMs = new ArrayList<>();
+        LinkVEM aux = root;
+
+        while(aux != null){
+            VEMs.add(aux.getValue());
+            aux = aux.getNext();
+        }
+
+        return VEMs;
     }
 
     @Override

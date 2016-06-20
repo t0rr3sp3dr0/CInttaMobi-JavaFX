@@ -3,6 +3,9 @@ package systems.singularity.cinttamobi.dados.onibus;
 import systems.singularity.cinttamobi.interfaces.Repositorios;
 import systems.singularity.cinttamobi.negocio.Onibus;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by phts on 19/06/16.
  */
@@ -70,5 +73,12 @@ public final class RepositorioOnibusLista implements Repositorios {
             return this.node.search(id);
         else
             return null;
+    }
+
+
+    @Override
+    public List toList() {
+
+        return null;
     }
 }

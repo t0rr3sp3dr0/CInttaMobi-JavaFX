@@ -1,5 +1,7 @@
 package systems.singularity.cinttamobi.interfaces;
 
+import java.util.List;
+
 /**
  * Created by lvrma on 02/05/16.
  * © 2016 Singularity Systems
@@ -15,5 +17,8 @@ public interface Repositorios {
     void remove(Object object);
 
     Object search(String id);
+
+    List toList();
+
 
 }

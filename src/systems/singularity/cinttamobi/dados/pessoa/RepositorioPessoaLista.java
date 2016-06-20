@@ -3,6 +3,9 @@ package systems.singularity.cinttamobi.dados.pessoa;
 import systems.singularity.cinttamobi.interfaces.Repositorios;
 import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by caesa on 19/06/2016.
  */
@@ -81,5 +84,19 @@ public class RepositorioPessoaLista implements Repositorios{
         }
         return null;
 
+    }
+
+    @Override
+    public List toList() {
+        ArrayList<Pessoa> pessoasLista = new ArrayList<>();
+
+        NodePessoa aux = root;
+        while(aux != null)
+        {
+            pessoasLista.add(aux.getValue());
+            aux = aux.getNext();
+        }
+
+        return  pessoasLista;
     }
 }
