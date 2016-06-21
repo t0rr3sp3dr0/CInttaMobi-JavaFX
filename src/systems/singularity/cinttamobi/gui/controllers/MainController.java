@@ -37,7 +37,6 @@ public class MainController implements Initializable {
 
         stageTools.newTab("vemCadastro", tabPane);
         stageTools.newTab("onibusCadastro", tabPane);
-//        onMovement();
     }
 
     public void setPane(final SwingNode swingNode) {
@@ -50,10 +49,8 @@ public class MainController implements Initializable {
         });
     }
 
-    public void onMovement(){
-        SwingNode sn = swingNode;
-        Scene s = sn.getScene();
-        s.setOnKeyPressed(event -> {
+    public void onMovement(Scene scene) {
+        scene.setOnKeyPressed(event -> {
             switch (event.getCode()) {
                 case W: System.out.println("UP"); break;
                 case S: System.out.println("DOWN"); break;

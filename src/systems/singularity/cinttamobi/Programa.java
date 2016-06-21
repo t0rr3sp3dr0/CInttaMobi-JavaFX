@@ -15,18 +15,15 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
+import systems.singularity.cinttamobi.gui.controllers.MainController;
 import systems.singularity.cinttamobi.negocio.gui.AsyncCallable;
 import systems.singularity.cinttamobi.negocio.gui.EventsTimeline;
 import systems.singularity.cinttamobi.negocio.gui.StageTools;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Optional;
 import java.util.Properties;
 import java.util.ResourceBundle;
-import java.util.prefs.Preferences;
 
 public class Programa extends Application {
     private static boolean developerMode = true;
@@ -46,8 +43,6 @@ public class Programa extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Testes.main(new String[] {});
-
         Thread.setDefaultUncaughtExceptionHandler((t, e) -> {
             if (developerMode)
                 e.printStackTrace();
@@ -86,31 +81,8 @@ public class Programa extends Application {
         splashStage.setMinHeight(Double.parseDouble("480"));
         splashStage.show();
 
-        Properties messages = new Properties();
-        messages.loadFromXML(getClass().getResourceAsStream("/values/messages.xml"));
-        Parent root = FXMLLoader.load(getClass().getResource("/scenes/main.fxml"));
-        root.minHeight(Double.parseDouble(messages.getProperty("minHeight")));
-        root.minWidth(Double.parseDouble(messages.getProperty("minWidth")));
-        primaryStage.setTitle(messages.getProperty("app_name"));
-        primaryStage.setMaxWidth(Double.parseDouble(messages.getProperty("maxWidth")));
-        primaryStage.setMaxHeight(Double.parseDouble(messages.getProperty("maxHeight")));
-        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/images/icon.png")));
-        try {
-            new StageTools().setupOSXStage(primaryStage);
-        } catch (Exception ignored) {
-        }
-        primaryStage.setScene(new Scene(
-                root,
-                Double.parseDouble(messages.getProperty("prefWidth")),
-                Double.parseDouble(messages.getProperty("prefHeight"))
-        ));
-        primaryStage.setMinWidth(Double.parseDouble(messages.getProperty("minWidth")));
-        primaryStage.setMinHeight(Double.parseDouble(messages.getProperty("minHeight")));
-
         new AsyncCallable(() -> {
             Label progressStatus = (Label) splashScreen.lookup("#progressStatus");
-            Preferences prefs = Preferences.userNodeForPackage(Programa.class);
-
             EventsTimeline eventsTimeline = new EventsTimeline();
             EventsTimeline.setDelay(1000);
             eventsTimeline.add(event -> {
@@ -118,7 +90,38 @@ public class Programa extends Application {
                 ((Label) splashScreen.lookup("#version")).setText(String.format("Version %s", resourceBundle.getString("app.version")));
                 ((Label) splashScreen.lookup("#licensedTo")).setText(String.format("Licensed to %s", resourceBundle.getString("instance.licensedTo")));
             });
+            eventsTimeline.add(event -> progressStatus.setText("Testando Métodos"), 250);
+            eventsTimeline.add(event -> Testes.main(new String[]{}));
             eventsTimeline.add(event -> progressStatus.setText("Carregando User Interface"), 250);
+            eventsTimeline.add(event -> {
+                try {
+                    Properties messages = new Properties();
+                    messages.loadFromXML(getClass().getResourceAsStream("/values/messages.xml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/scenes/main.fxml"));
+                    Parent root = fxmlLoader.load();
+                    root.minHeight(Double.parseDouble(messages.getProperty("minHeight")));
+                    root.minWidth(Double.parseDouble(messages.getProperty("minWidth")));
+                    Scene scene = new Scene(
+                            root,
+                            Double.parseDouble(messages.getProperty("prefWidth")),
+                            Double.parseDouble(messages.getProperty("prefHeight"))
+                    );
+                    primaryStage.setScene(scene);
+                    primaryStage.setTitle(messages.getProperty("app_name"));
+                    primaryStage.setMaxWidth(Double.parseDouble(messages.getProperty("maxWidth")));
+                    primaryStage.setMaxHeight(Double.parseDouble(messages.getProperty("maxHeight")));
+                    primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/images/icon.png")));
+                    try {
+                        new StageTools().setupOSXStage(primaryStage);
+                    } catch (Exception ignored) {
+                    }
+                    primaryStage.setMinWidth(Double.parseDouble(messages.getProperty("minWidth")));
+                    primaryStage.setMinHeight(Double.parseDouble(messages.getProperty("minHeight")));
+                    ((MainController) fxmlLoader.getController()).onMovement(scene);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
             eventsTimeline.add(event -> {
                 Timeline timeline = new Timeline();
                 timeline.getKeyFrames().add(new KeyFrame(Duration.millis(250), new KeyValue(splashStage.opacityProperty(), 0)));
