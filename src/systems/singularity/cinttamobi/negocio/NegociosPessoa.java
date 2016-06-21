@@ -32,7 +32,6 @@ public class NegociosPessoa {
 
 
     public void insert(Pessoa object) throws PessoaExistenteException {
-
         if (!exists(object.getCPF())) {
             repositorio.insert(object);
         } else
