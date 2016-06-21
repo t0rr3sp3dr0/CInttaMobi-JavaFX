@@ -21,6 +21,7 @@ import java.util.List;
 public class Fachada {
     private static Fachada ourInstance = new Fachada();
     private String tipo = "";
+    public  boolean repInvalido = false;
     private NegociosOnibus negociosOnibus;
     private NegociosPessoa negociosPessoa;
     private NegociosVEM negociosVEM;
@@ -37,6 +38,7 @@ public class Fachada {
             e.printStackTrace();
         } catch (RepositorioInvalidoException e) {
             e.printStackTrace();
+            repInvalido = true;
         }
     }
 
@@ -45,9 +47,11 @@ public class Fachada {
     }
 
     public void cadastrarVEM(VEM vem) throws PessoaExistenteException, VEMExistenteException {
-        if (!(vem instanceof VEMComum))
-            negociosPessoa.insert(vem.getPerson());
-        negociosVEM.insert(vem);
+        if(vem.getPerson() != null && !negociosPessoa.exists(vem.getPerson().getCPF())) {
+            negociosVEM.insert(vem);
+            if (!(vem instanceof VEMComum))
+                negociosPessoa.insert(vem.getPerson());
+        }
     }
 
     public void removerVEM(VEM vem) throws PessoaInexistenteException, VEMInexistenteException {

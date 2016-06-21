@@ -1,9 +1,6 @@
 package systems.singularity.cinttamobi.negocio.pessoas;
 
-import systems.singularity.cinttamobi.exceptions.CPFInvalidoException;
-import systems.singularity.cinttamobi.exceptions.IdadeInvalidaException;
-import systems.singularity.cinttamobi.exceptions.NISInvalidoException;
-import systems.singularity.cinttamobi.exceptions.ParametroNuloException;
+import systems.singularity.cinttamobi.exceptions.*;
 
 import java.util.Date;
 
@@ -13,7 +10,7 @@ import java.util.Date;
 public class Trabalhador extends Pessoa {
     private String nis;
 
-    public Trabalhador(String name, Date birth, String cpf, String nis) throws IdadeInvalidaException, CPFInvalidoException, NISInvalidoException, ParametroNuloException {
+    public Trabalhador(String name, Date birth, String cpf, String nis) throws IdadeInvalidaException, CPFInvalidoException, NISInvalidoException, ParametroNuloException, NomeInvalidoException {
         super(name, birth, cpf);
 
         if (nis != null) {
