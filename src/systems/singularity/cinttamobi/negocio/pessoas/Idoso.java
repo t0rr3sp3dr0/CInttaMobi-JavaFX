@@ -2,6 +2,7 @@ package systems.singularity.cinttamobi.negocio.pessoas;
 
 import systems.singularity.cinttamobi.exceptions.CPFInvalidoException;
 import systems.singularity.cinttamobi.exceptions.IdadeInvalidaException;
+import systems.singularity.cinttamobi.exceptions.NomeInvalidoException;
 import systems.singularity.cinttamobi.exceptions.ParametroNuloException;
 
 import java.time.LocalDateTime;
@@ -12,7 +13,7 @@ import java.util.Date;
  */
 public class Idoso extends Pessoa {
 
-    public Idoso(String name, Date birth, String cpf) throws CPFInvalidoException, IdadeInvalidaException, ParametroNuloException {
+    public Idoso(String name, Date birth, String cpf) throws CPFInvalidoException, IdadeInvalidaException, ParametroNuloException, NomeInvalidoException {
         super(name, birth, cpf);
 
         // Milisegundos atual - Milisegundos do nascimento

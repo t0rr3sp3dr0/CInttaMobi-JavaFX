@@ -6,7 +6,7 @@ package systems.singularity.cinttamobi.exceptions;
 public class VEMInvalidoException extends Exception{
 
     public VEMInvalidoException(){
-        super("Número VEM inválido!");
+        super("Número do VEM inválido!");
     }
 
 }

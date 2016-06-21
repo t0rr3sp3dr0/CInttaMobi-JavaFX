@@ -35,6 +35,14 @@ public class Testes {
             }
 
             try {
+                fachada.removeOnibus(new Onibus("123243", Linhas._10));
+            } catch (OnibusInexistenteException e) {
+                e.printStackTrace();
+            } catch (ParametroNuloException e) {
+                e.printStackTrace();
+            }
+
+            try {
                 fachada.cadastrarOnibus(new Onibus("4325", Linhas._20));
             } catch (OnibusExistenteException e) {
                 e.printStackTrace();
@@ -60,6 +68,8 @@ public class Testes {
 
             System.out.println(fachada.listOnibus().toString());
 
+
+
             try {
                 fachada.cadastrarVEM(new VEMComum(randNumber(13)));
             } catch (PessoaExistenteException e) {
@@ -80,6 +90,8 @@ public class Testes {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
                 e.printStackTrace();
+            } catch (NomeInvalidoException e) {
+                e.printStackTrace();
             }
 
             try {
@@ -89,6 +101,8 @@ public class Testes {
             } catch (IdadeInvalidaException e) {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
+                e.printStackTrace();
+            } catch (NomeInvalidoException e) {
                 e.printStackTrace();
             }
 
@@ -100,6 +114,8 @@ public class Testes {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
                 e.printStackTrace();
+            } catch (NomeInvalidoException e) {
+                e.printStackTrace();
             }
 
             try {
@@ -109,6 +125,8 @@ public class Testes {
             } catch (IdadeInvalidaException e) {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
+                e.printStackTrace();
+            } catch (NomeInvalidoException e) {
                 e.printStackTrace();
             }
 
@@ -120,6 +138,8 @@ public class Testes {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
                 e.printStackTrace();
+            } catch (NomeInvalidoException e) {
+                e.printStackTrace();
             }
 
             try {
@@ -129,6 +149,8 @@ public class Testes {
             } catch (IdadeInvalidaException e) {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
+                e.printStackTrace();
+            } catch (NomeInvalidoException e) {
                 e.printStackTrace();
             }
 
@@ -142,6 +164,8 @@ public class Testes {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
                 e.printStackTrace();
+            } catch (NomeInvalidoException e) {
+                e.printStackTrace();
             }
 
             try {
@@ -153,6 +177,8 @@ public class Testes {
             } catch (CarteiraEstudanteInvalidaException e) {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
+                e.printStackTrace();
+            } catch (NomeInvalidoException e) {
                 e.printStackTrace();
             }
 
@@ -166,6 +192,8 @@ public class Testes {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
                 e.printStackTrace();
+            } catch (NomeInvalidoException e) {
+                e.printStackTrace();
             }
 
             try {
@@ -177,6 +205,8 @@ public class Testes {
             } catch (CarteiraEstudanteInvalidaException e) {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
+                e.printStackTrace();
+            } catch (NomeInvalidoException e) {
                 e.printStackTrace();
             }
 
@@ -190,6 +220,8 @@ public class Testes {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
                 e.printStackTrace();
+            } catch (NomeInvalidoException e) {
+                e.printStackTrace();
             }
 
             try {
@@ -201,6 +233,8 @@ public class Testes {
             } catch (NISInvalidoException e) {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
+                e.printStackTrace();
+            } catch (NomeInvalidoException e) {
                 e.printStackTrace();
             }
 
@@ -214,6 +248,8 @@ public class Testes {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
                 e.printStackTrace();
+            } catch (NomeInvalidoException e) {
+                e.printStackTrace();
             }
 
             try {
@@ -226,6 +262,8 @@ public class Testes {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
                 e.printStackTrace();
+            } catch (NomeInvalidoException e) {
+                e.printStackTrace();
             }
 
             try {
@@ -235,6 +273,8 @@ public class Testes {
             } catch (IdadeInvalidaException e) {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
+                e.printStackTrace();
+            } catch (NomeInvalidoException e) {
                 e.printStackTrace();
             }
 
@@ -246,6 +286,8 @@ public class Testes {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
                 e.printStackTrace();
+            } catch (NomeInvalidoException e) {
+                e.printStackTrace();
             }
 
             try {
@@ -255,6 +297,8 @@ public class Testes {
             } catch (IdadeInvalidaException e) {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
+                e.printStackTrace();
+            } catch (NomeInvalidoException e) {
                 e.printStackTrace();
             }
 
@@ -266,6 +310,8 @@ public class Testes {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
                 e.printStackTrace();
+            } catch (NomeInvalidoException e) {
+                e.printStackTrace();
             }
 
             try {
@@ -275,6 +321,8 @@ public class Testes {
             } catch (IdadeInvalidaException e) {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
+                e.printStackTrace();
+            } catch (NomeInvalidoException e) {
                 e.printStackTrace();
             }
 
@@ -286,6 +334,8 @@ public class Testes {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
                 e.printStackTrace();
+            } catch (NomeInvalidoException e) {
+                e.printStackTrace();
             }
 
             try {
@@ -296,15 +346,19 @@ public class Testes {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
                 e.printStackTrace();
+            } catch (NomeInvalidoException e) {
+                e.printStackTrace();
             }
 
             try {
-                pessoas[19] = new Idoso("gfhgf", new Date(1972, 10, 12), randNumber(13));
+                pessoas[19] = new Idoso("", new Date(1972, 10, 12), randNumber(13));
             } catch (CPFInvalidoException e) {
                 e.printStackTrace();
             } catch (IdadeInvalidaException e) {
                 e.printStackTrace();
             } catch (ParametroNuloException e) {
+                e.printStackTrace();
+            } catch (NomeInvalidoException e) {
                 e.printStackTrace();
             }
 
@@ -397,7 +451,7 @@ public class Testes {
                 System.out.println(vem);
 
                 try {
-                    fachada.creditarVEM(vem.getNumber(), 5);
+                    fachada.creditarVEM(vem.getNumber(), -5);
                 } catch (RepositorioInvalidoException e) {
                     e.printStackTrace();
                 } catch (VEMInexistenteException e) {
