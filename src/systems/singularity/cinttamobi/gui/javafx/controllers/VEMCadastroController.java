@@ -156,6 +156,15 @@ public class VEMCadastroController implements Initializable {
             }
         });
         new ComboBoxAutoComplete<TiposVEM>(typeVEMComboBox);
+
+        addVEMButton.setOnAction(event -> {
+        });
+        editVEMButton.setOnAction(event -> {
+        });
+        saveVEMButton.setOnAction(event -> {
+        });
+        deleteVEMButton.setOnAction(event -> {
+        });
     }
 
     private void clearFields() {

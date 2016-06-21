@@ -1,6 +1,5 @@
 package systems.singularity.cinttamobi;
 
-import jdk.nashorn.internal.runtime.regexp.joni.CodeRangeBuffer;
 import systems.singularity.cinttamobi.abstracts.VEM;
 import systems.singularity.cinttamobi.enums.Linhas;
 import systems.singularity.cinttamobi.exceptions.*;
@@ -330,7 +329,7 @@ public class Testes {
 
         for (int i = 0; i < pessoas.length; i++) {
             try {
-                fachada.cadastrarVEM(new VEMEstudante(String.valueOf(Math.random()), pessoas[i]));
+                fachada.cadastrarVEM(new VEMEstudante(randNumber(13), pessoas[i]));
             } catch (PessoaExistenteException e) {
                 e.printStackTrace();
             } catch (VEMExistenteException e) {
@@ -342,7 +341,7 @@ public class Testes {
             }
 
             try {
-                fachada.cadastrarVEM(new VEMIdoso(String.valueOf(Math.random()), pessoas[i]));
+                fachada.cadastrarVEM(new VEMIdoso(randNumber(13), pessoas[i]));
             } catch (PessoaExistenteException e) {
                 e.printStackTrace();
             } catch (VEMExistenteException e) {
@@ -354,7 +353,7 @@ public class Testes {
             }
 
             try {
-                fachada.cadastrarVEM(new VEMInfantil(String.valueOf(Math.random()), pessoas[i]));
+                fachada.cadastrarVEM(new VEMInfantil(randNumber(13), pessoas[i]));
             } catch (PessoaExistenteException e) {
                 e.printStackTrace();
             } catch (VEMExistenteException e) {
@@ -367,7 +366,7 @@ public class Testes {
 
 
             try {
-                fachada.cadastrarVEM(new VEMTrabalhador(String.valueOf(Math.random()), pessoas[i]));
+                fachada.cadastrarVEM(new VEMTrabalhador(randNumber(13), pessoas[i]));
             } catch (PessoaExistenteException e) {
                 e.printStackTrace();
             } catch (VEMExistenteException e) {
@@ -639,6 +638,9 @@ public class Testes {
         } catch (SaldoInsuficienteException e) {
             e.printStackTrace();
         }
+    }
 
+    private static String randNumber(int length) {
+        return String.valueOf(Math.random()).substring(2).substring(0, length);
     }
 }
