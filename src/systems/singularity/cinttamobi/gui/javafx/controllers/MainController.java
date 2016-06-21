@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.input.KeyCode;
 import systems.singularity.cinttamobi.gui.swing.GamePanel;
 import systems.singularity.cinttamobi.gui.javafx.StageTools;
 
@@ -19,6 +20,7 @@ public class MainController implements Initializable {
     public Tab mainTab;
     public SwingNode swingNode;
 
+    private GamePanel panel = new GamePanel();
     private Properties messages = new Properties();
     private StageTools stageTools = new StageTools();
 
@@ -43,7 +45,6 @@ public class MainController implements Initializable {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                GamePanel panel = new GamePanel();
                 swingNode.setContent(panel);
             }
         });
@@ -51,13 +52,31 @@ public class MainController implements Initializable {
 
     public void onMovement(Scene scene) {
         scene.setOnKeyPressed(event -> {
-            switch (event.getCode()) {
-                case W: System.out.println("UP"); break;
-                case S: System.out.println("DOWN"); break;
-                case A: System.out.println("LEFT"); break;
-                case D: System.out.println("RIGHT"); break;
-                case SHIFT: System.out.println("Run"); break;
+            if(tabPane.getSelectionModel().isSelected(0)) {
+                switch (event.getCode()) {
+                    case W:
+                        panel.moveNorth();
+                        break;
+                    case S:
+                        panel.moveSouth();
+                        break;
+                    case A:
+                        panel.moveWest();
+                        break;
+                    case D:
+                        panel.moveEast();
+                        break;
+                    case SHIFT:
+                        panel.startRun();
+                        break;
+                }
             }
+        });
+
+        scene.setOnKeyReleased(event -> {
+            if(tabPane.getSelectionModel().isSelected(0))
+                if (event.getCode() == KeyCode.SHIFT)
+                    panel.stopRun();
         });
     }
 }
