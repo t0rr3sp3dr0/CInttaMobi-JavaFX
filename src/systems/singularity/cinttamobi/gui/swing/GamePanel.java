@@ -10,7 +10,7 @@ import java.awt.event.*;
 import java.util.Arrays;
 
 /**
- * Created by lvrma on 20/06/16.
+ * Created by Lucas on 20/06/16.
  */
 public class GamePanel extends JPanel implements ComponentListener {
 
