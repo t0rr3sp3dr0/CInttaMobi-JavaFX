@@ -60,7 +60,7 @@ public class Testes {
         System.out.println(fachada.listOnibus().toString());
 
         try {
-            fachada.cadastrarVEM(new VEMComum("123"));
+            fachada.cadastrarVEM(new VEMComum(randNumber(13)));
         } catch (PessoaExistenteException e) {
             e.printStackTrace();
         } catch (VEMExistenteException e) {
@@ -72,7 +72,7 @@ public class Testes {
         Pessoa[] pessoas = new Pessoa[32];
 
         try {
-            pessoas[0] = new Pessoa("Hi", new Date(), "08168971400");
+            pessoas[0] = new Pessoa("Hi", new Date(), randNumber(11));
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
@@ -82,7 +82,7 @@ public class Testes {
         }
 
         try {
-            pessoas[1] = new Pessoa("Hi", new Date(), "00068971400");
+            pessoas[1] = new Pessoa("Hi", new Date(), randNumber(11));
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
@@ -92,7 +92,7 @@ public class Testes {
         }
 
         try {
-            pessoas[2] = new Pessoa("Oi", new Date(), "00068971400");
+            pessoas[2] = new Pessoa("Oi", new Date(), randNumber(11));
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
@@ -102,7 +102,7 @@ public class Testes {
         }
 
         try {
-            pessoas[3] = new Pessoa("Oi", new Date(), "08168971400");
+            pessoas[3] = new Pessoa("Oi", new Date(), randNumber(11));
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
@@ -112,7 +112,7 @@ public class Testes {
         }
 
         try {
-            pessoas[4] = new Pessoa("Oi", new Date(), "08168400");
+            pessoas[4] = new Pessoa("Oi", new Date(), randNumber(11));
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
@@ -122,7 +122,7 @@ public class Testes {
         }
 
         try {
-            pessoas[5] = new Pessoa("Oi", new Date(new Date().getTime() + 100000000), "08168971400");
+            pessoas[5] = new Pessoa("Oi", new Date(new Date().getTime() + 100000000), randNumber(11));
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
@@ -132,19 +132,7 @@ public class Testes {
         }
 
         try {
-            pessoas[6] = new Estudante("twert", new Date(), "0816898640", "45235");
-        } catch (CPFInvalidoException e) {
-            e.printStackTrace();
-        } catch (IdadeInvalidaException e) {
-            e.printStackTrace();
-        } catch (CarteiraEstudanteInvalidaException e) {
-            e.printStackTrace();
-        } catch (ParametroNuloException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            pessoas[7] = new Estudante("dgfhf", new Date(), "08168642400", "");
+            pessoas[6] = new Estudante("twert", new Date(), randNumber(11), randNumber(8));
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
@@ -156,7 +144,7 @@ public class Testes {
         }
 
         try {
-            pessoas[8] = new Estudante("fgh", new Date(), "", "08168642400");
+            pessoas[7] = new Estudante("dgfhf", new Date(), randNumber(11), randNumber(9));
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
@@ -168,7 +156,7 @@ public class Testes {
         }
 
         try {
-            pessoas[9] = new Estudante("gfhgf", new Date(), "", "");
+            pessoas[8] = new Estudante("fgh", new Date(), randNumber(11), randNumber(8));
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
@@ -180,7 +168,19 @@ public class Testes {
         }
 
         try {
-            pessoas[10] = new Trabalhador("gfhgf", new Date(), "", "");
+            pessoas[9] = new Estudante("gfhgf", new Date(), "", randNumber(8));
+        } catch (CPFInvalidoException e) {
+            e.printStackTrace();
+        } catch (IdadeInvalidaException e) {
+            e.printStackTrace();
+        } catch (CarteiraEstudanteInvalidaException e) {
+            e.printStackTrace();
+        } catch (ParametroNuloException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            pessoas[10] = new Trabalhador("gfhgf", new Date(), randNumber(11), randNumber(11));
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
@@ -192,7 +192,7 @@ public class Testes {
         }
 
         try {
-            pessoas[11] = new Trabalhador("gfhgf", new Date(), "", "354325");
+            pessoas[11] = new Trabalhador("gfhgf", new Date(), "", randNumber(11));
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
@@ -204,7 +204,7 @@ public class Testes {
         }
 
         try {
-            pessoas[12] = new Trabalhador("gfhgf", new Date(), "09876543211", "354325");
+            pessoas[12] = new Trabalhador("gfhgf", new Date(), randNumber(11), randNumber(10));
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
@@ -216,7 +216,7 @@ public class Testes {
         }
 
         try {
-            pessoas[12] = new Trabalhador("gfhgf", new Date(), "09876543211", "12345678900");
+            pessoas[12] = new Trabalhador("gfhgf", new Date(), randNumber(11), randNumber(11));
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
@@ -228,7 +228,7 @@ public class Testes {
         }
 
         try {
-            pessoas[13] = new Crianca("gfhgf", new Date(), "09876543211");
+            pessoas[13] = new Crianca("gfhgf", new Date(), randNumber(11));
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
@@ -238,7 +238,7 @@ public class Testes {
         }
 
         try {
-            pessoas[14] = new Crianca("gfhgf", new Date(), "123123123122");
+            pessoas[14] = new Crianca("gfhgf", new Date(), randNumber(11));
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
@@ -248,7 +248,7 @@ public class Testes {
         }
 
         try {
-            pessoas[15] = new Crianca("gfhgf", new Date(), "12332123212");
+            pessoas[15] = new Crianca("gfhgf", new Date(), randNumber(11));
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
@@ -258,7 +258,7 @@ public class Testes {
         }
 
         try {
-            pessoas[16] = new Idoso("OLD", new Date(new Date().getTime() - 10000000000000l), "00000011111");
+            pessoas[16] = new Idoso("OLD", new Date(new Date().getTime() - 10000000000000l), randNumber(11));
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
@@ -268,7 +268,7 @@ public class Testes {
         }
 
         try {
-            pessoas[17] = new Idoso("gfhgf", new Date(), "6564646");
+            pessoas[16] = new Idoso("OLD", new Date(new Date().getTime() - 10000000000000l), randNumber(10));
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
@@ -278,7 +278,7 @@ public class Testes {
         }
 
         try {
-            pessoas[18] = new Idoso("gfhgf", new Date(1990, 10, 12), "666666666666");
+            pessoas[17] = new Idoso("gfhgf", new Date(), randNumber(11));
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
@@ -288,7 +288,7 @@ public class Testes {
         }
 
         try {
-            pessoas[19] = new Idoso("gfhgf", new Date(1972, 10, 12), "00000000000");
+            pessoas[18] = new Idoso("gfhgf", new Date(1990, 10, 12), randNumber(11));
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
@@ -298,7 +298,17 @@ public class Testes {
         }
 
         try {
-            fachada.cadastrarVEM(new VEMComum("321"));
+            pessoas[19] = new Idoso("gfhgf", new Date(1972, 10, 12), randNumber(13));
+        } catch (CPFInvalidoException e) {
+            e.printStackTrace();
+        } catch (IdadeInvalidaException e) {
+            e.printStackTrace();
+        } catch (ParametroNuloException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            fachada.cadastrarVEM(new VEMComum(randNumber(13)));
         } catch (PessoaExistenteException e) {
             e.printStackTrace();
         } catch (VEMExistenteException e) {
@@ -308,7 +318,7 @@ public class Testes {
         }
 
         try {
-            fachada.cadastrarVEM(new VEMComum("321"));
+            fachada.cadastrarVEM(new VEMComum(randNumber(13)));
         } catch (PessoaExistenteException e) {
             e.printStackTrace();
         } catch (VEMExistenteException e) {
@@ -318,7 +328,7 @@ public class Testes {
         }
 
         try {
-            fachada.cadastrarVEM(new VEMComum("65436"));
+            fachada.cadastrarVEM(new VEMComum(randNumber(12)));
         } catch (PessoaExistenteException e) {
             e.printStackTrace();
         } catch (VEMExistenteException e) {
