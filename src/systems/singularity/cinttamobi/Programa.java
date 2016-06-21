@@ -15,10 +15,10 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
-import systems.singularity.cinttamobi.gui.controllers.MainController;
-import systems.singularity.cinttamobi.negocio.gui.AsyncCallable;
-import systems.singularity.cinttamobi.negocio.gui.EventsTimeline;
-import systems.singularity.cinttamobi.negocio.gui.StageTools;
+import systems.singularity.cinttamobi.gui.javafx.controllers.MainController;
+import systems.singularity.cinttamobi.gui.javafx.AsyncCallable;
+import systems.singularity.cinttamobi.gui.javafx.EventsTimeline;
+import systems.singularity.cinttamobi.gui.javafx.StageTools;
 
 import java.io.IOException;
 import java.util.Optional;

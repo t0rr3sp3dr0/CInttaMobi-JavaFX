@@ -1,12 +1,12 @@
-package systems.singularity.cinttamobi.gui.controllers;
+package systems.singularity.cinttamobi.gui.javafx.controllers;
 
 import javafx.embed.swing.SwingNode;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
-import systems.singularity.cinttamobi.gui.GamePanel;
-import systems.singularity.cinttamobi.negocio.gui.StageTools;
+import systems.singularity.cinttamobi.gui.swing.GamePanel;
+import systems.singularity.cinttamobi.gui.javafx.StageTools;
 
 import javax.swing.*;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package systems.singularity.cinttamobi.negocio.gui;
+package systems.singularity.cinttamobi.gui.javafx;
 
 import javafx.application.Platform;
 import systems.singularity.cinttamobi.Programa;

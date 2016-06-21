@@ -1,4 +1,4 @@
-package systems.singularity.cinttamobi.gui;
+package systems.singularity.cinttamobi.gui.swing;
 
 import javafx.scene.input.KeyCode;
 import systems.singularity.cinttamobi.Programa;
