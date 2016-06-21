@@ -2,6 +2,7 @@ package systems.singularity.cinttamobi.negocio.pessoas;
 
 import systems.singularity.cinttamobi.exceptions.CPFInvalidoException;
 import systems.singularity.cinttamobi.exceptions.IdadeInvalidaException;
+import systems.singularity.cinttamobi.exceptions.ParametroNuloException;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -15,7 +16,13 @@ public class Pessoa {
     private Date birth;
     private String cpf;
 
-    public Pessoa(String name, Date birth, String cpf) throws CPFInvalidoException, IdadeInvalidaException {
+    public Pessoa(String name, Date birth, String cpf) throws CPFInvalidoException, IdadeInvalidaException, ParametroNuloException {
+        if(name == null || birth == null || cpf == null)
+        {
+            throw new ParametroNuloException();
+        }
+
+
         if (birth.getTime() > System.currentTimeMillis())
             throw new IdadeInvalidaException();
 
@@ -25,6 +32,7 @@ public class Pessoa {
                 throw new CPFInvalidoException();
         } else
             throw new CPFInvalidoException();
+
 
         this.name = name;
         this.birth = birth;

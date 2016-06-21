@@ -22,17 +22,23 @@ public class Testes {
             fachada.cadastrarOnibus(new Onibus("123", Linhas._1));
         } catch (OnibusExistenteException e) {
             e.printStackTrace();
+        } catch (ParametroNuloException e) {
+            e.printStackTrace();
         }
 
         try {
             fachada.cadastrarOnibus(new Onibus("123", Linhas._10));
         } catch (OnibusExistenteException e) {
             e.printStackTrace();
+        } catch (ParametroNuloException e) {
+            e.printStackTrace();
         }
 
         try {
-            fachada.cadastrarOnibus(new Onibus("", null));
+            fachada.cadastrarOnibus(new Onibus("4325", Linhas._20));
         } catch (OnibusExistenteException e) {
+            e.printStackTrace();
+        } catch (ParametroNuloException e) {
             e.printStackTrace();
         }
 
@@ -40,11 +46,15 @@ public class Testes {
             fachada.cadastrarOnibus(new Onibus(null, null));
         } catch (OnibusExistenteException e) {
             e.printStackTrace();
+        } catch (ParametroNuloException e) {
+            e.printStackTrace();
         }
 
         try {
             fachada.cadastrarOnibus(new Onibus(null, Linhas._1));
         } catch (OnibusExistenteException e) {
+            e.printStackTrace();
+        } catch (ParametroNuloException e) {
             e.printStackTrace();
         }
 
@@ -68,6 +78,8 @@ public class Testes {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
             e.printStackTrace();
+        } catch (ParametroNuloException e) {
+            e.printStackTrace();
         }
 
         try {
@@ -75,6 +87,8 @@ public class Testes {
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
+            e.printStackTrace();
+        } catch (ParametroNuloException e) {
             e.printStackTrace();
         }
 
@@ -84,6 +98,8 @@ public class Testes {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
             e.printStackTrace();
+        } catch (ParametroNuloException e) {
+            e.printStackTrace();
         }
 
         try {
@@ -91,6 +107,8 @@ public class Testes {
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
+            e.printStackTrace();
+        } catch (ParametroNuloException e) {
             e.printStackTrace();
         }
 
@@ -100,6 +118,8 @@ public class Testes {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
             e.printStackTrace();
+        } catch (ParametroNuloException e) {
+            e.printStackTrace();
         }
 
         try {
@@ -107,6 +127,8 @@ public class Testes {
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
+            e.printStackTrace();
+        } catch (ParametroNuloException e) {
             e.printStackTrace();
         }
 
@@ -118,6 +140,8 @@ public class Testes {
             e.printStackTrace();
         } catch (CarteiraEstudanteInvalidaException e) {
             e.printStackTrace();
+        } catch (ParametroNuloException e) {
+            e.printStackTrace();
         }
 
         try {
@@ -127,6 +151,8 @@ public class Testes {
         } catch (IdadeInvalidaException e) {
             e.printStackTrace();
         } catch (CarteiraEstudanteInvalidaException e) {
+            e.printStackTrace();
+        } catch (ParametroNuloException e) {
             e.printStackTrace();
         }
 
@@ -138,6 +164,8 @@ public class Testes {
             e.printStackTrace();
         } catch (CarteiraEstudanteInvalidaException e) {
             e.printStackTrace();
+        } catch (ParametroNuloException e) {
+            e.printStackTrace();
         }
 
         try {
@@ -147,6 +175,8 @@ public class Testes {
         } catch (IdadeInvalidaException e) {
             e.printStackTrace();
         } catch (CarteiraEstudanteInvalidaException e) {
+            e.printStackTrace();
+        } catch (ParametroNuloException e) {
             e.printStackTrace();
         }
 
@@ -158,6 +188,8 @@ public class Testes {
             e.printStackTrace();
         } catch (NISInvalidoException e) {
             e.printStackTrace();
+        } catch (ParametroNuloException e) {
+            e.printStackTrace();
         }
 
         try {
@@ -167,6 +199,8 @@ public class Testes {
         } catch (IdadeInvalidaException e) {
             e.printStackTrace();
         } catch (NISInvalidoException e) {
+            e.printStackTrace();
+        } catch (ParametroNuloException e) {
             e.printStackTrace();
         }
 
@@ -178,6 +212,8 @@ public class Testes {
             e.printStackTrace();
         } catch (NISInvalidoException e) {
             e.printStackTrace();
+        } catch (ParametroNuloException e) {
+            e.printStackTrace();
         }
 
         try {
@@ -188,6 +224,8 @@ public class Testes {
             e.printStackTrace();
         } catch (NISInvalidoException e) {
             e.printStackTrace();
+        } catch (ParametroNuloException e) {
+            e.printStackTrace();
         }
 
         try {
@@ -195,6 +233,8 @@ public class Testes {
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
+            e.printStackTrace();
+        } catch (ParametroNuloException e) {
             e.printStackTrace();
         }
 
@@ -204,6 +244,8 @@ public class Testes {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
             e.printStackTrace();
+        } catch (ParametroNuloException e) {
+            e.printStackTrace();
         }
 
         try {
@@ -211,6 +253,8 @@ public class Testes {
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
+            e.printStackTrace();
+        } catch (ParametroNuloException e) {
             e.printStackTrace();
         }
 
@@ -220,6 +264,8 @@ public class Testes {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
             e.printStackTrace();
+        } catch (ParametroNuloException e) {
+            e.printStackTrace();
         }
 
         try {
@@ -227,6 +273,8 @@ public class Testes {
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
+            e.printStackTrace();
+        } catch (ParametroNuloException e) {
             e.printStackTrace();
         }
 
@@ -236,6 +284,8 @@ public class Testes {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
             e.printStackTrace();
+        } catch (ParametroNuloException e) {
+            e.printStackTrace();
         }
 
         try {
@@ -243,6 +293,8 @@ public class Testes {
         } catch (CPFInvalidoException e) {
             e.printStackTrace();
         } catch (IdadeInvalidaException e) {
+            e.printStackTrace();
+        } catch (ParametroNuloException e) {
             e.printStackTrace();
         }
 
@@ -359,31 +411,7 @@ public class Testes {
             }
 
             try {
-                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(1));
-            } catch (RepositorioInvalidoException e) {
-                e.printStackTrace();
-            } catch (VEMInexistenteException e) {
-                e.printStackTrace();
-            } catch (ValorInvalidoException e) {
-                e.printStackTrace();
-            } catch (SaldoInsuficienteException e) {
-                e.printStackTrace();
-            }
-
-            try {
-                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(2));
-            } catch (RepositorioInvalidoException e) {
-                e.printStackTrace();
-            } catch (VEMInexistenteException e) {
-                e.printStackTrace();
-            } catch (ValorInvalidoException e) {
-                e.printStackTrace();
-            } catch (SaldoInsuficienteException e) {
-                e.printStackTrace();
-            }
-
-            try {
-                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(3));
+                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(0));
             } catch (RepositorioInvalidoException e) {
                 e.printStackTrace();
             } catch (VEMInexistenteException e) {
@@ -407,31 +435,7 @@ public class Testes {
             }
 
             try {
-                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(1));
-            } catch (RepositorioInvalidoException e) {
-                e.printStackTrace();
-            } catch (VEMInexistenteException e) {
-                e.printStackTrace();
-            } catch (ValorInvalidoException e) {
-                e.printStackTrace();
-            } catch (SaldoInsuficienteException e) {
-                e.printStackTrace();
-            }
-
-            try {
-                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(2));
-            } catch (RepositorioInvalidoException e) {
-                e.printStackTrace();
-            } catch (VEMInexistenteException e) {
-                e.printStackTrace();
-            } catch (ValorInvalidoException e) {
-                e.printStackTrace();
-            } catch (SaldoInsuficienteException e) {
-                e.printStackTrace();
-            }
-
-            try {
-                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(3));
+                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(0));
             } catch (RepositorioInvalidoException e) {
                 e.printStackTrace();
             } catch (VEMInexistenteException e) {
@@ -455,7 +459,7 @@ public class Testes {
             }
 
             try {
-                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(1));
+                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(0));
             } catch (RepositorioInvalidoException e) {
                 e.printStackTrace();
             } catch (VEMInexistenteException e) {
@@ -467,7 +471,7 @@ public class Testes {
             }
 
             try {
-                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(2));
+                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(0));
             } catch (RepositorioInvalidoException e) {
                 e.printStackTrace();
             } catch (VEMInexistenteException e) {
@@ -479,7 +483,55 @@ public class Testes {
             }
 
             try {
-                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(3));
+                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(0));
+            } catch (RepositorioInvalidoException e) {
+                e.printStackTrace();
+            } catch (VEMInexistenteException e) {
+                e.printStackTrace();
+            } catch (ValorInvalidoException e) {
+                e.printStackTrace();
+            } catch (SaldoInsuficienteException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(0));
+            } catch (RepositorioInvalidoException e) {
+                e.printStackTrace();
+            } catch (VEMInexistenteException e) {
+                e.printStackTrace();
+            } catch (ValorInvalidoException e) {
+                e.printStackTrace();
+            } catch (SaldoInsuficienteException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(0));
+            } catch (RepositorioInvalidoException e) {
+                e.printStackTrace();
+            } catch (VEMInexistenteException e) {
+                e.printStackTrace();
+            } catch (ValorInvalidoException e) {
+                e.printStackTrace();
+            } catch (SaldoInsuficienteException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(0));
+            } catch (RepositorioInvalidoException e) {
+                e.printStackTrace();
+            } catch (VEMInexistenteException e) {
+                e.printStackTrace();
+            } catch (ValorInvalidoException e) {
+                e.printStackTrace();
+            } catch (SaldoInsuficienteException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                fachada.debitarVEM(vem.getNumber(), fachada.listOnibus().get(0));
             } catch (RepositorioInvalidoException e) {
                 e.printStackTrace();
             } catch (VEMInexistenteException e) {
@@ -490,5 +542,103 @@ public class Testes {
                 e.printStackTrace();
             }
         }
+
+        try {
+            fachada.creditarVEM("dgfdsgdsg",5.00);
+        } catch (RepositorioInvalidoException e) {
+            e.printStackTrace();
+        } catch (ValorInvalidoException e) {
+            e.printStackTrace();
+        } catch (OperacaoInvalidaException e) {
+            e.printStackTrace();
+        } catch (VEMInexistenteException e) {
+            e.printStackTrace();
+        }
+
+
+        try {
+            fachada.debitarVEM("321", fachada.listOnibus().get(0));
+        } catch (RepositorioInvalidoException e) {
+            e.printStackTrace();
+        } catch (VEMInexistenteException e) {
+            e.printStackTrace();
+        } catch (ValorInvalidoException e) {
+            e.printStackTrace();
+        } catch (SaldoInsuficienteException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            fachada.debitarVEM("321", fachada.listOnibus().get(0));
+        } catch (RepositorioInvalidoException e) {
+            e.printStackTrace();
+        } catch (VEMInexistenteException e) {
+            e.printStackTrace();
+        } catch (ValorInvalidoException e) {
+            e.printStackTrace();
+        } catch (SaldoInsuficienteException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            fachada.debitarVEM("321", fachada.listOnibus().get(0));
+        } catch (RepositorioInvalidoException e) {
+            e.printStackTrace();
+        } catch (VEMInexistenteException e) {
+            e.printStackTrace();
+        } catch (ValorInvalidoException e) {
+            e.printStackTrace();
+        } catch (SaldoInsuficienteException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            fachada.debitarVEM("321", fachada.listOnibus().get(0));
+        } catch (RepositorioInvalidoException e) {
+            e.printStackTrace();
+        } catch (VEMInexistenteException e) {
+            e.printStackTrace();
+        } catch (ValorInvalidoException e) {
+            e.printStackTrace();
+        } catch (SaldoInsuficienteException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            fachada.debitarVEM("321", fachada.listOnibus().get(0));
+        } catch (RepositorioInvalidoException e) {
+            e.printStackTrace();
+        } catch (VEMInexistenteException e) {
+            e.printStackTrace();
+        } catch (ValorInvalidoException e) {
+            e.printStackTrace();
+        } catch (SaldoInsuficienteException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            fachada.debitarVEM("321", fachada.listOnibus().get(0));
+        } catch (RepositorioInvalidoException e) {
+            e.printStackTrace();
+        } catch (VEMInexistenteException e) {
+            e.printStackTrace();
+        } catch (ValorInvalidoException e) {
+            e.printStackTrace();
+        } catch (SaldoInsuficienteException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            fachada.debitarVEM("321", fachada.listOnibus().get(0));
+        } catch (RepositorioInvalidoException e) {
+            e.printStackTrace();
+        } catch (VEMInexistenteException e) {
+            e.printStackTrace();
+        } catch (ValorInvalidoException e) {
+            e.printStackTrace();
+        } catch (SaldoInsuficienteException e) {
+            e.printStackTrace();
+        }
+
     }
 }

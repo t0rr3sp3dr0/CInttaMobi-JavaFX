@@ -2,6 +2,7 @@ package systems.singularity.cinttamobi.negocio.vem;
 
 import systems.singularity.cinttamobi.abstracts.VEM;
 import systems.singularity.cinttamobi.enums.TiposVEM;
+import systems.singularity.cinttamobi.exceptions.ParametroNuloException;
 import systems.singularity.cinttamobi.exceptions.SaldoInsuficienteException;
 import systems.singularity.cinttamobi.exceptions.VEMInvalidoException;
 import systems.singularity.cinttamobi.exceptions.ValorInvalidoException;

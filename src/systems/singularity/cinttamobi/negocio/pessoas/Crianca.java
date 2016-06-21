@@ -2,6 +2,7 @@ package systems.singularity.cinttamobi.negocio.pessoas;
 
 import systems.singularity.cinttamobi.exceptions.CPFInvalidoException;
 import systems.singularity.cinttamobi.exceptions.IdadeInvalidaException;
+import systems.singularity.cinttamobi.exceptions.ParametroNuloException;
 
 import java.util.Date;
 
@@ -10,7 +11,7 @@ import java.util.Date;
  */
 public class Crianca extends Pessoa {
 
-    public Crianca(String name, Date birth, String cpf) throws CPFInvalidoException, IdadeInvalidaException {
+    public Crianca(String name, Date birth, String cpf) throws CPFInvalidoException, IdadeInvalidaException, ParametroNuloException {
         super(name, birth, cpf);
         double years = Math.abs(System.currentTimeMillis() - birth.getTime())
                 / (365.25 * 24 * 60 * 60 * 1000);

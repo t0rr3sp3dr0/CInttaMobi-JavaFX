@@ -38,10 +38,10 @@ public final class RepositorioOnibusLista implements RepositoriosOnibus {
         if (this.value == null)
             this.value = object;
         else if (this.node == null) {
-            this.node = new RepositorioOnibusLista(value);
+            this.node = new RepositorioOnibusLista(object);
             this.node.parent = this;
         } else
-            this.node.insert(value);
+            this.node.insert(object);
     }
 
     @Override
