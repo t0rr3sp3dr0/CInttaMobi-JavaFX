@@ -4,6 +4,8 @@ import javafx.collections.FXCollections;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.util.StringConverter;
 import systems.singularity.cinttamobi.abstracts.VEM;
 import systems.singularity.cinttamobi.enums.TiposVEM;
@@ -31,12 +33,19 @@ public class VEMCadastroController implements Initializable {
     public Button editVEMButton;
     public Button saveVEMButton;
     public Button deleteVEMButton;
+    public Label numberVEMLabel;
     public TextField numberVEMTextField;
+    public Label typeVEMLabel;
     public ComboBox<TiposVEM> typeVEMComboBox;
+    public Label ownerNameLabel;
     public TextField ownerNameTextField;
+    public Label ownerBirthLabel;
     public DatePicker ownerBirthDatePicker;
+    public Label ownerCPFLabel;
     public TextField ownerCPFTextField;
+    public Label ownerExtraLabel;
     public TextField ownerExtraTextField;
+    public ImageView vemImageView;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -58,9 +67,13 @@ public class VEMCadastroController implements Initializable {
                 clearFieldsContatos();
 
                 ownerNameTextField.setVisible(false);
+                ownerNameLabel.setVisible(false);
                 ownerBirthDatePicker.setVisible(false);
+                ownerBirthLabel.setVisible(false);
                 ownerCPFTextField.setVisible(false);
+                ownerCPFLabel.setVisible(false);
                 ownerExtraTextField.setVisible(false);
+                ownerExtraLabel.setVisible(false);
             } else {
                 VEM vem = (VEM) newValue;
                 numberVEMTextField.setText(vem.getNumber());
@@ -71,22 +84,31 @@ public class VEMCadastroController implements Initializable {
                     ownerBirthDatePicker.setValue(vem.getPerson().getBirth().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
                     ownerCPFTextField.setText(vem.getPerson().getCPF());
 
-                    ownerNameTextField.setVisible(true);
-                    ownerBirthDatePicker.setVisible(true);
-                    ownerCPFTextField.setVisible(true);
+//                    ownerNameTextField.setVisible(true);
+//                    ownerNameLabel.setVisible(true);
+//                    ownerBirthDatePicker.setVisible(true);
+//                    ownerBirthLabel.setVisible(true);
+//                    ownerCPFTextField.setVisible(true);
+//                    ownerCPFLabel.setVisible(true);
                     if (tipoVEM == TiposVEM.Estudante) {
                         ownerExtraTextField.setText(((Estudante) vem.getPerson()).getStudentID());
-                        ownerExtraTextField.setVisible(true);
+//                        ownerExtraTextField.setVisible(true);
+//                        ownerExtraLabel.setVisible(true);
                     } else if (tipoVEM == TiposVEM.Trabalhador) {
                         ownerExtraTextField.setText(((Trabalhador) vem.getPerson()).getNIS());
-                        ownerExtraTextField.setVisible(true);
+//                        ownerExtraTextField.setVisible(true);
+//                        ownerExtraLabel.setVisible(true);
                     } else {
-                        ownerExtraTextField.setVisible(false);
+//                        ownerExtraTextField.setVisible(false);
+//                        ownerExtraLabel.setVisible(false);
                     }
                 } else {
                     ownerNameTextField.setVisible(false);
+                    ownerNameLabel.setVisible(false);
                     ownerBirthDatePicker.setVisible(false);
+                    ownerBirthLabel.setVisible(false);
                     ownerCPFTextField.setVisible(false);
+                    ownerCPFLabel.setVisible(false);
                 }
             }
         });
@@ -103,27 +125,52 @@ public class VEMCadastroController implements Initializable {
                 return null;
             }
         });
-        new ComboBoxAutoComplete<TiposVEM>(typeVEMComboBox);
-
-        SelectionModel selectionModel1 = typeVEMComboBox.getSelectionModel();
-        selectionModel1.selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+        typeVEMComboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue == TiposVEM._null || newValue == TiposVEM.Comum) {
                 ownerNameTextField.setVisible(false);
+                ownerNameLabel.setVisible(false);
                 ownerBirthDatePicker.setVisible(false);
+                ownerBirthLabel.setVisible(false);
                 ownerCPFTextField.setVisible(false);
+                ownerCPFLabel.setVisible(false);
                 ownerExtraTextField.setVisible(false);
+                ownerExtraLabel.setVisible(false);
+                if (newValue == TiposVEM.Comum)
+                    vemImageView.setImage(new Image(getClass().getResourceAsStream("/images/VEMComum.png")));
+                else
+                    vemImageView.setImage(null);
             } else if (newValue == TiposVEM.Estudante || newValue == TiposVEM.Trabalhador) {
                 ownerNameTextField.setVisible(true);
+                ownerNameLabel.setVisible(true);
                 ownerBirthDatePicker.setVisible(true);
+                ownerBirthLabel.setVisible(true);
                 ownerCPFTextField.setVisible(true);
+                ownerCPFLabel.setVisible(true);
                 ownerExtraTextField.setVisible(true);
+                ownerExtraLabel.setVisible(true);
+                if (newValue == TiposVEM.Estudante) {
+                    ownerExtraLabel.setText("ID Estudantil");
+                    vemImageView.setImage(new Image(getClass().getResourceAsStream("/images/VEMEstudante.png")));
+                } else {
+                    ownerExtraLabel.setText("NIS");
+                    vemImageView.setImage(new Image(getClass().getResourceAsStream("/images/VEMTrabalhador.png")));
+                }
             } else {
                 ownerNameTextField.setVisible(true);
+                ownerNameLabel.setVisible(true);
                 ownerBirthDatePicker.setVisible(true);
+                ownerBirthLabel.setVisible(true);
                 ownerCPFTextField.setVisible(true);
+                ownerCPFLabel.setVisible(true);
                 ownerExtraTextField.setVisible(false);
+                ownerExtraLabel.setVisible(false);
+                if (newValue == TiposVEM.Infantil)
+                    vemImageView.setImage(new Image(getClass().getResourceAsStream("/images/VEMInfantil.png")));
+                else if (newValue == TiposVEM.Idoso)
+                    vemImageView.setImage(new Image(getClass().getResourceAsStream("/images/VEMIdoso.png")));
             }
         });
+        new ComboBoxAutoComplete<TiposVEM>(typeVEMComboBox);
     }
 
     private void clearFieldsContatos() {
