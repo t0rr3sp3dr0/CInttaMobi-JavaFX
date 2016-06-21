@@ -1,4 +1,4 @@
-package systems.singularity.cinttamobi.guiController;
+package systems.singularity.cinttamobi.gui.controllers;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -6,7 +6,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
-
 
 import java.net.URL;
 import java.util.ResourceBundle;

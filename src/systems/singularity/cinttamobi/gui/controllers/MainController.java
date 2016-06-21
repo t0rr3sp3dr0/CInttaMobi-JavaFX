@@ -1,19 +1,14 @@
-package systems.singularity.cinttamobi.guiController;
+package systems.singularity.cinttamobi.gui.controllers;
 
 import javafx.embed.swing.SwingNode;
-import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
-import javafx.scene.layout.Pane;
 import systems.singularity.cinttamobi.gui.GamePanel;
-import systems.singularity.cinttamobi.negocio.gui.AsyncCallable;
 import systems.singularity.cinttamobi.negocio.gui.StageTools;
 
 import javax.swing.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Properties;
@@ -42,7 +37,7 @@ public class MainController implements Initializable {
 
         stageTools.newTab("vemCadastro", tabPane);
         stageTools.newTab("onibusCadastro", tabPane);
-        onMovement();
+//        onMovement();
     }
 
     public void setPane(final SwingNode swingNode) {

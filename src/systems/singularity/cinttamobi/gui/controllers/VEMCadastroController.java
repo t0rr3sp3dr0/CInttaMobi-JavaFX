@@ -1,10 +1,9 @@
-package systems.singularity.cinttamobi.guiController;
+package systems.singularity.cinttamobi.gui.controllers;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.shape.ObservableFaceArray;
 import javafx.util.StringConverter;
 import systems.singularity.cinttamobi.abstracts.VEM;
 import systems.singularity.cinttamobi.enums.TiposVEM;
@@ -13,9 +12,7 @@ import systems.singularity.cinttamobi.negocio.gui.AsyncCallable;
 import systems.singularity.cinttamobi.negocio.gui.ComboBoxAutoComplete;
 import systems.singularity.cinttamobi.negocio.pessoas.Estudante;
 import systems.singularity.cinttamobi.negocio.pessoas.Trabalhador;
-import systems.singularity.cinttamobi.negocio.vem.VEMEstudante;
 
-import java.net.Proxy;
 import java.net.URL;
 import java.time.ZoneId;
 import java.util.ResourceBundle;
