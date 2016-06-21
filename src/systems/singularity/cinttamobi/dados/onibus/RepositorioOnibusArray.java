@@ -1,7 +1,6 @@
 package systems.singularity.cinttamobi.dados.onibus;
 
 import systems.singularity.cinttamobi.interfaces.RepositoriosOnibus;
-import systems.singularity.cinttamobi.interfaces.RepositoriosVEM;
 import systems.singularity.cinttamobi.negocio.Onibus;
 
 import java.util.ArrayList;
@@ -18,7 +17,7 @@ public class RepositorioOnibusArray implements RepositoriosOnibus {
     @Override
     public boolean exists(String id) {
         for (int i = 0; i < onibus.length; i++)
-            if (onibus[i].getId().equals(id))
+            if (onibus[i].getNumber().equals(id))
                 return true;
         return false;
     }
@@ -36,7 +35,7 @@ public class RepositorioOnibusArray implements RepositoriosOnibus {
     public void update(Onibus object) {
 
         for (int i = 0; i < this.onibus.length; i++)
-            if (this.onibus[i].getId().equals(object.getId())) {
+            if (this.onibus[i].getNumber().equals(object.getNumber())) {
                 this.onibus[i] = object;
                 return;
             }
@@ -46,7 +45,7 @@ public class RepositorioOnibusArray implements RepositoriosOnibus {
     public void remove(Onibus object) {
         Onibus[] onibus = new Onibus[this.onibus.length - 1];
         for (int i = 0, j = 0; i < this.onibus.length; i++)
-            if (!this.onibus[i].getId().equals(((Onibus) object).getId())) {
+            if (!this.onibus[i].getNumber().equals(((Onibus) object).getNumber())) {
                 onibus[j] = this.onibus[i];
                 j++;
             }
@@ -56,7 +55,7 @@ public class RepositorioOnibusArray implements RepositoriosOnibus {
     @Override
     public Onibus search(String id) {
         for (Onibus onibus : this.onibus)
-            if (onibus.getId().equals(id))
+            if (onibus.getNumber().equals(id))
                 return onibus;
         return null;
     }

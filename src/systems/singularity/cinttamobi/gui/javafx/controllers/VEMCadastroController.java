@@ -64,7 +64,7 @@ public class VEMCadastroController implements Initializable {
         SelectionModel selectionModel = vemTableView.getSelectionModel();
         selectionModel.selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue == null) {
-                clearFieldsContatos();
+                clearFields();
 
                 ownerNameTextField.setVisible(false);
                 ownerNameLabel.setVisible(false);
@@ -77,31 +77,16 @@ public class VEMCadastroController implements Initializable {
             } else {
                 VEM vem = (VEM) newValue;
                 numberVEMTextField.setText(vem.getNumber());
-                TiposVEM tipoVEM = TiposVEM.valueOf(vem.getT().equals("") ? "_null" : vem.getT());
+                TiposVEM tipoVEM = vem.getT();
                 typeVEMComboBox.setValue(tipoVEM);
                 if (tipoVEM != TiposVEM.Comum) {
                     ownerNameTextField.setText(vem.getPerson().getName());
                     ownerBirthDatePicker.setValue(vem.getPerson().getBirth().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
                     ownerCPFTextField.setText(vem.getPerson().getCPF());
-
-//                    ownerNameTextField.setVisible(true);
-//                    ownerNameLabel.setVisible(true);
-//                    ownerBirthDatePicker.setVisible(true);
-//                    ownerBirthLabel.setVisible(true);
-//                    ownerCPFTextField.setVisible(true);
-//                    ownerCPFLabel.setVisible(true);
-                    if (tipoVEM == TiposVEM.Estudante) {
+                    if (tipoVEM == TiposVEM.Estudante)
                         ownerExtraTextField.setText(((Estudante) vem.getPerson()).getStudentID());
-//                        ownerExtraTextField.setVisible(true);
-//                        ownerExtraLabel.setVisible(true);
-                    } else if (tipoVEM == TiposVEM.Trabalhador) {
+                    else if (tipoVEM == TiposVEM.Trabalhador)
                         ownerExtraTextField.setText(((Trabalhador) vem.getPerson()).getNIS());
-//                        ownerExtraTextField.setVisible(true);
-//                        ownerExtraLabel.setVisible(true);
-                    } else {
-//                        ownerExtraTextField.setVisible(false);
-//                        ownerExtraLabel.setVisible(false);
-                    }
                 } else {
                     ownerNameTextField.setVisible(false);
                     ownerNameLabel.setVisible(false);
@@ -149,7 +134,7 @@ public class VEMCadastroController implements Initializable {
                 ownerExtraTextField.setVisible(true);
                 ownerExtraLabel.setVisible(true);
                 if (newValue == TiposVEM.Estudante) {
-                    ownerExtraLabel.setText("ID Estudantil");
+                    ownerExtraLabel.setText("Carteira Estudantil");
                     vemImageView.setImage(new Image(getClass().getResourceAsStream("/images/VEMEstudante.png")));
                 } else {
                     ownerExtraLabel.setText("NIS");
@@ -173,7 +158,7 @@ public class VEMCadastroController implements Initializable {
         new ComboBoxAutoComplete<TiposVEM>(typeVEMComboBox);
     }
 
-    private void clearFieldsContatos() {
+    private void clearFields() {
         numberVEMTextField.setText("");
         typeVEMComboBox.setValue(TiposVEM._null);
         ownerNameTextField.setText("");

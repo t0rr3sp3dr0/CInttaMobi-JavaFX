@@ -77,7 +77,7 @@
                     <children>
                         <HBox minWidth="0.0" prefWidth="0.0">
                             <children>
-                                <Label fx:id="numberVEMLabel" alignment="CENTER_RIGHT" prefWidth="96.0" text="Número">
+                                <Label fx:id="numberVEMLabel" alignment="CENTER_RIGHT" prefWidth="128.0" text="Número">
                                     <HBox.margin>
                                         <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
                                     </HBox.margin>
@@ -91,12 +91,12 @@
                         </HBox>
                         <HBox minWidth="0.0" prefWidth="0.0">
                             <children>
-                                <Label fx:id="typeVEMLabel" alignment="CENTER_RIGHT" prefWidth="96.0" text="Tipo">
+                                <Label fx:id="typeVEMLabel" alignment="CENTER_RIGHT" prefWidth="128.0" text="Tipo">
                                     <HBox.margin>
                                         <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
                                     </HBox.margin>
                                 </Label>
-                                <ComboBox fx:id="typeVEMComboBox" maxWidth="Infinity" HBox.hgrow="ALWAYS">
+                                <ComboBox fx:id="typeVEMComboBox" minWidth="0" maxWidth="Infinity" HBox.hgrow="ALWAYS">
                                     <HBox.margin>
                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                                     </HBox.margin>
@@ -105,7 +105,7 @@
                         </HBox>
                         <HBox minWidth="0.0" prefWidth="0.0">
                             <children>
-                                <Label fx:id="ownerNameLabel" alignment="CENTER_RIGHT" prefWidth="96.0" text="Titular"
+                                <Label fx:id="ownerNameLabel" alignment="CENTER_RIGHT" prefWidth="128.0" text="Titular"
                                        visible="false">
                                     <HBox.margin>
                                         <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
@@ -120,7 +120,7 @@
                         </HBox>
                         <HBox layoutX="10.0" layoutY="80.0" minWidth="0.0" prefWidth="0.0">
                             <children>
-                                <Label fx:id="ownerBirthLabel" alignment="CENTER_RIGHT" prefWidth="96.0"
+                                <Label fx:id="ownerBirthLabel" alignment="CENTER_RIGHT" prefWidth="128.0"
                                        text="Nascimento" visible="false">
                                     <HBox.margin>
                                         <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
@@ -136,7 +136,7 @@
                         </HBox>
                         <HBox minWidth="0.0" prefWidth="0.0">
                             <children>
-                                <Label fx:id="ownerCPFLabel" alignment="CENTER_RIGHT" prefWidth="96.0" text="CPF"
+                                <Label fx:id="ownerCPFLabel" alignment="CENTER_RIGHT" prefWidth="128.0" text="CPF"
                                        visible="false">
                                     <HBox.margin>
                                         <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
@@ -151,7 +151,7 @@
                         </HBox>
                         <HBox layoutX="10.0" layoutY="150.0" minWidth="0.0" prefWidth="0.0">
                             <children>
-                                <Label fx:id="ownerExtraLabel" alignment="CENTER_RIGHT" prefWidth="96.0"
+                                <Label fx:id="ownerExtraLabel" alignment="CENTER_RIGHT" prefWidth="128.0"
                                        text="{{ EXTRA }}" visible="false">
                                     <HBox.margin>
                                         <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>

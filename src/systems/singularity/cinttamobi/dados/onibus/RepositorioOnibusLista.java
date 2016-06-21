@@ -4,7 +4,6 @@ import systems.singularity.cinttamobi.interfaces.RepositoriosOnibus;
 import systems.singularity.cinttamobi.negocio.Onibus;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by phts on 19/06/16.
@@ -25,7 +24,7 @@ public final class RepositorioOnibusLista implements RepositoriosOnibus {
     public boolean exists(String id) {
         if (this.value == null)
             return false;
-        else if (this.value.getId().equals(id))
+        else if (this.value.getNumber().equals(id))
             return true;
         else if (this.node == null)
             return false;
@@ -48,7 +47,7 @@ public final class RepositorioOnibusLista implements RepositoriosOnibus {
     @Override
     public void update(Onibus object) {
 
-        if (this.value.getId().equals(object.getId()))
+        if (this.value.getNumber().equals(object.getNumber()))
             this.value = object;
         else if (this.node != null)
             this.node.update(object);
@@ -57,7 +56,7 @@ public final class RepositorioOnibusLista implements RepositoriosOnibus {
     @Override
     public void remove(Onibus object) {
 
-        if (this.value.getId().equals(object.getId())) {
+        if (this.value.getNumber().equals(object.getNumber())) {
             if (this.parent == null) {
                 this.value = this.node.value;
                 this.node = this.node.node;
@@ -69,7 +68,7 @@ public final class RepositorioOnibusLista implements RepositoriosOnibus {
 
     @Override
     public Onibus search(String id) {
-        if (this.value.getId().equals(id))
+        if (this.value.getNumber().equals(id))
             return this.value;
         else if (this.node != null)
             return this.node.search(id);

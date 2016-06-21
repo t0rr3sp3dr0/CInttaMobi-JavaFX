@@ -4,6 +4,7 @@ package systems.singularity.cinttamobi.enums;
  * Created by phts on 17/06/16.
  */
 public enum Aneis {
+    _null(null, -1),
     A("A", 2.80),
     B("B", 3.85),
     D("D", 3.00),
@@ -27,6 +28,6 @@ public enum Aneis {
 
     @Override
     public String toString() {
-        return name;
+        return name.replace("null", "");
     }
 }

@@ -4,6 +4,7 @@ package systems.singularity.cinttamobi.enums;
  * Created by phts on 17/06/16.
  */
 public enum Linhas {
+    _null(null, null, Aneis._null),
     _1940("1940", "TI PE-15 (Circular)", Aneis.B),
     _1933("1933", "TI Abreu e Lima / TI Pelópidas", Aneis.B),
     _33("33", "Aeroporto", Aneis.A),
@@ -433,6 +434,6 @@ public enum Linhas {
 
     @Override
     public String toString() {
-        return String.format("%s - %s", number, name);
+        return String.format("%s - %s", number, name).replace("null - null", "");
     }
 }

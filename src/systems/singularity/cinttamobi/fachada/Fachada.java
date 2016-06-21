@@ -2,13 +2,11 @@ package systems.singularity.cinttamobi.fachada;
 
 import systems.singularity.cinttamobi.Programa;
 import systems.singularity.cinttamobi.abstracts.VEM;
-import systems.singularity.cinttamobi.enums.Linhas;
 import systems.singularity.cinttamobi.exceptions.*;
 import systems.singularity.cinttamobi.negocio.NegociosOnibus;
 import systems.singularity.cinttamobi.negocio.NegociosPessoa;
 import systems.singularity.cinttamobi.negocio.NegociosVEM;
 import systems.singularity.cinttamobi.negocio.Onibus;
-import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 import systems.singularity.cinttamobi.negocio.vem.VEMComum;
 
 import java.io.BufferedReader;
@@ -21,17 +19,11 @@ import java.util.List;
  * Created by esvm on 20/06/16.
  */
 public class Fachada {
-    private String tipo = "";
     private static Fachada ourInstance = new Fachada();
-
-    public static Fachada getInstance() {
-        return ourInstance;
-    }
-
+    private String tipo = "";
     private NegociosOnibus negociosOnibus;
     private NegociosPessoa negociosPessoa;
     private NegociosVEM negociosVEM;
-
     private Fachada() {
         try {
             BufferedReader in = new BufferedReader(new FileReader(Programa.class.getResource("config.txt").getPath()));
@@ -46,6 +38,10 @@ public class Fachada {
         } catch (RepositorioInvalidoException e) {
             e.printStackTrace();
         }
+    }
+
+    public static Fachada getInstance() {
+        return ourInstance;
     }
 
     public void cadastrarVEM(VEM vem) throws PessoaExistenteException, VEMExistenteException {
@@ -83,7 +79,7 @@ public class Fachada {
 
     public void debitarVEM(String id, Onibus onibus) throws RepositorioInvalidoException, VEMInexistenteException, ValorInvalidoException, SaldoInsuficienteException {
         VEM vem = negociosVEM.search(id);
-        vem.debit(onibus.getLinha().getRing().getPrice());
+        vem.debit(onibus.getLine().getRing().getPrice());
         negociosVEM.update(vem);
     }
 }

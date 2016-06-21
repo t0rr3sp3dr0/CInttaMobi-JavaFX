@@ -1,5 +1,6 @@
 package systems.singularity.cinttamobi.abstracts;
 
+import systems.singularity.cinttamobi.enums.TiposVEM;
 import systems.singularity.cinttamobi.exceptions.OperacaoInvalidaException;
 import systems.singularity.cinttamobi.exceptions.SaldoInsuficienteException;
 import systems.singularity.cinttamobi.exceptions.VEMInvalidoException;
@@ -43,17 +44,17 @@ public abstract class VEM {
     // Os metodos abaixo são utilizados única e exclusivamente
     // para popular a TableView no JavaFX
 
-    public String getT() {
+    public TiposVEM getT() {
         if (person instanceof Crianca)
-            return "Infantil";
+            return TiposVEM.Infantil;
         else if (person instanceof Estudante)
-            return "Estudante";
+            return TiposVEM.Estudante;
         else if (person instanceof Idoso)
-            return "Idoso";
+            return TiposVEM.Idoso;
         else if (person instanceof Trabalhador)
-            return "Trabalhador";
+            return TiposVEM.Trabalhador;
         else
-            return "Comum";
+            return TiposVEM.Comum;
     }
 
     public String getN() {
