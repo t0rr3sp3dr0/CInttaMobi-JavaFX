@@ -53,6 +53,8 @@ public class Fachada {
                 negociosVEM.insert(vem);
                 negociosPessoa.insert(vem.getPerson());
             }
+            else
+                negociosPessoa.insert(vem.getPerson());
         }
         else
             negociosVEM.insert(vem);
