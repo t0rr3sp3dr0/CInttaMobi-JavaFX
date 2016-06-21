@@ -25,8 +25,8 @@ public class GamePanel extends JPanel implements ComponentListener {
     private boolean[][] blockedTiles = new boolean[(ScaleW*4)][(ScaleH*4)];
     private int[] tilesX = new int[(ScaleW*4)];
     private int[] tilesY = new int[(ScaleH*4)];
-    private int presentTileX = 4;
-    private int presentTileY = 5;
+    private int presentTileX = ScaleW+3;
+    private int presentTileY = (ScaleH*4)-2;
     private int presentMoveVariantX = 0;
     private int presentMoveVariantY = 0;
 
