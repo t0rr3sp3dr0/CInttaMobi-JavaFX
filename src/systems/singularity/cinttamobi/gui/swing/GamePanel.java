@@ -10,7 +10,7 @@ import java.awt.event.*;
 import java.util.Arrays;
 
 /**
- * Created by lvrma on 20/06/16.
+ * Created by Lucas on 20/06/16.
  */
 public class GamePanel extends JPanel implements ComponentListener {
 
@@ -22,16 +22,16 @@ public class GamePanel extends JPanel implements ComponentListener {
     private int ScaleH = 3;
     private int speedMultiplier = 1;
     private boolean isMoving = false;
-    private boolean[][] blockedTiles = new boolean[(ScaleW*2)][(ScaleH*2)];
-    private int[] tilesX = new int[(ScaleW*2)];
-    private int[] tilesY = new int[(ScaleH*2)];
-    private int presentTileX = 0;
-    private int presentTileY = 0;
+    private boolean[][] blockedTiles = new boolean[(ScaleW*4)][(ScaleH*4)];
+    private int[] tilesX = new int[(ScaleW*4)];
+    private int[] tilesY = new int[(ScaleH*4)];
+    private int presentTileX = ScaleW+3;
+    private int presentTileY = (ScaleH*4)-2;
     private int presentMoveVariantX = 0;
     private int presentMoveVariantY = 0;
 
     private Image background = Toolkit.getDefaultToolkit().getImage(
-            Programa.class.getResource("/images/logo.png"));
+            Programa.class.getResource("/images/background.png"));
 
     private Image southStand = Toolkit.getDefaultToolkit().getImage(
             Programa.class.getResource("/images/southStand.png"));
@@ -75,7 +75,7 @@ public class GamePanel extends JPanel implements ComponentListener {
         super.paint(g);
         g.drawImage(background, x, y, getWidth(), getHeight(), this);
         g.drawImage(character, presentMoveVariantX + tilesX[presentTileX],
-                presentMoveVariantY + tilesY[presentTileY], (getWidth() / (ScaleW*2)), (getHeight() / (ScaleH*2)), this);
+                presentMoveVariantY + tilesY[presentTileY], (getWidth() / (ScaleW*8)), (getHeight() / (ScaleH*5)), this);
     }
 
     public void componentResized(ComponentEvent arg0) {
@@ -110,12 +110,12 @@ public class GamePanel extends JPanel implements ComponentListener {
                 EventsTimeline.setDelay(150/speedMultiplier);
                 eventsTimeline.add(event -> {
                     character = northWalk1;
-                    presentMoveVariantY -= (getHeight() / (ScaleH*2)) / 2;
+                    presentMoveVariantY -= (getHeight() / (ScaleH*4)) / 2;
                     repaint();
                 });
                 eventsTimeline.add(event -> {
                     character = northWalk2;
-                    presentMoveVariantY -= (getHeight() / (ScaleH*2)) / 2;
+                    presentMoveVariantY -= (getHeight() / (ScaleH*4)) / 2;
                     repaint();
                 });
                 eventsTimeline.add(event -> {
@@ -123,7 +123,7 @@ public class GamePanel extends JPanel implements ComponentListener {
                     presentMoveVariantY = 0;
                     presentTileY--;
                     repaint();
-                }, 100);
+                }, 100/speedMultiplier);
 
                 eventsTimeline.play();
             }
@@ -138,12 +138,12 @@ public class GamePanel extends JPanel implements ComponentListener {
                 EventsTimeline.setDelay(150/speedMultiplier);
                 eventsTimeline.add(event -> {
                     character = southWalk1;
-                    presentMoveVariantY += (getHeight() / (ScaleH*2)) / 2;
+                    presentMoveVariantY += (getHeight() / (ScaleH*4)) / 2;
                     repaint();
                 });
                 eventsTimeline.add(event -> {
                     character = southWalk2;
-                    presentMoveVariantY += (getHeight() / (ScaleH*2)) / 2;
+                    presentMoveVariantY += (getHeight() / (ScaleH*4)) / 2;
                     repaint();
                 });
                 eventsTimeline.add(event -> {
@@ -151,7 +151,7 @@ public class GamePanel extends JPanel implements ComponentListener {
                     presentMoveVariantY = 0;
                     presentTileY++;
                     repaint();
-                }, 100);
+                }, 100/speedMultiplier);
 
                 eventsTimeline.play();
             }
@@ -166,12 +166,12 @@ public class GamePanel extends JPanel implements ComponentListener {
                 EventsTimeline.setDelay(150/speedMultiplier);
                 eventsTimeline.add(event -> {
                     character = westWalk1;
-                    presentMoveVariantX -= (getHeight() / (ScaleH*2)) / 2;
+                    presentMoveVariantX -= (getHeight() / (ScaleH*4)) / 2;
                     repaint();
                 });
                 eventsTimeline.add(event -> {
                     character = westWalk2;
-                    presentMoveVariantX -= (getHeight() / (ScaleH*2)) / 2;
+                    presentMoveVariantX -= (getHeight() / (ScaleH*4)) / 2;
                     repaint();
                 });
                 eventsTimeline.add(event -> {
@@ -179,7 +179,7 @@ public class GamePanel extends JPanel implements ComponentListener {
                     presentMoveVariantX = 0;
                     presentTileX--;
                     repaint();
-                }, 100);
+                }, 100/speedMultiplier);
                 eventsTimeline.play();
             }
         }
@@ -193,12 +193,12 @@ public class GamePanel extends JPanel implements ComponentListener {
                 EventsTimeline.setDelay(150/speedMultiplier);
                 eventsTimeline.add(event -> {
                     character = eastWalk1;
-                    presentMoveVariantX += (getHeight() / (ScaleH*2)) / 2;
+                    presentMoveVariantX += (getHeight() / (ScaleH*4)) / 2;
                     repaint();
                 });
                 eventsTimeline.add(event -> {
                     character = eastWalk2;
-                    presentMoveVariantX += (getHeight() / (ScaleH*2)) / 2;
+                    presentMoveVariantX += (getHeight() / (ScaleH*4)) / 2;
                     repaint();
                 });
                 eventsTimeline.add(event -> {
@@ -206,7 +206,7 @@ public class GamePanel extends JPanel implements ComponentListener {
                     presentMoveVariantX = 0;
                     presentTileX++;
                     repaint();
-                }, 100);
+                }, 100/speedMultiplier);
 
                 eventsTimeline.play();
             }
@@ -226,10 +226,10 @@ public class GamePanel extends JPanel implements ComponentListener {
     };
 
     private void reTile() {
-        for (int i = 0; i < (ScaleW*2); i++)
-            tilesX[i] = (getWidth() / (ScaleW*2)) * i;
-        for (int j = 0; j < (ScaleH*2); j++)
-            tilesY[j] = (getHeight() / (ScaleH*2)) * j;
+        for (int i = 0; i < (ScaleW*4); i++)
+            tilesX[i] = (getWidth() / (ScaleW*4)) * i;
+        for (int j = 0; j < (ScaleH*4); j++)
+            tilesY[j] = (getHeight() / (ScaleH*4)) * j;
     }
 
     public void componentShown(ComponentEvent arg0) {
