@@ -21,6 +21,7 @@ import java.util.List;
 public class Fachada {
     private static Fachada ourInstance = new Fachada();
     private String tipo = "";
+    public  boolean repInvalido = false;
     private NegociosOnibus negociosOnibus;
     private NegociosPessoa negociosPessoa;
     private NegociosVEM negociosVEM;
@@ -37,6 +38,7 @@ public class Fachada {
             e.printStackTrace();
         } catch (RepositorioInvalidoException e) {
             e.printStackTrace();
+            repInvalido = true;
         }
     }
 
