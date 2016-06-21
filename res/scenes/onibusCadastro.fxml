@@ -12,8 +12,10 @@
             <children>
                 <TableView fx:id="onibusTableView" minHeight="120.0" VBox.vgrow="ALWAYS">
                     <columns>
-                        <TableColumn fx:id="idOnibusTableColumn" minWidth="104.0" prefWidth="139.0" text="Número da Linha" />
-                        <TableColumn fx:id="linhaOnibusTableColumn" minWidth="128.0" prefWidth="245.0" text="Linha" />
+                        <TableColumn fx:id="idOnibusTableColumn" minWidth="104.0" prefWidth="139.0"
+                                     text="Número da Linha" />
+                        <TableColumn fx:id="linhaOnibusTableColumn" minWidth="128.0" prefWidth="245.0"
+                                     text="Linha" />
                     </columns>
                 </TableView>
                 <HBox>
