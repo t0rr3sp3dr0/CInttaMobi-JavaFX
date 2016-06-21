@@ -75,8 +75,23 @@ public class MainController implements Initializable {
 
         scene.setOnKeyReleased(event -> {
             if(tabPane.getSelectionModel().isSelected(0))
-                if (event.getCode() == KeyCode.SHIFT)
-                    panel.stopRun();
+                switch (event.getCode()) {
+                    case W:
+                        panel.stopMoving();
+                        break;
+                    case S:
+                        panel.stopMoving();
+                        break;
+                    case A:
+                        panel.stopMoving();
+                        break;
+                    case D:
+                        panel.stopMoving();
+                        break;
+                    case SHIFT:
+                        panel.stopRun();
+                        break;
+                }
         });
     }
 }
