@@ -707,6 +707,10 @@ public class Testes {
     }
 
     private static String randNumber(int length) {
-        return String.valueOf(Math.random()).substring(2).substring(0, length);
+        try {
+            return String.valueOf(Math.random()).substring(2).substring(0, length);
+        } catch (Exception e) {
+            return randNumber(length);
+        }
     }
 }

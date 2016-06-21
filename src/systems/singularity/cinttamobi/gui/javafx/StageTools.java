@@ -52,8 +52,8 @@ public class StageTools {
 
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Exception");
-        alert.setHeaderText(e.toString().split(":")[0]);
-        alert.setContentText(e.getMessage());
+        alert.setHeaderText(e.getMessage());
+        alert.setContentText(e.toString().split(":")[0]);
 
         StringWriter sw = new StringWriter();
         PrintWriter pw = new PrintWriter(sw);

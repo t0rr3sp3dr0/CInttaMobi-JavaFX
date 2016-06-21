@@ -12,11 +12,17 @@ import systems.singularity.cinttamobi.enums.TiposVEM;
 import systems.singularity.cinttamobi.fachada.Fachada;
 import systems.singularity.cinttamobi.gui.javafx.AsyncCallable;
 import systems.singularity.cinttamobi.gui.javafx.ComboBoxAutoComplete;
+import systems.singularity.cinttamobi.gui.javafx.StageTools;
+import systems.singularity.cinttamobi.negocio.pessoas.Crianca;
 import systems.singularity.cinttamobi.negocio.pessoas.Estudante;
+import systems.singularity.cinttamobi.negocio.pessoas.Idoso;
 import systems.singularity.cinttamobi.negocio.pessoas.Trabalhador;
+import systems.singularity.cinttamobi.negocio.vem.*;
 
 import java.net.URL;
+import java.time.Instant;
 import java.time.ZoneId;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 /**
@@ -158,12 +164,103 @@ public class VEMCadastroController implements Initializable {
         new ComboBoxAutoComplete<TiposVEM>(typeVEMComboBox);
 
         addVEMButton.setOnAction(event -> {
+            vemTableView.setItems(FXCollections.observableArrayList(fachada.listVEM()));
+            vemTableView.getSelectionModel().clearSelection();
         });
         editVEMButton.setOnAction(event -> {
         });
         saveVEMButton.setOnAction(event -> {
+            boolean reloadTable = false;
+
+            if (numberVEMTextField.getText().equals(""))
+                StageTools.alert(Alert.AlertType.WARNING, null, "Número do VEM é um campo obrigatório!", null, true);
+            else {
+                TiposVEM tipoVEM = typeVEMComboBox.getValue();
+                if (tipoVEM == null || tipoVEM == TiposVEM._null) {
+                    StageTools.alert(Alert.AlertType.WARNING, null, "Tipo do VEM é um campo obrigatório!", null, true);
+                } else if (tipoVEM == TiposVEM.Comum) {
+                    try {
+                        fachada.cadastrarVEM(new VEMComum(numberVEMTextField.getText()));
+                        reloadTable = true;
+                    } catch (Exception e) {
+                        StageTools.exception(e, true);
+                    }
+                } else if (ownerBirthDatePicker.getValue() == null) {
+                    StageTools.alert(Alert.AlertType.WARNING, null, "Data de Nascimento é um campo obrigatório!", null, true);
+                } else {
+                    if (tipoVEM == TiposVEM.Estudante) {
+                        try {
+                            fachada.cadastrarVEM(new VEMEstudante(
+                                    numberVEMTextField.getText(),
+                                    new Estudante(
+                                            ownerNameTextField.getText(),
+                                            Date.from(Instant.from(ownerBirthDatePicker.getValue().atStartOfDay(ZoneId.systemDefault()))),
+                                            ownerCPFTextField.getText(),
+                                            ownerExtraTextField.getText()
+                                    )));
+                            reloadTable = true;
+                        } catch (Exception e) {
+                            StageTools.exception(e, true);
+                        }
+                    } else if (tipoVEM == TiposVEM.Idoso) {
+                        try {
+                            fachada.cadastrarVEM(new VEMIdoso(
+                                    numberVEMTextField.getText(),
+                                    new Idoso(
+                                            ownerNameTextField.getText(),
+                                            Date.from(Instant.from(ownerBirthDatePicker.getValue().atStartOfDay(ZoneId.systemDefault()))),
+                                            ownerCPFTextField.getText()
+                                    )));
+                            reloadTable = true;
+                        } catch (Exception e) {
+                            StageTools.exception(e, true);
+                        }
+                    } else if (tipoVEM == TiposVEM.Infantil) {
+                        try {
+                            fachada.cadastrarVEM(new VEMInfantil(
+                                    numberVEMTextField.getText(),
+                                    new Crianca(
+                                            ownerNameTextField.getText(),
+                                            Date.from(Instant.from(ownerBirthDatePicker.getValue().atStartOfDay(ZoneId.systemDefault()))),
+                                            ownerCPFTextField.getText()
+                                    )));
+                            reloadTable = true;
+                        } catch (Exception e) {
+                            StageTools.exception(e, true);
+                        }
+                    } else if (tipoVEM == TiposVEM.Trabalhador) {
+                        try {
+                            fachada.cadastrarVEM(new VEMTrabalhador(
+                                    numberVEMTextField.getText(),
+                                    new Trabalhador(
+                                            ownerNameTextField.getText(),
+                                            Date.from(Instant.from(ownerBirthDatePicker.getValue().atStartOfDay(ZoneId.systemDefault()))),
+                                            ownerCPFTextField.getText(),
+                                            ownerExtraTextField.getText()
+                                    )));
+                            reloadTable = true;
+                        } catch (Exception e) {
+                            StageTools.exception(e, true);
+                        }
+                    }
+                }
+            }
+
+            if (reloadTable) {
+                clearFields();
+                vemTableView.setItems(FXCollections.observableArrayList(fachada.listVEM()));
+                vemTableView.getSelectionModel().clearSelection();
+            }
         });
         deleteVEMButton.setOnAction(event -> {
+            try {
+                fachada.removerVEM((VEM) selectionModel.getSelectedItem());
+            } catch (Exception e) {
+                StageTools.exception(e, true);
+            }
+
+            vemTableView.setItems(FXCollections.observableArrayList(fachada.listVEM()));
+            vemTableView.getSelectionModel().clearSelection();
         });
     }
 
