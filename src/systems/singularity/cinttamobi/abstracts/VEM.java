@@ -18,7 +18,7 @@ public abstract class VEM {
     public VEM(String number, Pessoa person) throws VEMInvalidoException {
         // TO-DO
         // Verify if number or person already exists
-        if (number == null)
+        if (number == null || number.replaceAll("\\D+", "").length() != 13)
             throw new VEMInvalidoException();
         this.number = number;
         this.person = person;
