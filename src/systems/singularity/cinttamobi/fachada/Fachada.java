@@ -54,7 +54,8 @@ public class Fachada {
                 negociosPessoa.insert(vem.getPerson());
             }
         }
-        negociosVEM.insert(vem);
+        else
+            negociosVEM.insert(vem);
     }
 
     public void removerVEM(VEM vem) throws PessoaInexistenteException, VEMInexistenteException {
