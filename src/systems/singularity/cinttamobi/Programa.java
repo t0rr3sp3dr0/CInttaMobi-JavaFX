@@ -23,7 +23,6 @@ import systems.singularity.cinttamobi.gui.javafx.controllers.MainController;
 import java.io.IOException;
 import java.util.Optional;
 import java.util.Properties;
-import java.util.ResourceBundle;
 
 public class Programa extends Application {
     private static final boolean developerMode = true;
@@ -62,7 +61,7 @@ public class Programa extends Application {
                 event.consume();
         });
 
-        Parent splashScreen = FXMLLoader.load(getClass().getResource("/scenes/splashScreen.fxml"), ResourceBundle.getBundle("values.fxml"));
+        Parent splashScreen = FXMLLoader.load(getClass().getResource("/scenes/splashScreen.fxml"));
         splashScreen.minHeight(Double.parseDouble("480"));
         splashScreen.minWidth(Double.parseDouble("480"));
         Stage splashStage = new Stage();
