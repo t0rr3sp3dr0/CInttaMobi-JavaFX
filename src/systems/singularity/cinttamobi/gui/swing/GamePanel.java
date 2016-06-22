@@ -235,6 +235,9 @@ public class GamePanel extends JPanel implements ComponentListener {
             for (int j = 0; j < ScaleW * 4; j++) {
                 if (i > 3 && j > 4 && j < 11) {
                     blockedTiles[i][j] = true;
+                    if(i == 4 && j == 10){
+                        blockedTiles[i][j] = false;
+                    }
                 } else if (i > 6 && j > 10 && j < 13) {
                     blockedTiles[i][j] = true;
                 } else if (i > 7 && j < 13) {
@@ -253,6 +256,8 @@ public class GamePanel extends JPanel implements ComponentListener {
             MainController.mainTabPane.getSelectionModel().select(1);
         } else if (presentTileY == 6 && presentTileX == 12) {
             MainController.mainTabPane.getSelectionModel().select(3);
+        } else if(presentTileY == 5 && presentTileX == 10){
+            MainController.mainTabPane.getSelectionModel().select(4);
         }
     }
 
