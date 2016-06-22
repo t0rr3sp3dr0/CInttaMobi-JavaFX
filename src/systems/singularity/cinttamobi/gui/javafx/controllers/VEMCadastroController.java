@@ -36,7 +36,6 @@ public class VEMCadastroController implements Initializable {
     public TableColumn<VEM, String> ownerNameTableColumn;
     public TableColumn<VEM, String> ownerCPFTableColumn;
     public Button addVEMButton;
-    public Button editVEMButton;
     public Button saveVEMButton;
     public Button deleteVEMButton;
     public Label numberVEMLabel;
@@ -81,6 +80,11 @@ public class VEMCadastroController implements Initializable {
                 ownerExtraTextField.setVisible(false);
                 ownerExtraLabel.setVisible(false);
             } else {
+                numberVEMTextField.setDisable(true);
+                typeVEMComboBox.setDisable(true);
+                ownerBirthDatePicker.setDisable(true);
+                ownerCPFTextField.setDisable(true);
+
                 VEM vem = (VEM) newValue;
                 numberVEMTextField.setText(vem.getNumber());
                 TiposVEM tipoVEM = vem.getT();
@@ -164,13 +168,12 @@ public class VEMCadastroController implements Initializable {
         new ComboBoxAutoComplete<TiposVEM>(typeVEMComboBox);
 
         addVEMButton.setOnAction(event -> {
+            clearFields();
             vemTableView.setItems(FXCollections.observableArrayList(fachada.listVEM()));
             vemTableView.getSelectionModel().clearSelection();
         });
-        editVEMButton.setOnAction(event -> {
-        });
         saveVEMButton.setOnAction(event -> {
-            boolean reloadTable = false;
+            VEM vem = null;
 
             if (numberVEMTextField.getText().equals(""))
                 StageTools.alert(Alert.AlertType.WARNING, null, "Número do VEM é um campo obrigatório!", null, true);
@@ -180,8 +183,7 @@ public class VEMCadastroController implements Initializable {
                     StageTools.alert(Alert.AlertType.WARNING, null, "Tipo do VEM é um campo obrigatório!", null, true);
                 } else if (tipoVEM == TiposVEM.Comum) {
                     try {
-                        fachada.cadastrarVEM(new VEMComum(numberVEMTextField.getText()));
-                        reloadTable = true;
+                        vem = new VEMComum(numberVEMTextField.getText());
                     } catch (Exception e) {
                         StageTools.exception(e, true);
                     }
@@ -190,55 +192,51 @@ public class VEMCadastroController implements Initializable {
                 } else {
                     if (tipoVEM == TiposVEM.Estudante) {
                         try {
-                            fachada.cadastrarVEM(new VEMEstudante(
+                            vem = new VEMEstudante(
                                     numberVEMTextField.getText(),
                                     new Estudante(
                                             ownerNameTextField.getText(),
                                             Date.from(Instant.from(ownerBirthDatePicker.getValue().atStartOfDay(ZoneId.systemDefault()))),
                                             ownerCPFTextField.getText(),
                                             ownerExtraTextField.getText()
-                                    )));
-                            reloadTable = true;
+                                    ));
                         } catch (Exception e) {
                             StageTools.exception(e, true);
                         }
                     } else if (tipoVEM == TiposVEM.Idoso) {
                         try {
-                            fachada.cadastrarVEM(new VEMIdoso(
+                            vem = new VEMIdoso(
                                     numberVEMTextField.getText(),
                                     new Idoso(
                                             ownerNameTextField.getText(),
                                             Date.from(Instant.from(ownerBirthDatePicker.getValue().atStartOfDay(ZoneId.systemDefault()))),
                                             ownerCPFTextField.getText()
-                                    )));
-                            reloadTable = true;
+                                    ));
                         } catch (Exception e) {
                             StageTools.exception(e, true);
                         }
                     } else if (tipoVEM == TiposVEM.Infantil) {
                         try {
-                            fachada.cadastrarVEM(new VEMInfantil(
+                            vem = new VEMInfantil(
                                     numberVEMTextField.getText(),
                                     new Crianca(
                                             ownerNameTextField.getText(),
                                             Date.from(Instant.from(ownerBirthDatePicker.getValue().atStartOfDay(ZoneId.systemDefault()))),
                                             ownerCPFTextField.getText()
-                                    )));
-                            reloadTable = true;
+                                    ));
                         } catch (Exception e) {
                             StageTools.exception(e, true);
                         }
                     } else if (tipoVEM == TiposVEM.Trabalhador) {
                         try {
-                            fachada.cadastrarVEM(new VEMTrabalhador(
+                            vem = new VEMTrabalhador(
                                     numberVEMTextField.getText(),
                                     new Trabalhador(
                                             ownerNameTextField.getText(),
                                             Date.from(Instant.from(ownerBirthDatePicker.getValue().atStartOfDay(ZoneId.systemDefault()))),
                                             ownerCPFTextField.getText(),
                                             ownerExtraTextField.getText()
-                                    )));
-                            reloadTable = true;
+                                    ));
                         } catch (Exception e) {
                             StageTools.exception(e, true);
                         }
@@ -246,10 +244,17 @@ public class VEMCadastroController implements Initializable {
                 }
             }
 
-            if (reloadTable) {
+            try {
+                if (selectionModel.getSelectedItem() != null)
+                    fachada.atualizarVEM(vem);
+                else
+                    fachada.cadastrarVEM(vem);
+
                 clearFields();
                 vemTableView.setItems(FXCollections.observableArrayList(fachada.listVEM()));
                 vemTableView.getSelectionModel().clearSelection();
+            } catch (Exception e) {
+                StageTools.exception(e, true);
             }
         });
         deleteVEMButton.setOnAction(event -> {
@@ -265,6 +270,11 @@ public class VEMCadastroController implements Initializable {
     }
 
     private void clearFields() {
+        numberVEMTextField.setDisable(false);
+        typeVEMComboBox.setDisable(false);
+        ownerBirthDatePicker.setDisable(false);
+        ownerCPFTextField.setDisable(false);
+
         numberVEMTextField.setText("");
         typeVEMComboBox.setValue(TiposVEM._null);
         ownerNameTextField.setText("");

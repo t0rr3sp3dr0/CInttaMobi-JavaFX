@@ -16,17 +16,6 @@ import java.util.stream.Stream;
  * Created by pedro on 5/10/16.
  * © 2016 Singularity Systems
  */
-
-/**
- * Uses a combobox tooltip as the suggestion for auto complete and updates the
- * combo box items accordingly
- * It does not work with space, space and escape cause the combobox to hide and
- * clean the filter ... Send me a PR if you want it to work with all characters
- * -> It should be a custom controller - I KNOW!
- *
- * @param <T>
- * @author wsiqueir
- */
 public class ComboBoxAutoComplete<T> {
     String filter = "";
     private ComboBox<T> comboBox;

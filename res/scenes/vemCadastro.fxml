@@ -34,15 +34,6 @@
                                         </ImageView>
                                     </graphic>
                                 </Button>
-                                <Button fx:id="editVEMButton" mnemonicParsing="false">
-                                    <graphic>
-                                        <ImageView fitHeight="17.0" fitWidth="17.0">
-                                            <image>
-                                                <Image url="@/icons/ic_edit.png"/>
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                </Button>
                                 <Button fx:id="saveVEMButton" mnemonicParsing="false">
                                     <graphic>
                                         <ImageView fitHeight="17.0" fitWidth="17.0">

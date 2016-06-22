@@ -20,8 +20,8 @@ import java.util.List;
  */
 public class Fachada {
     private static Fachada ourInstance = new Fachada();
-    private String tipo = "";
     public  boolean repInvalido = false;
+    private String tipo = "";
     private NegociosOnibus negociosOnibus;
     private NegociosPessoa negociosPessoa;
     private NegociosVEM negociosVEM;
@@ -60,6 +60,12 @@ public class Fachada {
             negociosVEM.insert(vem);
     }
 
+    public void atualizarVEM(VEM vem) throws PessoaInexistenteException, VEMInexistenteException {
+        if (vem.getPerson() != null)
+            negociosPessoa.update(vem.getPerson());
+        negociosVEM.update(vem);
+    }
+
     public void removerVEM(VEM vem) throws PessoaInexistenteException, VEMInexistenteException {
         negociosPessoa.remove(vem.getPerson());
         negociosVEM.remove(vem);
@@ -71,6 +77,10 @@ public class Fachada {
 
     public void cadastrarOnibus(Onibus onibus) throws OnibusExistenteException {
         negociosOnibus.insert(onibus);
+    }
+
+    public void atualizarOnibus(Onibus onibus) throws OnibusInexistenteException {
+        negociosOnibus.update(onibus);
     }
 
     public void removeOnibus(Onibus onibus) throws OnibusInexistenteException {

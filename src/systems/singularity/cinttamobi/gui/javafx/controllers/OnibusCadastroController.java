@@ -10,6 +10,7 @@ import systems.singularity.cinttamobi.enums.TiposVEM;
 import systems.singularity.cinttamobi.fachada.Fachada;
 import systems.singularity.cinttamobi.gui.javafx.AsyncCallable;
 import systems.singularity.cinttamobi.gui.javafx.ComboBoxAutoComplete;
+import systems.singularity.cinttamobi.gui.javafx.StageTools;
 import systems.singularity.cinttamobi.negocio.Onibus;
 
 import java.net.URL;
@@ -24,7 +25,6 @@ public class OnibusCadastroController implements Initializable {
     public TableColumn<Onibus, String> idOnibusTableColumn;
     public TableColumn<Onibus, TiposVEM> linhaOnibusTableColumn;
     public Button addOnibusButton;
-    public Button editOnibusButton;
     public Button saveOnibusButton;
     public Button deleteOnibusButton;
     public TextField numberOnibusTextField;
@@ -44,9 +44,11 @@ public class OnibusCadastroController implements Initializable {
 
         SelectionModel selectionModel = onibusTableView.getSelectionModel();
         selectionModel.selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue == null) {
+            if (newValue == null)
                 clearFields();
-            } else {
+            else {
+                numberOnibusTextField.setDisable(true);
+
                 Onibus onibus = (Onibus) newValue;
                 numberOnibusTextField.setText(onibus.getNumber());
                 linhaOnibusComboBox.setValue(onibus.getLine());
@@ -66,9 +68,50 @@ public class OnibusCadastroController implements Initializable {
             }
         });
         new ComboBoxAutoComplete<Linhas>(linhaOnibusComboBox);
+
+        addOnibusButton.setOnAction(event -> {
+            clearFields();
+            onibusTableView.setItems(FXCollections.observableArrayList(fachada.listOnibus()));
+            onibusTableView.getSelectionModel().clearSelection();
+        });
+        saveOnibusButton.setOnAction(event -> {
+            Linhas linha = linhaOnibusComboBox.getValue();
+
+            if (numberOnibusTextField.getText().equals(""))
+                StageTools.alert(Alert.AlertType.WARNING, null, "Número do Ônibus é um campo obrigatório!", null, true);
+            else if (linha == null || linha == Linhas._null)
+                StageTools.alert(Alert.AlertType.WARNING, null, "Linha de Ônibus é um campo obrigatório!", null, true);
+            else {
+                try {
+                    Onibus onibus = new Onibus(numberOnibusTextField.getText(), linha);
+                    if (selectionModel.getSelectedItem() != null)
+                        fachada.atualizarOnibus(onibus);
+                    else
+                        fachada.cadastrarOnibus(onibus);
+
+                    clearFields();
+                    onibusTableView.setItems(FXCollections.observableArrayList(fachada.listOnibus()));
+                    onibusTableView.getSelectionModel().clearSelection();
+                } catch (Exception e) {
+                    StageTools.exception(e, true);
+                }
+            }
+        });
+        deleteOnibusButton.setOnAction(event -> {
+            try {
+                fachada.removeOnibus((Onibus) selectionModel.getSelectedItem());
+            } catch (Exception e) {
+                StageTools.exception(e, true);
+            }
+
+            onibusTableView.setItems(FXCollections.observableArrayList(fachada.listOnibus()));
+            onibusTableView.getSelectionModel().clearSelection();
+        });
     }
 
     private void clearFields() {
+        numberOnibusTextField.setDisable(false);
+
         numberOnibusTextField.setText("");
         linhaOnibusComboBox.setValue(Linhas._null);
     }
