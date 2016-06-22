@@ -97,6 +97,11 @@ public class OnibusCadastroController implements Initializable {
                     clearFields();
                     onibusTableView.setItems(FXCollections.observableArrayList(fachada.listOnibus()));
                     onibusTableView.getSelectionModel().clearSelection();
+
+                    MainController.stageTools.newTab("vemTerminal");
+                    MainController.stageTools.newTab("vemATM");
+
+                    StageTools.alert(Alert.AlertType.INFORMATION, null, "Operação realizada com sucesso!", null, true);
                 } catch (Exception e) {
                     StageTools.exception(e, true);
                 }
@@ -109,8 +114,14 @@ public class OnibusCadastroController implements Initializable {
                 StageTools.exception(e, true);
             }
 
+            clearFields();
             onibusTableView.setItems(FXCollections.observableArrayList(fachada.listOnibus()));
             onibusTableView.getSelectionModel().clearSelection();
+
+            MainController.stageTools.newTab("vemTerminal");
+            MainController.stageTools.newTab("vemATM");
+
+            StageTools.alert(Alert.AlertType.INFORMATION, null, "Operação realizada com sucesso!", null, true);
         });
 
         deleteOnibusButton.setDisable(true);

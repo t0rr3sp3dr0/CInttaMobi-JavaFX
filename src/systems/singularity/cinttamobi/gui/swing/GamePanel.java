@@ -251,13 +251,13 @@ public class GamePanel extends JPanel implements ComponentListener {
 
     public void checkPortal() {
         if (presentTileY == 8 && presentTileX < 2 && presentTileX > 0) {
-            MainController.mainTabPane.getSelectionModel().select(2);
+            MainController.stageTools.newTab("onibusCadastro");
         } else if (presentTileY == 4 && presentTileX > 6 && presentTileX < 9) {
-            MainController.mainTabPane.getSelectionModel().select(1);
+            MainController.stageTools.newTab("vemCadastro");
         } else if (presentTileY == 6 && presentTileX == 12) {
-            MainController.mainTabPane.getSelectionModel().select(3);
+            MainController.stageTools.newTab("vemTerminal");
         } else if(presentTileY == 5 && presentTileX == 10){
-            MainController.mainTabPane.getSelectionModel().select(4);
+            MainController.stageTools.newTab("vemATM");
         }
     }
 

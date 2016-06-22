@@ -77,9 +77,11 @@ public class VEMATMController implements Initializable {
             else {
                 try {
                     fachada.creditarVEM(vemComboBox.getValue().getNumber(), Double.parseDouble(vemTextField.getText()));
-                    StageTools.alert(Alert.AlertType.INFORMATION, "", "Crédito Executado com Sucesso", "", true);
+
                     vemComboBox.setValue(null);
                     vemTextField.setText(null);
+
+                    StageTools.alert(Alert.AlertType.INFORMATION, "", "Crédito Executado com Sucesso", "", true);
                 } catch (Exception e) {
                     StageTools.exception(e, true);
                 }

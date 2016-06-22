@@ -255,11 +255,14 @@ public class VEMCadastroController implements Initializable {
                     fachada.cadastrarVEM(vem);
                 }
 
-                StageTools.alert(Alert.AlertType.INFORMATION, null, "Operação realizada com sucesso!", null, true);
-
                 clearFields();
                 vemTableView.setItems(FXCollections.observableArrayList(fachada.listVEM()));
                 vemTableView.getSelectionModel().clearSelection();
+
+                MainController.stageTools.newTab("vemTerminal");
+                MainController.stageTools.newTab("vemATM");
+
+                StageTools.alert(Alert.AlertType.INFORMATION, null, "Operação realizada com sucesso!", null, true);
             } catch (Exception e) {
                 StageTools.exception(e, true);
             }
@@ -271,8 +274,14 @@ public class VEMCadastroController implements Initializable {
                 StageTools.exception(e, true);
             }
 
+            clearFields();
             vemTableView.setItems(FXCollections.observableArrayList(fachada.listVEM()));
             vemTableView.getSelectionModel().clearSelection();
+
+            MainController.stageTools.newTab("vemTerminal");
+            MainController.stageTools.newTab("vemATM");
+
+            StageTools.alert(Alert.AlertType.INFORMATION, null, "Operação realizada com sucesso!", null, true);
         });
 
         deleteVEMButton.setDisable(true);

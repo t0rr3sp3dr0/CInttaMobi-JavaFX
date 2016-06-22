@@ -83,9 +83,11 @@ public class VEMTerminalController implements Initializable {
             else {
                 try {
                     fachada.debitarVEM(vemComboBox.getValue().getNumber(), onibusComboBox.getValue());
-                    StageTools.alert(Alert.AlertType.INFORMATION, "", "Passagem Validada com Sucesso", "", true);
+
                     onibusComboBox.setValue(null);
                     vemComboBox.setValue(null);
+
+                    StageTools.alert(Alert.AlertType.INFORMATION, "", "Passagem Validada com Sucesso", "", true);
                 } catch (Exception e) {
                     StageTools.exception(e, true);
                 }

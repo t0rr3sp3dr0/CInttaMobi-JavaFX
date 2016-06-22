@@ -115,6 +115,22 @@ public class StageTools {
         newTab(id, tabPane);
     }
 
+    public void closeTab(String id, TabPane tabPane) {
+        for (Tab e : tabPane.getTabs())
+            if (e.getId().equals(id)) {
+                tabPane.getTabs().remove(e);
+                return;
+            }
+    }
+
+    public void closeTab(String id) {
+        newTab(id, tabPane);
+    }
+
+    public TabPane getTabPane() {
+        return tabPane;
+    }
+
     public void setTabPane(TabPane tabPane) {
         this.tabPane = tabPane;
     }
