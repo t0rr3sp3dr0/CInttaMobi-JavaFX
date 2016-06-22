@@ -35,7 +35,7 @@ public class Pessoa {
         if (cpf.length() != 11)
             throw new CPFInvalidoException();
 
-
+        name = name.replaceAll("[^A-Za-z]+", "");
         this.name = name;
         this.birth = birth;
         this.cpf = cpf;

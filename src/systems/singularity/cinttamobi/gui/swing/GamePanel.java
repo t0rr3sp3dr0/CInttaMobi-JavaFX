@@ -22,11 +22,11 @@ public class GamePanel extends JPanel implements ComponentListener {
     private int ScaleH = 3;
     private int speedMultiplier = 1;
     private boolean isMoving = false;
-    private boolean[][] blockedTiles = new boolean[(ScaleH*4)][(ScaleW*4)];
-    private int[] tilesX = new int[(ScaleW*4)];
-    private int[] tilesY = new int[(ScaleH*4)];
-    private int presentTileX = ScaleW+3;
-    private int presentTileY = (ScaleH*4)-2;
+    private boolean[][] blockedTiles = new boolean[(ScaleH * 4)][(ScaleW * 4)];
+    private int[] tilesX = new int[(ScaleW * 4)];
+    private int[] tilesY = new int[(ScaleH * 4)];
+    private int presentTileX = ScaleW + 3;
+    private int presentTileY = (ScaleH * 4) - 2;
     private int presentMoveVariantX = 0;
     private int presentMoveVariantY = 0;
 
@@ -76,7 +76,7 @@ public class GamePanel extends JPanel implements ComponentListener {
         super.paint(g);
         g.drawImage(background, x, y, getWidth(), getHeight(), this);
         g.drawImage(character, presentMoveVariantX + tilesX[presentTileX],
-                presentMoveVariantY + tilesY[presentTileY], (getWidth() / (ScaleW*8)), (getHeight() / (ScaleH*5)), this);
+                presentMoveVariantY + tilesY[presentTileY], (getWidth() / (ScaleW * 8)), (getHeight() / (ScaleH * 5)), this);
     }
 
     public void componentResized(ComponentEvent arg0) {
@@ -104,47 +104,50 @@ public class GamePanel extends JPanel implements ComponentListener {
     }
 
     public void moveNorth() {
-        if (presentTileY > 0 && blockedTiles[presentTileY-1][presentTileX]) {
+        if (presentTileY > 0 && blockedTiles[presentTileY - 1][presentTileX]) {
             if (!isMoving) {
                 isMoving = true;
                 EventsTimeline eventsTimeline = new EventsTimeline();
-                EventsTimeline.setDelay(150/speedMultiplier);
+                EventsTimeline.setDelay(150 / speedMultiplier);
+                eventsTimeline.add(event -> MainController.canMove = false,10);
                 eventsTimeline.add(event -> {
                     character = northWalk1;
-                    presentMoveVariantY -= (getHeight() / (ScaleH*4)) / 2;
+                    presentMoveVariantY -= (getHeight() / (ScaleH * 4)) / 2;
                     repaint();
                 });
                 eventsTimeline.add(event -> {
                     character = northWalk2;
-                    presentMoveVariantY -= (getHeight() / (ScaleH*4)) / 2;
+                    presentMoveVariantY -= (getHeight() / (ScaleH * 4)) / 2;
                     repaint();
                 });
                 eventsTimeline.add(event -> {
                     character = northStand;
                     presentMoveVariantY = 0;
                     presentTileY--;
+                    checkPortal();
                     repaint();
-                }, 100/speedMultiplier);
-
+                }, 50 / speedMultiplier);
+                eventsTimeline.add(event -> MainController.canMove = true,10);
                 eventsTimeline.play();
             }
         }
     }
 
     public void moveSouth() {
-        if (presentTileY < tilesY.length - 1 && blockedTiles[presentTileY+1][presentTileX]) {
+        if (presentTileY < tilesY.length - 1 && blockedTiles[presentTileY + 1][presentTileX]) {
             if (!isMoving) {
                 isMoving = true;
                 EventsTimeline eventsTimeline = new EventsTimeline();
-                EventsTimeline.setDelay(150/speedMultiplier);
+                EventsTimeline.setDelay(150 / speedMultiplier);
+                eventsTimeline.add(event -> MainController.canMove = false,10);
                 eventsTimeline.add(event -> {
                     character = southWalk1;
-                    presentMoveVariantY += (getHeight() / (ScaleH*4)) / 2;
+                    presentMoveVariantY += (getHeight() / (ScaleH * 4)) / 2;
                     repaint();
                 });
                 eventsTimeline.add(event -> {
                     character = southWalk2;
-                    presentMoveVariantY += (getHeight() / (ScaleH*4)) / 2;
+                    presentMoveVariantY += (getHeight() / (ScaleH * 4)) / 2;
                     repaint();
                 });
                 eventsTimeline.add(event -> {
@@ -152,89 +155,102 @@ public class GamePanel extends JPanel implements ComponentListener {
                     presentMoveVariantY = 0;
                     presentTileY++;
                     repaint();
-                }, 100/speedMultiplier);
-
+                }, 50 / speedMultiplier);
+                eventsTimeline.add(event -> MainController.canMove = true,10);
                 eventsTimeline.play();
             }
         }
     }
 
     public void moveWest() {
-        if (presentTileX > 0 && blockedTiles[presentTileY][presentTileX-1]) {
+        if (presentTileX > 0 && blockedTiles[presentTileY][presentTileX - 1]) {
             if (!isMoving) {
                 isMoving = true;
                 EventsTimeline eventsTimeline = new EventsTimeline();
-                EventsTimeline.setDelay(150/speedMultiplier);
+                EventsTimeline.setDelay(150 / speedMultiplier);
+                eventsTimeline.add(event -> MainController.canMove = false,10);
                 eventsTimeline.add(event -> {
                     character = westWalk1;
-                    presentMoveVariantX -= (getHeight() / (ScaleH*4)) / 2;
+                    presentMoveVariantX -= (getHeight() / (ScaleH * 4)) / 2;
                     repaint();
                 });
                 eventsTimeline.add(event -> {
                     character = westWalk2;
-                    presentMoveVariantX -= (getHeight() / (ScaleH*4)) / 2;
+                    presentMoveVariantX -= (getHeight() / (ScaleH * 4)) / 2;
                     repaint();
                 });
                 eventsTimeline.add(event -> {
                     character = westStand;
                     presentMoveVariantX = 0;
                     presentTileX--;
+                    checkPortal();
                     repaint();
-                }, 100/speedMultiplier);
+                }, 50 / speedMultiplier);
+                eventsTimeline.add(event -> MainController.canMove = true,10);
                 eventsTimeline.play();
             }
         }
     }
 
     public void moveEast() {
-        if (presentTileX < tilesX.length - 1 && blockedTiles[presentTileY][presentTileX+1]) {
+        if (presentTileX < tilesX.length - 1 && blockedTiles[presentTileY][presentTileX + 1]) {
             if (!isMoving) {
                 isMoving = true;
                 EventsTimeline eventsTimeline = new EventsTimeline();
-                EventsTimeline.setDelay(150/speedMultiplier);
+                EventsTimeline.setDelay(150 / speedMultiplier);
+                eventsTimeline.add(event -> MainController.canMove = false,10);
                 eventsTimeline.add(event -> {
                     character = eastWalk1;
-                    presentMoveVariantX += (getHeight() / (ScaleH*4)) / 2;
+                    presentMoveVariantX += (getHeight() / (ScaleH * 4)) / 2;
                     repaint();
                 });
                 eventsTimeline.add(event -> {
                     character = eastWalk2;
-                    presentMoveVariantX += (getHeight() / (ScaleH*4)) / 2;
+                    presentMoveVariantX += (getHeight() / (ScaleH * 4)) / 2;
                     repaint();
                 });
                 eventsTimeline.add(event -> {
                     character = eastStand;
                     presentMoveVariantX = 0;
                     presentTileX++;
+                    checkPortal();
                     repaint();
-                }, 100/speedMultiplier);
-
+                }, 50 / speedMultiplier);
+                eventsTimeline.add(event -> MainController.canMove = true,10);
                 eventsTimeline.play();
             }
         }
     }
 
     private void reTile() {
-        for (int i = 0; i < (ScaleW*4); i++)
-            tilesX[i] = (getWidth() / (ScaleW*4)) * i;
-        for (int j = 0; j < (ScaleH*4); j++)
-            tilesY[j] = (getHeight() / (ScaleH*4)) * j;
+        for (int i = 0; i < (ScaleW * 4); i++)
+            tilesX[i] = (getWidth() / (ScaleW * 4)) * i;
+        for (int j = 0; j < (ScaleH * 4); j++)
+            tilesY[j] = (getHeight() / (ScaleH * 4)) * j;
     }
 
-    private void populateBooleans(){
-        for(int i = 0; i < ScaleH*4; i++){
-            for (int j = 0; j < ScaleW*4; j++){
-                if(i > 3 && j > 4 && j < 11){
+    private void populateBooleans() {
+        for (int i = 0; i < ScaleH * 4; i++) {
+            for (int j = 0; j < ScaleW * 4; j++) {
+                if (i > 3 && j > 4 && j < 11) {
                     blockedTiles[i][j] = true;
-                } else if(i > 6 && j > 10 && j < 13){
+                } else if (i > 6 && j > 10 && j < 13) {
                     blockedTiles[i][j] = true;
-                } else if(i > 7 && j < 13){
+                } else if (i > 7 && j < 13) {
                     blockedTiles[i][j] = true;
-                } else if(i == 6 && j == 12){
+                } else if (i == 6 && j == 12) {
                     blockedTiles[i][j] = true;
                 }
             }
         }
+    }
+
+    public void checkPortal() {
+        if (presentTileY == 8 && presentTileX < 2 && presentTileX > 0) {
+            MainController.mainTabPane.getSelectionModel().select(2);
+        } else if (presentTileY == 4 && presentTileX > 6 && presentTileX < 9) {
+            MainController.mainTabPane.getSelectionModel().select(1);
+        } else if (presentTileY == 6 && presentTileX == 12) {}
     }
 
     public void startRun() {
@@ -245,9 +261,9 @@ public class GamePanel extends JPanel implements ComponentListener {
         this.speedMultiplier = 1;
     }
 
-    public void stopMoving(){
+    public void stopMoving() {
         isMoving = false;
-    }
+    };
 
     public void componentShown(ComponentEvent arg0) {
     }

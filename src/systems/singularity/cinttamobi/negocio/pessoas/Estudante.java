@@ -17,7 +17,9 @@ public class Estudante extends Pessoa {
     public Estudante(String name, Date birth, String cpf, String studentID) throws CPFInvalidoException, CarteiraEstudanteInvalidaException, IdadeInvalidaException, ParametroNuloException, NomeInvalidoException {
         // Verify if student ID exists
         super(name, birth, cpf);
-        if (studentID == null || studentID.replaceAll("\\D+", "").length() < 7 || studentID.replaceAll("\\D+", "").length() > 8)
+
+        studentID = studentID.replaceAll("\\D+", "");
+        if (studentID == null || studentID.length() < 7 || studentID.length() > 8)
             throw new CarteiraEstudanteInvalidaException();
         this.studentID = studentID;
     }

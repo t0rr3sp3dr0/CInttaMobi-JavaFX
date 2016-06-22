@@ -39,15 +39,21 @@ public class MainController implements Initializable {
 
         stageTools.newTab("vemCadastro", tabPane);
         stageTools.newTab("onibusCadastro", tabPane);
+
+        mainTabPane.getSelectionModel().select(0);
     }
+
 
     public void setPane(final SwingNode swingNode) {
         SwingUtilities.invokeLater(() -> swingNode.setContent(panel));
     }
 
     public void onMovement(Scene scene) {
+        if(!canMove){
+            return;
+        }
         scene.setOnKeyPressed(event -> {
-            if (tabPane.getSelectionModel().isSelected(0) && canMove) {
+            if (tabPane.getSelectionModel().isSelected(0)) {
                 switch (event.getCode()) {
                     case W:
                         panel.moveNorth();
