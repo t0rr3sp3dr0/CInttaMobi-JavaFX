@@ -2,24 +2,19 @@ package systems.singularity.cinttamobi.enums;
 
 /**
  * Created by phts on 17/06/16.
+ * © 2016 Singularity Systems
  */
 public enum Aneis {
-    _null(null, -1),
-    A("A", 2.80),
-    B("B", 3.85),
-    D("D", 3.00),
-    G("G", 1.85);
+    _null(-1),
+    A(2.80),
+    B(3.85),
+    D(3.00),
+    G(1.85);
 
-    private String name;
-    private double price;
+    private final double price;
 
-    Aneis(String name, double value) {
-        this.name = name;
+    Aneis(double value) {
         this.price = value;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public double getPrice() {
@@ -28,6 +23,6 @@ public enum Aneis {
 
     @Override
     public String toString() {
-        return name.replace("null", "");
+        return super.toString().replace("_null", "");
     }
 }

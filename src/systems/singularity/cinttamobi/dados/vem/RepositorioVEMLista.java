@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 /**
  * Created by lvrma on 19/06/16.
+ * © 2016 Singularity Systems
  */
 public class RepositorioVEMLista implements RepositoriosVEM {
 
@@ -14,11 +15,6 @@ public class RepositorioVEMLista implements RepositoriosVEM {
 
     public RepositorioVEMLista() {
         root = null;
-    }
-
-    public RepositorioVEMLista(VEM value) {
-        root = new LinkVEM(value);
-        root.setNext(null);
     }
 
     @Override
@@ -94,9 +90,7 @@ public class RepositorioVEMLista implements RepositoriosVEM {
 
     @Override
     public boolean exists(String value) {
-        if (search(value) != null)
-            return true;
-        return false;
+        return search(value) != null;
     }
 
 }

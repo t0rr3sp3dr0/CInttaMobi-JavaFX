@@ -4,9 +4,11 @@ import systems.singularity.cinttamobi.interfaces.RepositoriosPessoa;
 import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by caesa on 19/06/2016.
+ * © 2016 Singularity Systems
  */
 public class RepositorioPessoaArray implements RepositoriosPessoa {
 
@@ -30,11 +32,9 @@ public class RepositorioPessoaArray implements RepositoriosPessoa {
 
         Pessoa[] aux = new Pessoa[this.pessoas.length + 1];
 
-        for (int i = 0; i < this.pessoas.length; i++) {
-            aux[i] = this.pessoas[i];
-        }
+        System.arraycopy(this.pessoas, 0, aux, 0, this.pessoas.length);
 
-        aux[this.pessoas.length] = (Pessoa) object;
+        aux[this.pessoas.length] = object;
         this.pessoas = aux;
 
     }
@@ -61,9 +61,7 @@ public class RepositorioPessoaArray implements RepositoriosPessoa {
                 this.pessoas[i] = this.pessoas[this.pessoas.length - 1];
         }
 
-        for (int i = 0; i < aux.length; i++) {
-            aux[i] = this.pessoas[i];
-        }
+        System.arraycopy(this.pessoas, 0, aux, 0, aux.length);
 
         this.pessoas = aux;
 
@@ -83,13 +81,11 @@ public class RepositorioPessoaArray implements RepositoriosPessoa {
         return null;
     }
 
+    // Uso feito exclusivamente pela GUI
     @Override
     public ArrayList toList() {
         ArrayList<Pessoa> pessoasLista = new ArrayList<>();
-        for (int i = 0; i < this.pessoas.length; i++) {
-            pessoasLista.add(this.pessoas[i]);
-        }
-
+        Collections.addAll(pessoasLista, this.pessoas);
         return pessoasLista;
     }
 }

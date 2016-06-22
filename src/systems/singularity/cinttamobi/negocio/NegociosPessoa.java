@@ -8,22 +8,25 @@ import systems.singularity.cinttamobi.exceptions.RepositorioInvalidoException;
 import systems.singularity.cinttamobi.interfaces.RepositoriosPessoa;
 import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 
-import java.util.List;
-
 /**
  * Created by caesa on 19/06/2016.
+ * © 2016 Singularity Systems
  */
 public class NegociosPessoa {
 
     private RepositoriosPessoa repositorio;
 
     public NegociosPessoa(String tipo) throws RepositorioInvalidoException {
-        if (tipo.equals("array"))
-            repositorio = new RepositorioPessoaArray();
-        else if (tipo.equals("lista"))
-            repositorio = new RepositorioPessoaLista();
-        else
-            throw new RepositorioInvalidoException();
+        switch (tipo) {
+            case "array":
+                repositorio = new RepositorioPessoaArray();
+                break;
+            case "lista":
+                repositorio = new RepositorioPessoaLista();
+                break;
+            default:
+                throw new RepositorioInvalidoException();
+        }
     }
 
     public boolean exists(String id) {
@@ -50,18 +53,5 @@ public class NegociosPessoa {
         if (exists(object.getCPF())) {
             repositorio.remove(object);
         } else throw new PessoaInexistenteException();
-    }
-
-    public Pessoa search(String id) throws RepositorioInvalidoException, PessoaInexistenteException {
-        if (exists(id)) {
-            return repositorio.search(id);
-
-        }
-        else
-            throw new PessoaInexistenteException();
-    }
-
-    public List toList() {
-        return repositorio.toList();
     }
 }

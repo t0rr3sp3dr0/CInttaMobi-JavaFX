@@ -4,9 +4,11 @@ import systems.singularity.cinttamobi.abstracts.VEM;
 import systems.singularity.cinttamobi.interfaces.RepositoriosVEM;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by lvrma on 19/06/16.
+ * © 2016 Singularity Systems
  */
 public class RepositorioVEMArray implements RepositoriosVEM {
 
@@ -14,9 +16,7 @@ public class RepositorioVEMArray implements RepositoriosVEM {
 
     @Override
     public boolean exists(String object) {
-        if (search(object) != null)
-            return true;
-        return false;
+        return search(object) != null;
     }
 
     @Override
@@ -24,8 +24,7 @@ public class RepositorioVEMArray implements RepositoriosVEM {
 
         VEM[] temp = new VEM[array.length + 1];
 
-        for (int i = 0; i < array.length; i++)
-            temp[i] = array[i];
+        System.arraycopy(array, 0, temp, 0, array.length);
 
         temp[array.length] = object;
         array = temp;
@@ -50,27 +49,24 @@ public class RepositorioVEMArray implements RepositoriosVEM {
             if (array[i].getNumber().equals(object.getNumber()))
                 array[i] = array[array.length - 1];
 
-        for (int i = 0; i < array.length - 1; i++)
-            temp[i] = array[i];
+        System.arraycopy(array, 0, temp, 0, array.length - 1);
 
         this.array = temp;
     }
 
     @Override
     public VEM search(String object) {
-        for (int i = 0; i < array.length; i++)
-            if (array[i].getNumber().equals(object))
-                return array[i];
+        for (VEM anArray : array)
+            if (anArray.getNumber().equals(object))
+                return anArray;
         return null;
     }
 
+    // Usado apenas na GUI
     @Override
     public ArrayList toList() {
-
         ArrayList<VEM> VEMs = new ArrayList<>();
-        for (int i = 0; i < array.length; i++)
-            VEMs.add(array[i]);
-
+        Collections.addAll(VEMs, array);
         return VEMs;
     }
 }

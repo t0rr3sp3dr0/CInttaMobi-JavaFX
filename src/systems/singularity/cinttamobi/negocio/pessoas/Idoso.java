@@ -5,11 +5,11 @@ import systems.singularity.cinttamobi.exceptions.IdadeInvalidaException;
 import systems.singularity.cinttamobi.exceptions.NomeInvalidoException;
 import systems.singularity.cinttamobi.exceptions.ParametroNuloException;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
  * Created by lvrma on 17/06/16.
+ * © 2016 Singularity Systems
  */
 public class Idoso extends Pessoa {
 

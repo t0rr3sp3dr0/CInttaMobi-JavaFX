@@ -7,11 +7,12 @@ import java.util.ArrayList;
 
 /**
  * Created by phts on 19/06/16.
+ * © 2016 Singularity Systems
  */
 public final class RepositorioOnibusLista implements RepositoriosOnibus {
-    public RepositorioOnibusLista node;
-    public RepositorioOnibusLista parent;
-    public Onibus value;
+    private RepositorioOnibusLista node;
+    private RepositorioOnibusLista parent;
+    private Onibus value;
 
     public RepositorioOnibusLista() {
     }
@@ -76,14 +77,14 @@ public final class RepositorioOnibusLista implements RepositoriosOnibus {
             return null;
     }
 
-    public Onibus get(int index) {
+    private Onibus get(int index) {
         if (index == 0)
             return this.value;
         else
             return this.node.get(--index);
     }
 
-    public int size() {
+    private int size() {
         if (this.node == null)
             return 1;
         else

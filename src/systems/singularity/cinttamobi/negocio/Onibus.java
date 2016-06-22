@@ -5,6 +5,7 @@ import systems.singularity.cinttamobi.exceptions.ParametroNuloException;
 
 /**
  * Created by phts on 17/06/16.
+ * © 2016 Singularity Systems
  */
 public class Onibus {
     private String number;

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 /**
  * Created by caesa on 19/06/2016.
+ * © 2016 Singularity Systems
  */
 public class RepositorioPessoaLista implements RepositoriosPessoa {
 
@@ -15,9 +16,7 @@ public class RepositorioPessoaLista implements RepositoriosPessoa {
 
     @Override
     public boolean exists(String id) {
-        if(search(id) != null)
-            return true;
-        return false;
+        return search(id) != null;
     }
 
     @Override

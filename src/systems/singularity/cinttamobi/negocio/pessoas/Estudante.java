@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * Created by lvrma on 16/06/16.
  * Edited by esvm on 16/06/2016
- *
+ * © 2016 Singularity Systems
  */
 
 public class Estudante extends Pessoa {

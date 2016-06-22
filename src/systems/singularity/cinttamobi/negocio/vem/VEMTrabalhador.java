@@ -1,13 +1,16 @@
 package systems.singularity.cinttamobi.negocio.vem;
 
 import systems.singularity.cinttamobi.abstracts.VEM;
-import systems.singularity.cinttamobi.enums.TiposVEM;
-import systems.singularity.cinttamobi.exceptions.*;
+import systems.singularity.cinttamobi.exceptions.SaldoInsuficienteException;
+import systems.singularity.cinttamobi.exceptions.TipoVEMInvalidoException;
+import systems.singularity.cinttamobi.exceptions.VEMInvalidoException;
+import systems.singularity.cinttamobi.exceptions.ValorInvalidoException;
 import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 import systems.singularity.cinttamobi.negocio.pessoas.Trabalhador;
 
 /**
  * Created by esvm on 17/06/16.
+ * © 2016 Singularity Systems
  */
 public class VEMTrabalhador extends VEM {
 

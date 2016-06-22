@@ -4,6 +4,7 @@ import systems.singularity.cinttamobi.abstracts.VEM;
 
 /**
  * Created by lvrma on 19/06/16.
+ * © 2016 Singularity Systems
  */
 public class LinkVEM {
 

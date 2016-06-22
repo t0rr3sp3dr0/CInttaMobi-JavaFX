@@ -12,21 +12,26 @@ import java.util.List;
 
 /**
  * Created by lvrma on 19/06/16.
+ * © 2016 Singularity Systems
  */
 public class NegociosVEM {
 
     private RepositoriosVEM repositorio;
 
     public NegociosVEM(String tipo) throws RepositorioInvalidoException {
-        if (tipo.equals("array"))
-            repositorio = new RepositorioVEMArray();
-        else if (tipo.equals("lista"))
-            repositorio = new RepositorioVEMLista();
-        else
-            throw new RepositorioInvalidoException();
+        switch (tipo) {
+            case "array":
+                repositorio = new RepositorioVEMArray();
+                break;
+            case "lista":
+                repositorio = new RepositorioVEMLista();
+                break;
+            default:
+                throw new RepositorioInvalidoException();
+        }
     }
 
-    public boolean exists(String id) {
+    private boolean exists(String id) {
         return repositorio.exists(id);
     }
 
@@ -53,7 +58,7 @@ public class NegociosVEM {
         } else throw new VEMInexistenteException();
     }
 
-    public VEM search(String id) throws RepositorioInvalidoException, VEMInexistenteException {
+    public VEM search(String id) throws VEMInexistenteException {
         if (exists(id)) {
             return repositorio.search(id);
 

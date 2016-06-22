@@ -6,7 +6,6 @@ import systems.singularity.cinttamobi.exceptions.NomeInvalidoException;
 import systems.singularity.cinttamobi.exceptions.ParametroNuloException;
 
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by pedro on 5/2/16.
@@ -32,11 +31,8 @@ public class Pessoa {
         if (birth.getTime() > System.currentTimeMillis())
             throw new IdadeInvalidaException();
 
-        if (cpf != null) {
-            cpf = cpf.replaceAll("\\D+", "");
-            if(cpf.length() != 11)
-                throw new CPFInvalidoException();
-        } else
+        cpf = cpf.replaceAll("\\D+", "");
+        if (cpf.length() != 11)
             throw new CPFInvalidoException();
 
 

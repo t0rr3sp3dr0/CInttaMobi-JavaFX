@@ -26,15 +26,11 @@ import java.util.Properties;
 import java.util.ResourceBundle;
 
 public class Programa extends Application {
-    private static boolean developerMode = true;
-    private static boolean waitOnExcept = false;
+    private static final boolean developerMode = true;
+    private static final boolean waitOnExcept = false;
 
     public static void main(String[] args) {
         launch(args);
-    }
-
-    public static boolean isDeveloperMode() {
-        return developerMode;
     }
 
     public static boolean isWaitOnExcept() {

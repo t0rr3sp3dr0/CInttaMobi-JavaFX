@@ -6,6 +6,7 @@ import java.util.Date;
 
 /**
  * Created by esvm on 17/06/16.
+ * © 2016 Singularity Systems
  */
 public class Trabalhador extends Pessoa {
     private String nis;

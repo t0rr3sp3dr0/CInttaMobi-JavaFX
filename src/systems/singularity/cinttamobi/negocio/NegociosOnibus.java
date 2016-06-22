@@ -11,20 +11,25 @@ import java.util.List;
 
 /**
  * Created by phts on 19/06/16.
+ * © 2016 Singularity Systems
  */
 public class NegociosOnibus {
     private RepositoriosOnibus repositorio;
 
     public NegociosOnibus(String tipo) throws RepositorioInvalidoException {
-        if (tipo.equals("array"))
-            repositorio = new RepositorioOnibusArray();
-        else if (tipo.equals("lista"))
-            repositorio = new RepositorioOnibusLista();
-        else
-            throw new RepositorioInvalidoException();
+        switch (tipo) {
+            case "array":
+                repositorio = new RepositorioOnibusArray();
+                break;
+            case "lista":
+                repositorio = new RepositorioOnibusLista();
+                break;
+            default:
+                throw new RepositorioInvalidoException();
+        }
     }
 
-    public boolean exists(String id) {
+    private boolean exists(String id) {
         return repositorio.exists(id);
     }
 
@@ -48,15 +53,6 @@ public class NegociosOnibus {
         if (exists(object.getNumber())) {
             repositorio.remove(object);
         } else throw new OnibusInexistenteException();
-    }
-
-    public Onibus search(String id) throws RepositorioInvalidoException, OnibusInexistenteException {
-        if (exists(id)) {
-            return repositorio.search(id);
-
-        }
-        else
-            throw new OnibusInexistenteException();
     }
 
     public List toList() {

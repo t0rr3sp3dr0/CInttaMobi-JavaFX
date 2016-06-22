@@ -61,10 +61,10 @@ public class VEMCadastroController implements Initializable {
             return null;
         }).start();
 
-        numberVEMTableColumn.setCellValueFactory(new PropertyValueFactory<VEM, String>("number"));
-        typeVEMTableColumn.setCellValueFactory(new PropertyValueFactory<VEM, TiposVEM>("t"));
-        ownerNameTableColumn.setCellValueFactory(new PropertyValueFactory<VEM, String>("n"));
-        ownerCPFTableColumn.setCellValueFactory(new PropertyValueFactory<VEM, String>("c"));
+        numberVEMTableColumn.setCellValueFactory(new PropertyValueFactory<>("number"));
+        typeVEMTableColumn.setCellValueFactory(new PropertyValueFactory<>("t"));
+        ownerNameTableColumn.setCellValueFactory(new PropertyValueFactory<>("n"));
+        ownerCPFTableColumn.setCellValueFactory(new PropertyValueFactory<>("c"));
 
         SelectionModel selectionModel = vemTableView.getSelectionModel();
         selectionModel.selectedItemProperty().addListener((observable, oldValue, newValue) -> {
@@ -165,7 +165,7 @@ public class VEMCadastroController implements Initializable {
                     vemImageView.setImage(new Image(getClass().getResourceAsStream("/images/VEMIdoso.png")));
             }
         });
-        new ComboBoxAutoComplete<TiposVEM>(typeVEMComboBox);
+        new ComboBoxAutoComplete<>(typeVEMComboBox);
 
         addVEMButton.setOnAction(event -> {
             clearFields();

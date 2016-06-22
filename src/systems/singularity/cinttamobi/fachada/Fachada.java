@@ -10,18 +10,17 @@ import systems.singularity.cinttamobi.negocio.Onibus;
 import systems.singularity.cinttamobi.negocio.vem.VEMComum;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 
 /**
  * Created by esvm on 20/06/16.
+ * © 2016 Singularity Systems
  */
 public class Fachada {
-    private static Fachada ourInstance = new Fachada();
+    private static final Fachada ourInstance = new Fachada();
     public  boolean repInvalido = false;
-    private String tipo = "";
     private NegociosOnibus negociosOnibus;
     private NegociosPessoa negociosPessoa;
     private NegociosVEM negociosVEM;
@@ -32,8 +31,6 @@ public class Fachada {
             negociosOnibus = new NegociosOnibus(tipo);
             negociosPessoa = new NegociosPessoa(tipo);
             negociosVEM = new NegociosVEM(tipo);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } catch (RepositorioInvalidoException e) {

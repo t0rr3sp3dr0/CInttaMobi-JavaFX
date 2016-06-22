@@ -9,13 +9,14 @@ import systems.singularity.cinttamobi.negocio.pessoas.*;
 
 /**
  * Created by phts on 16/06/16.
+ * © 2016 Singularity Systems
  */
 public abstract class VEM {
     protected double balance;
     private String number;
     private Pessoa person;
 
-    public VEM(String number, Pessoa person) throws VEMInvalidoException {
+    protected VEM(String number, Pessoa person) throws VEMInvalidoException {
         // TO-DO
         // Verify if number or person already exists
         if (number == null || number.replaceAll("\\D+", "").length() != 13)

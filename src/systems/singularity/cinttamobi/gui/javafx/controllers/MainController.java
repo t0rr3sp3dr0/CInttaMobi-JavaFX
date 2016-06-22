@@ -17,12 +17,12 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable {
     public static boolean canMove = true;
     public static TabPane mainTabPane;
+    private final GamePanel panel = new GamePanel();
+    private final Properties messages = new Properties();
+    private final StageTools stageTools = new StageTools();
     public TabPane tabPane;
     public Tab mainTab;
     public SwingNode swingNode;
-    private GamePanel panel = new GamePanel();
-    private Properties messages = new Properties();
-    private StageTools stageTools = new StageTools();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -42,12 +42,7 @@ public class MainController implements Initializable {
     }
 
     public void setPane(final SwingNode swingNode) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                swingNode.setContent(panel);
-            }
-        });
+        SwingUtilities.invokeLater(() -> swingNode.setContent(panel));
     }
 
     public void onMovement(Scene scene) {

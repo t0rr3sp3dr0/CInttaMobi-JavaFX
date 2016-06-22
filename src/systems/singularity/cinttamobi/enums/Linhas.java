@@ -2,6 +2,7 @@ package systems.singularity.cinttamobi.enums;
 
 /**
  * Created by phts on 17/06/16.
+ * © 2016 Singularity Systems
  */
 public enum Linhas {
     _null(null, null, Aneis._null),
@@ -410,22 +411,14 @@ public enum Linhas {
     _149("149", "Zumbi do Pacheco / TI Cavaleiro", Aneis.A),
     _138("138", "Zumbi do Pacheco / TI Tancredo Neves", Aneis.A);
 
-    private String number;
-    private String name;
-    private Aneis ring;
+    private final String number;
+    private final String name;
+    private final Aneis ring;
 
     Linhas(String number, String name, Aneis ring) {
         this.number = number;
         this.name = name;
         this.ring = ring;
-    }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public Aneis getRing() {

@@ -4,9 +4,11 @@ import systems.singularity.cinttamobi.interfaces.RepositoriosOnibus;
 import systems.singularity.cinttamobi.negocio.Onibus;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by phts on 19/06/16.
+ * © 2016 Singularity Systems
  */
 public class RepositorioOnibusArray implements RepositoriosOnibus {
     private Onibus[] onibus = {};
@@ -16,8 +18,8 @@ public class RepositorioOnibusArray implements RepositoriosOnibus {
 
     @Override
     public boolean exists(String id) {
-        for (int i = 0; i < onibus.length; i++)
-            if (onibus[i].getNumber().equals(id))
+        for (Onibus onibus : this.onibus)
+            if (onibus.getNumber().equals(id))
                 return true;
         return false;
     }
@@ -25,9 +27,8 @@ public class RepositorioOnibusArray implements RepositoriosOnibus {
     @Override
     public void insert(Onibus object) {
         Onibus[] onibus = new Onibus[this.onibus.length + 1];
-        for (int i = 0; i < this.onibus.length; i++)
-            onibus[i] = this.onibus[i];
-        onibus[this.onibus.length] = (Onibus) object;
+        System.arraycopy(this.onibus, 0, onibus, 0, this.onibus.length);
+        onibus[this.onibus.length] = object;
         this.onibus = onibus;
     }
 
@@ -45,7 +46,7 @@ public class RepositorioOnibusArray implements RepositoriosOnibus {
     public void remove(Onibus object) {
         Onibus[] onibus = new Onibus[this.onibus.length - 1];
         for (int i = 0, j = 0; i < this.onibus.length; i++)
-            if (!this.onibus[i].getNumber().equals(((Onibus) object).getNumber())) {
+            if (!this.onibus[i].getNumber().equals((object.getNumber()))) {
                 onibus[j] = this.onibus[i];
                 j++;
             }
@@ -60,12 +61,11 @@ public class RepositorioOnibusArray implements RepositoriosOnibus {
         return null;
     }
 
+    // Uso exclusivo na implementação da GUI
     @Override
     public ArrayList toList() {
         ArrayList<Onibus> onibusList = new ArrayList<>();
-        for (Onibus item: this.onibus)
-            onibusList.add(item);
-
+        Collections.addAll(onibusList, this.onibus);
         return onibusList;
     }
 }

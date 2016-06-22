@@ -5,10 +5,12 @@ import systems.singularity.cinttamobi.gui.javafx.EventsTimeline;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
 
 /**
  * Created by Lucas on 20/06/16.
+ * © 2016 Singularity Systems
  */
 public class GamePanel extends JPanel implements ComponentListener {
 
@@ -245,7 +247,7 @@ public class GamePanel extends JPanel implements ComponentListener {
 
     public void stopMoving(){
         isMoving = false;
-    };
+    }
 
     public void componentShown(ComponentEvent arg0) {
     }
