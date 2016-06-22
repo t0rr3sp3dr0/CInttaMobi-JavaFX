@@ -421,6 +421,14 @@ public enum Linhas {
         this.ring = ring;
     }
 
+    public String getNumber() {
+        return number;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     public Aneis getRing() {
         return ring;
     }

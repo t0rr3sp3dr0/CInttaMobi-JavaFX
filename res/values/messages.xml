@@ -13,4 +13,5 @@
     <entry key="maxHeight">Infinity</entry>
     <entry key="vemCadastro">Cadastro de VEMs</entry>
     <entry key="onibusCadastro">Cadastro de Ônibus</entry>
+    <entry key="vemTerminal">Terminal VEM</entry>
 </properties>

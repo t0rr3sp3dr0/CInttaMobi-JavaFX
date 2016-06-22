@@ -39,6 +39,7 @@ public class MainController implements Initializable {
 
         stageTools.newTab("vemCadastro", tabPane);
         stageTools.newTab("onibusCadastro", tabPane);
+        stageTools.newTab("vemTerminal", tabPane);
 
         mainTabPane.getSelectionModel().select(0);
     }

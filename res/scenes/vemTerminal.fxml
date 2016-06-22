@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
-<HBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-      minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8">
+<?import javafx.scene.text.Font?>
+<HBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+      fx:controller="systems.singularity.cinttamobi.gui.javafx.controllers.VEMTerminalController">
     <children>
         <VBox maxHeight="50.0" minHeight="25.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
             <children>
@@ -12,7 +14,11 @@
                     <children>
                         <StackPane minHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                             <children>
-                                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true"/>
+                                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@/images/pay.png"/>
+                                    </image>
+                                </ImageView>
                             </children>
                         </StackPane>
                     </children>
@@ -26,7 +32,11 @@
                                         <StackPane maxHeight="50.0" minHeight="25.0" prefWidth="200.0"
                                                    HBox.hgrow="ALWAYS">
                                             <children>
-                                                <Label fx:id="pastLabel" text="Saldo Atual"/>
+                                                <Label fx:id="pastLabel" text="Saldo Atual">
+                                                    <font>
+                                                        <Font name="System Bold" size="18.0"/>
+                                                    </font>
+                                                </Label>
                                             </children>
                                         </StackPane>
                                     </children>
@@ -36,7 +46,11 @@
                                         <StackPane maxHeight="50.0" minHeight="25.0" prefWidth="200.0"
                                                    HBox.hgrow="ALWAYS">
                                             <children>
-                                                <Label fx:id="pastBallanceLabel" text="R$ {{ VALUE }}"/>
+                                                <Label fx:id="pastBallanceLabel" text="R$ {{ VALUE }}">
+                                                    <font>
+                                                        <Font size="18.0"/>
+                                                    </font>
+                                                </Label>
                                             </children>
                                         </StackPane>
                                     </children>
@@ -50,7 +64,11 @@
                                         <StackPane maxHeight="50.0" minHeight="25.0" prefWidth="200.0"
                                                    HBox.hgrow="ALWAYS">
                                             <children>
-                                                <Label fx:id="futureLabel" text="Saldo Após Operação"/>
+                                                <Label fx:id="futureLabel" text="Saldo Após Operação">
+                                                    <font>
+                                                        <Font name="System Bold" size="18.0"/>
+                                                    </font>
+                                                </Label>
                                             </children>
                                         </StackPane>
                                     </children>
@@ -60,7 +78,11 @@
                                         <StackPane maxHeight="50.0" minHeight="25.0" prefWidth="200.0"
                                                    HBox.hgrow="ALWAYS">
                                             <children>
-                                                <Label fx:id="futureBallanceLabel" text="R$ {{ VALUE }}"/>
+                                                <Label fx:id="futureBallanceLabel" text="R$ {{ VALUE }}">
+                                                    <font>
+                                                        <Font size="18.0"/>
+                                                    </font>
+                                                </Label>
                                             </children>
                                         </StackPane>
                                     </children>
