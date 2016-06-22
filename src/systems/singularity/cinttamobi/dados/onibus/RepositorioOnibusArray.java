@@ -18,6 +18,7 @@ public class RepositorioOnibusArray implements RepositoriosOnibus {
 
     @Override
     public boolean exists(String id) {
+        //verifica no array se já existe algum ônibus com aquela numeração
         for (Onibus onibus : this.onibus)
             if (onibus.getNumber().equals(id))
                 return true;
@@ -26,6 +27,9 @@ public class RepositorioOnibusArray implements RepositoriosOnibus {
 
     @Override
     public void insert(Onibus object) {
+        //Insere um novo ônibus no array
+        //O tamanho do array é dinâmico, aumenta a medida que se vai inserindo objetos
+
         Onibus[] onibus = new Onibus[this.onibus.length + 1];
         for (int i = 0; i < this.onibus.length; i++)
             onibus[i] = this.onibus[i];
@@ -35,6 +39,7 @@ public class RepositorioOnibusArray implements RepositoriosOnibus {
 
     @Override
     public void update(Onibus object) {
+        //atualiza um ônibus
 
         for (int i = 0; i < this.onibus.length; i++)
             if (this.onibus[i].getNumber().equals(object.getNumber())) {
@@ -45,6 +50,8 @@ public class RepositorioOnibusArray implements RepositoriosOnibus {
 
     @Override
     public void remove(Onibus object) {
+
+        //remove um ônibus e diminui o tamanho do array
         Onibus[] onibus = new Onibus[this.onibus.length - 1];
         for (int i = 0, j = 0; i < this.onibus.length; i++)
             if (!this.onibus[i].getNumber().equals((object.getNumber()))) {
@@ -56,6 +63,8 @@ public class RepositorioOnibusArray implements RepositoriosOnibus {
 
     @Override
     public Onibus search(String id) {
+
+        //Procura um ônibus e retorna ele
         for (Onibus onibus : this.onibus)
             if (onibus.getNumber().equals(id))
                 return onibus;
@@ -65,6 +74,7 @@ public class RepositorioOnibusArray implements RepositoriosOnibus {
     // Uso exclusivo na implementação da GUI
     @Override
     public ArrayList toList() {
+        //converte o array para ArrayList para ser utilizado na GUI. Exclusivamente na GUI
         ArrayList<Onibus> onibusList = new ArrayList<>();
         Collections.addAll(onibusList, this.onibus);
         return onibusList;
