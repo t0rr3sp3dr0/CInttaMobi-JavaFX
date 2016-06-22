@@ -98,8 +98,8 @@ public class OnibusCadastroController implements Initializable {
                     onibusTableView.setItems(FXCollections.observableArrayList(fachada.listOnibus()));
                     onibusTableView.getSelectionModel().clearSelection();
 
-                    MainController.stageTools.newTab("vemTerminal");
-                    MainController.stageTools.newTab("vemATM");
+                    MainController.stageTools.closeTab("vemTerminal");
+                    MainController.stageTools.closeTab("vemATM");
 
                     StageTools.alert(Alert.AlertType.INFORMATION, null, "Operação realizada com sucesso!", null, true);
                 } catch (Exception e) {
@@ -118,8 +118,8 @@ public class OnibusCadastroController implements Initializable {
             onibusTableView.setItems(FXCollections.observableArrayList(fachada.listOnibus()));
             onibusTableView.getSelectionModel().clearSelection();
 
-            MainController.stageTools.newTab("vemTerminal");
-            MainController.stageTools.newTab("vemATM");
+            MainController.stageTools.closeTab("vemTerminal");
+            MainController.stageTools.closeTab("vemATM");
 
             StageTools.alert(Alert.AlertType.INFORMATION, null, "Operação realizada com sucesso!", null, true);
         });

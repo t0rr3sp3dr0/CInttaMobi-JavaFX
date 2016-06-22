@@ -124,7 +124,7 @@ public class StageTools {
     }
 
     public void closeTab(String id) {
-        newTab(id, tabPane);
+        closeTab(id, tabPane);
     }
 
     public TabPane getTabPane() {
