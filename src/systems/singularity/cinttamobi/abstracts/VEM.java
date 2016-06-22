@@ -17,10 +17,9 @@ public abstract class VEM {
     private Pessoa person;
 
     protected VEM(String number, Pessoa person) throws VEMInvalidoException {
-        // TO-DO
-        // Verify if number or person already exists
-        number = number.replaceAll("\\D+", "");
-        if (number == null || number.length() != 13)
+
+        number = number.replaceAll("\\D+", ""); //Pega apenas os números que estão na String
+        if (number == null || number.length() != 13) //Se não tiver 13 números, número do VEM é inválido
             throw new VEMInvalidoException();
         this.number = number;
         this.person = person;
@@ -47,6 +46,8 @@ public abstract class VEM {
     // para popular a TableView no JavaFX
 
     public TiposVEM getT() {
+
+        //Retorna o tipo do VEM (Infantil, Estudante, Idoso, Trabalhador ou Comum)
         if (person instanceof Crianca)
             return TiposVEM.Infantil;
         else if (person instanceof Estudante)
@@ -60,16 +61,18 @@ public abstract class VEM {
     }
 
     public String getN() {
+        //Pega o nome da pessoa registrada com o determinado VEM
         if (person != null)
             return person.getName();
-        else
+        else //Caso seja vem Comum, não possui pessoa
             return "Não se Aplica";
     }
 
     public String getC() {
+        //Pega o CPF da pessoa registrada com o determinado VEM
         if (person != null)
             return person.getCPF();
-        else
+        else //Caso seja vem Comum, não possui pessoa
             return "Não se Aplica";
     }
 }

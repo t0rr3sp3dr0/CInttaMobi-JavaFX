@@ -23,6 +23,7 @@ public final class RepositorioOnibusLista implements RepositoriosOnibus {
 
     @Override
     public boolean exists(String id) {
+        //Verifica se já existe um ônibus com aquela numeração na lista encadeada
         if (this.value == null)
             return false;
         else if (this.value.getNumber().equals(id))
@@ -35,7 +36,7 @@ public final class RepositorioOnibusLista implements RepositoriosOnibus {
 
     @Override
     public void insert(Onibus object) {
-
+        //Insere um ônibus na lista encadeada
         if (this.value == null)
             this.value = object;
         else if (this.node == null) {
@@ -47,7 +48,7 @@ public final class RepositorioOnibusLista implements RepositoriosOnibus {
 
     @Override
     public void update(Onibus object) {
-
+        //Atualiza um ônibus na lista encadeada
         if (this.value.getNumber().equals(object.getNumber()))
             this.value = object;
         else if (this.node != null)
@@ -56,7 +57,7 @@ public final class RepositorioOnibusLista implements RepositoriosOnibus {
 
     @Override
     public void remove(Onibus object) {
-
+        //remove um ônibus na lista encadeada
         if (this.value.getNumber().equals(object.getNumber())) {
             if (this.parent == null) {
                 this.value = this.node.value;
@@ -69,6 +70,8 @@ public final class RepositorioOnibusLista implements RepositoriosOnibus {
 
     @Override
     public Onibus search(String id) {
+
+        //procura um ônibus na lista encadeada
         if (this.value.getNumber().equals(id))
             return this.value;
         else if (this.node != null)
@@ -78,6 +81,8 @@ public final class RepositorioOnibusLista implements RepositoriosOnibus {
     }
 
     private Onibus get(int index) {
+
+        //Pega um ônibus a partir de um index
         if (index == 0)
             return this.value;
         else
@@ -85,6 +90,7 @@ public final class RepositorioOnibusLista implements RepositoriosOnibus {
     }
 
     private int size() {
+        //verifica o tamanho da lista
         if (this.node == null)
             return 1;
         else
@@ -94,6 +100,8 @@ public final class RepositorioOnibusLista implements RepositoriosOnibus {
 
     @Override
     public ArrayList toList() {
+        //Converte a lista encadeada para ArrayList para usar na GUI
+        //Uso exclusivo na GUI
         ArrayList<Onibus> list = new ArrayList<>();
         int size = size();
         for (int i = 0; i < size; i++)
