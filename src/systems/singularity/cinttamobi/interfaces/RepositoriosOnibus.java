@@ -9,6 +9,7 @@ import java.util.ArrayList;
  * © 2016 Singularity Systems
  */
 public interface RepositoriosOnibus {
+    //Interface de Repositorio de Onibus
     boolean exists(String id);
     void insert(Onibus object);
     void update(Onibus object);

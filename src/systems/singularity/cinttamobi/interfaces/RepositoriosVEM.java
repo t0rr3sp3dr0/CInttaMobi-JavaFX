@@ -9,6 +9,7 @@ import java.util.ArrayList;
  * © 2016 Singularity Systems
  */
 public interface RepositoriosVEM {
+    //Interface de Repositorio de VEM
     boolean exists(String id);
     void insert(VEM object);
     void update(VEM object);
