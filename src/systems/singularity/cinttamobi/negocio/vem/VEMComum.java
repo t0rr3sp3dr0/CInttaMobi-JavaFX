@@ -30,6 +30,7 @@ public class VEMComum extends VEM {
         {
             throw new SaldoInsuficienteException();
         }
+        this.balance -= value;
     }
 
 
