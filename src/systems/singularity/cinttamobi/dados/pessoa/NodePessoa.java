@@ -8,6 +8,7 @@ import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
  */
 public class NodePessoa {
 
+    //Classe para os nós da lista encadeada
     private Pessoa value;
     private NodePessoa next;
 

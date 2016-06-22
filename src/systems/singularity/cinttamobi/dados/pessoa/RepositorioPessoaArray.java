@@ -18,6 +18,7 @@ public class RepositorioPessoaArray implements RepositoriosPessoa {
 
     @Override
     public boolean exists(String id) {
+        //verifica se existe uma pessoa no array com o determinado CPF
         for (Pessoa item: this.pessoas)
         {
             if(item.getCPF().equals(id))
@@ -30,6 +31,7 @@ public class RepositorioPessoaArray implements RepositoriosPessoa {
 
     @Override
     public boolean existsID(String id) {
+        //verifica se existe um estudante no array com o determinado número da carteira de estudante
         for (Pessoa item: this.pessoas)
         {
             if(item instanceof Estudante)
@@ -44,6 +46,7 @@ public class RepositorioPessoaArray implements RepositoriosPessoa {
 
     @Override
     public boolean existsNIS(String id) {
+        //verifica se existe um trabalhador no array com o determinado NIS
         for (Pessoa item: this.pessoas)
         {
             if(item instanceof Trabalhador)
@@ -58,7 +61,8 @@ public class RepositorioPessoaArray implements RepositoriosPessoa {
 
     @Override
     public void insert(Pessoa object) {
-
+        //insere uma pessoa no array
+        //tamanho do array aumenta de forma dinâmica
         Pessoa[] aux = new Pessoa[this.pessoas.length + 1];
 
         for (int i = 0; i < this.pessoas.length; i++) {
@@ -72,7 +76,7 @@ public class RepositorioPessoaArray implements RepositoriosPessoa {
 
     @Override
     public void update(Pessoa object) {
-
+        //atualiza uma pessoa no array
         for (int i = 0; i < this.pessoas.length; i++) {
             if(object.getCPF().equals(this.pessoas[i].getCPF()))
             {
@@ -84,7 +88,8 @@ public class RepositorioPessoaArray implements RepositoriosPessoa {
 
     @Override
     public void remove(Pessoa object) {
-
+        //remove uma pessoa do array
+        //array diminui de tamanho de forma dinâmica
         Pessoa[] aux = new Pessoa[this.pessoas.length - 1];
 
         for (int i = 0; i < this.pessoas.length; i++) {
@@ -102,7 +107,7 @@ public class RepositorioPessoaArray implements RepositoriosPessoa {
 
     @Override
     public Pessoa search(String id) {
-
+        //procura uma pessoa no array a partir do CPF
         for(Pessoa item: this.pessoas)
         {
             if(item.getCPF().equals(id))
@@ -117,6 +122,8 @@ public class RepositorioPessoaArray implements RepositoriosPessoa {
     // Uso feito exclusivamente pela GUI
     @Override
     public ArrayList toList() {
+        //converte o array para ArrayList para usar na GUI
+        //Uso exclusivo na GUI
         ArrayList<Pessoa> pessoasLista = new ArrayList<>();
         Collections.addAll(pessoasLista, this.pessoas);
         return pessoasLista;

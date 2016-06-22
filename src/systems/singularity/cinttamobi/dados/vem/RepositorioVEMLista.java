@@ -19,6 +19,7 @@ public class RepositorioVEMLista implements RepositoriosVEM {
 
     @Override
     public VEM search(String id) {
+        //procura um VEM na lista encadeada
         LinkVEM aux = root;
         while (aux != null) {
             if (aux.getValue().getNumber().equals(id))
@@ -31,6 +32,8 @@ public class RepositorioVEMLista implements RepositoriosVEM {
 
     @Override
     public ArrayList toList() {
+        //converte a lista encadeada para ArrayList
+        //Uso exclusivo na GUI
         ArrayList<VEM> VEMs = new ArrayList<>();
         LinkVEM aux = root;
 
@@ -44,7 +47,7 @@ public class RepositorioVEMLista implements RepositoriosVEM {
 
     @Override
     public void insert(VEM value) {
-
+        //Insere um novo VEM na lista encadeada
         if (root == null) {
             root = new LinkVEM(value);
             root.setNext(null);
@@ -57,7 +60,7 @@ public class RepositorioVEMLista implements RepositoriosVEM {
 
     @Override
     public void update(VEM object) {
-
+        //Edita um VEM na lista encadeada
         LinkVEM aux = root;
         while (aux != null) {
             if (aux.getValue().getNumber().equals(object.getNumber())) {
@@ -71,7 +74,7 @@ public class RepositorioVEMLista implements RepositoriosVEM {
 
     @Override
     public void remove(VEM value) {
-
+        //remove um VEM da lista encadeada
         if (root.getValue().getNumber().equals(value.getNumber()))
             root = root.getNext();
         else {
@@ -90,6 +93,7 @@ public class RepositorioVEMLista implements RepositoriosVEM {
 
     @Override
     public boolean exists(String value) {
+        //verifica se existe um VEM na lista encadeada com o determinado número
         return search(value) != null;
     }
 

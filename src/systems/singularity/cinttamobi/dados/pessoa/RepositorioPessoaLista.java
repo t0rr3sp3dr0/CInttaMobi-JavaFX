@@ -17,12 +17,15 @@ public class RepositorioPessoaLista implements RepositoriosPessoa {
 
 
     @Override
-    public boolean exists(String id) {
+    public boolean exists(String id)
+    {
+        //verifica se existe uma pessoa na lista encadeada com o determinado CPF
         return search(id) != null;
     }
 
     @Override
     public boolean existsID(String id) {
+        //verifica se existe um estudante na lista encadeada com a determinada carteira de estudante
         NodePessoa aux = root;
         while(aux != null)
         {
@@ -39,6 +42,7 @@ public class RepositorioPessoaLista implements RepositoriosPessoa {
 
     @Override
     public boolean existsNIS(String id) {
+        //verifica se existe um trabalhador na lista encadeada com o determinado NIS
         NodePessoa aux = root;
         while(aux != null)
         {
@@ -55,6 +59,7 @@ public class RepositorioPessoaLista implements RepositoriosPessoa {
 
     @Override
     public void insert(Pessoa object) {
+        //Insere uma nova pessoa na lista encadeada
         if(this.root == null)
         {
             this.root = new NodePessoa(object);
@@ -72,7 +77,7 @@ public class RepositorioPessoaLista implements RepositoriosPessoa {
 
     @Override
     public void update(Pessoa object) {
-
+        //Edita uma pessoa na lista encadeada
         NodePessoa aux = root;
         while (aux != null) {
             if (aux.getValue().getCPF().equals(object.getCPF()))
@@ -86,7 +91,7 @@ public class RepositorioPessoaLista implements RepositoriosPessoa {
 
     @Override
     public void remove(Pessoa object) {
-
+        //remove uma pessoa da lista encadeada
         if (root.getValue().getCPF().equals(object.getCPF()))
             root = root.getNext();
         else {
@@ -105,6 +110,7 @@ public class RepositorioPessoaLista implements RepositoriosPessoa {
 
     @Override
     public Pessoa search(String id) {
+        //procura uma pessoa na lista encadeada
         NodePessoa aux = root;
         while(aux != null)
         {
@@ -120,6 +126,8 @@ public class RepositorioPessoaLista implements RepositoriosPessoa {
 
     @Override
     public ArrayList toList() {
+        //converte a lista encadeada para ArrayList
+        //Uso exclusivo na GUI
         ArrayList<Pessoa> pessoasLista = new ArrayList<>();
 
         NodePessoa aux = root;

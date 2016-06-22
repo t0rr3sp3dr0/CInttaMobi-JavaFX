@@ -7,7 +7,7 @@ import systems.singularity.cinttamobi.abstracts.VEM;
  * © 2016 Singularity Systems
  */
 public class LinkVEM {
-
+    //classe para a lista encadeada de VEM
     private VEM value;
     private LinkVEM next;
 
