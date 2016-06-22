@@ -2,11 +2,11 @@ package systems.singularity.cinttamobi.negocio;
 
 import systems.singularity.cinttamobi.dados.pessoa.RepositorioPessoaArray;
 import systems.singularity.cinttamobi.dados.pessoa.RepositorioPessoaLista;
-import systems.singularity.cinttamobi.exceptions.PessoaExistenteException;
-import systems.singularity.cinttamobi.exceptions.PessoaInexistenteException;
-import systems.singularity.cinttamobi.exceptions.RepositorioInvalidoException;
+import systems.singularity.cinttamobi.exceptions.*;
 import systems.singularity.cinttamobi.interfaces.RepositoriosPessoa;
+import systems.singularity.cinttamobi.negocio.pessoas.Estudante;
 import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
+import systems.singularity.cinttamobi.negocio.pessoas.Trabalhador;
 
 /**
  * Created by caesa on 19/06/2016.
@@ -33,10 +33,35 @@ public class NegociosPessoa {
         return repositorio.exists(id);
     }
 
+    public boolean existsID(String id) {
+        return repositorio.existsID(id);
+    }
 
-    public void insert(Pessoa object) throws PessoaExistenteException {
+    public boolean existsNIS(String id) {
+        return repositorio.existsNIS(id);
+    }
+
+
+    public void insert(Pessoa object) throws PessoaExistenteException, CarteiraEstudanteInvalidaException, NISInvalidoException {
         if (!exists(object.getCPF())) {
-            repositorio.insert(object);
+            if(object instanceof Estudante)
+            {
+                Estudante estudante = (Estudante) object;
+                if(!existsID(estudante.getStudentID()))
+                    repositorio.insert(object);
+                else
+                    throw new CarteiraEstudanteInvalidaException();
+            }
+            else if(object instanceof Trabalhador)
+            {
+                Trabalhador trabalhador = (Trabalhador) object;
+                if(!existsNIS(trabalhador.getNIS()))
+                    repositorio.insert(object);
+                else
+                    throw new NISInvalidoException();
+            }
+            else
+                repositorio.insert(object);
         } else
             throw new PessoaExistenteException();
     }

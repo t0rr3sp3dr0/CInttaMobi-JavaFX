@@ -10,6 +10,8 @@ import java.util.ArrayList;
  */
 public interface RepositoriosPessoa {
     boolean exists(String id);
+    boolean existsID(String id);
+    boolean existsNIS(String id);
     void insert(Pessoa object);
     void update(Pessoa object);
     void remove(Pessoa object);

@@ -7,6 +7,8 @@ import systems.singularity.cinttamobi.negocio.NegociosOnibus;
 import systems.singularity.cinttamobi.negocio.NegociosPessoa;
 import systems.singularity.cinttamobi.negocio.NegociosVEM;
 import systems.singularity.cinttamobi.negocio.Onibus;
+import systems.singularity.cinttamobi.negocio.pessoas.Estudante;
+import systems.singularity.cinttamobi.negocio.pessoas.Trabalhador;
 import systems.singularity.cinttamobi.negocio.vem.VEMComum;
 
 import java.io.BufferedReader;
@@ -43,13 +45,38 @@ public class Fachada {
         return ourInstance;
     }
 
-    public void cadastrarVEM(VEM vem) throws PessoaExistenteException, VEMExistenteException {
+    public void cadastrarVEM(VEM vem) throws PessoaExistenteException, VEMExistenteException, CarteiraEstudanteInvalidaException, NISInvalidoException {
         if(vem != null) {
             if (!(vem instanceof VEMComum)) {
                 if (!negociosPessoa.exists(vem.getPerson().getCPF())) {
-                    negociosVEM.insert(vem);
-                    negociosPessoa.insert(vem.getPerson());
-                } else
+                    if(vem.getPerson() instanceof Estudante)
+                    {
+                        Estudante estudante = (Estudante) vem.getPerson();
+                        if(!negociosPessoa.existsID(estudante.getStudentID()))
+                        {
+                            negociosVEM.insert(vem);
+                            negociosPessoa.insert(vem.getPerson());
+                        }
+                        else
+                            throw new CarteiraEstudanteInvalidaException();
+                    }
+                    else if(vem.getPerson() instanceof Trabalhador)
+                    {
+                        Trabalhador trabalhador = (Trabalhador) vem.getPerson();
+                        if(!negociosPessoa.existsNIS(trabalhador.getNIS()))
+                        {
+                            negociosVEM.insert(vem);
+                            negociosPessoa.insert(vem.getPerson());
+                        }
+                        else
+                            throw new NISInvalidoException();
+                    }
+                    else
+                    {
+                        negociosVEM.insert(vem);
+                        negociosPessoa.insert(vem.getPerson());
+                    }
+                 } else
                     throw new PessoaExistenteException();
             } else
                 negociosVEM.insert(vem);

@@ -63,6 +63,10 @@ public class Testes {
                 fachada.cadastrarVEM(new VEMComum(randNumber(13)));
             } catch (PessoaExistenteException | VEMInvalidoException | VEMExistenteException e) {
                 e.printStackTrace();
+            } catch (CarteiraEstudanteInvalidaException e) {
+                e.printStackTrace();
+            } catch (NISInvalidoException e) {
+                e.printStackTrace();
             }
 
             Pessoa[] pessoas = new Pessoa[32];
@@ -203,17 +207,29 @@ public class Testes {
                 fachada.cadastrarVEM(new VEMComum(randNumber(13)));
             } catch (PessoaExistenteException | VEMInvalidoException | VEMExistenteException e) {
                 e.printStackTrace();
+            } catch (CarteiraEstudanteInvalidaException e) {
+                e.printStackTrace();
+            } catch (NISInvalidoException e) {
+                e.printStackTrace();
             }
 
             try {
                 fachada.cadastrarVEM(new VEMComum(randNumber(13)));
             } catch (PessoaExistenteException | VEMInvalidoException | VEMExistenteException e) {
                 e.printStackTrace();
+            } catch (CarteiraEstudanteInvalidaException e) {
+                e.printStackTrace();
+            } catch (NISInvalidoException e) {
+                e.printStackTrace();
             }
 
             try {
                 fachada.cadastrarVEM(new VEMComum(randNumber(12)));
             } catch (PessoaExistenteException | VEMInvalidoException | VEMExistenteException e) {
+                e.printStackTrace();
+            } catch (CarteiraEstudanteInvalidaException e) {
+                e.printStackTrace();
+            } catch (NISInvalidoException e) {
                 e.printStackTrace();
             }
 
@@ -228,6 +244,10 @@ public class Testes {
                     e.printStackTrace();
                 } catch (TipoVEMInvalidoException e) {
                     e.printStackTrace();
+                } catch (CarteiraEstudanteInvalidaException e) {
+                    e.printStackTrace();
+                } catch (NISInvalidoException e) {
+                    e.printStackTrace();
                 }
 
                 try {
@@ -239,6 +259,10 @@ public class Testes {
                 } catch (VEMInvalidoException e) {
                     e.printStackTrace();
                 } catch (TipoVEMInvalidoException e) {
+                    e.printStackTrace();
+                } catch (CarteiraEstudanteInvalidaException e) {
+                    e.printStackTrace();
+                } catch (NISInvalidoException e) {
                     e.printStackTrace();
                 }
 
@@ -252,11 +276,19 @@ public class Testes {
                     e.printStackTrace();
                 } catch (TipoVEMInvalidoException e) {
                     e.printStackTrace();
+                } catch (CarteiraEstudanteInvalidaException e) {
+                    e.printStackTrace();
+                } catch (NISInvalidoException e) {
+                    e.printStackTrace();
                 }
 
                 try {
                     fachada.cadastrarVEM(new VEMTrabalhador(randNumber(13), pessoa));
                 } catch (PessoaExistenteException | TipoVEMInvalidoException | VEMInvalidoException | VEMExistenteException e) {
+                    e.printStackTrace();
+                } catch (CarteiraEstudanteInvalidaException e) {
+                    e.printStackTrace();
+                } catch (NISInvalidoException e) {
                     e.printStackTrace();
                 }
             }

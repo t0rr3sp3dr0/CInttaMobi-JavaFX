@@ -1,7 +1,9 @@
 package systems.singularity.cinttamobi.dados.pessoa;
 
 import systems.singularity.cinttamobi.interfaces.RepositoriosPessoa;
+import systems.singularity.cinttamobi.negocio.pessoas.Estudante;
 import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
+import systems.singularity.cinttamobi.negocio.pessoas.Trabalhador;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -24,7 +26,34 @@ public class RepositorioPessoaArray implements RepositoriosPessoa {
             }
         }
         return false;
+    }
 
+    @Override
+    public boolean existsID(String id) {
+        for (Pessoa item: this.pessoas)
+        {
+            if(item instanceof Estudante)
+            {
+                Estudante estudante = (Estudante) item;
+                if(estudante.getStudentID().equals(id))
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean existsNIS(String id) {
+        for (Pessoa item: this.pessoas)
+        {
+            if(item instanceof Trabalhador)
+            {
+                Trabalhador trabalhador = (Trabalhador) item;
+                if(trabalhador.getNIS().equals(id))
+                    return true;
+            }
+        }
+        return false;
     }
 
     @Override
