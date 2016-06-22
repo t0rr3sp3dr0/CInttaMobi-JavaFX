@@ -187,7 +187,7 @@ public class VEMCadastroController implements Initializable {
                     try {
                         vem = new VEMComum(numberVEMTextField.getText());
 
-                        StageTools.alert(Alert.AlertType.WARNING, null, "VEM cadastrado com sucesso!", null, true);
+                        StageTools.alert(Alert.AlertType.WARNING, null, "Operação realizada com sucesso!", null, true);
                     } catch (Exception e) {
                         StageTools.exception(e, true);
                     }
@@ -204,7 +204,7 @@ public class VEMCadastroController implements Initializable {
                                             ownerCPFTextField.getText(),
                                             ownerExtraTextField.getText()
                                     ));
-                            StageTools.alert(Alert.AlertType.WARNING, null, "VEM cadastrado com sucesso!", null, true);
+                            StageTools.alert(Alert.AlertType.WARNING, null, "Operação realizada com sucesso!", null, true);
                         } catch (Exception e) {
                             StageTools.exception(e, true);
                         }
@@ -217,7 +217,7 @@ public class VEMCadastroController implements Initializable {
                                             Date.from(Instant.from(ownerBirthDatePicker.getValue().atStartOfDay(ZoneId.systemDefault()))),
                                             ownerCPFTextField.getText()
                                     ));
-                            StageTools.alert(Alert.AlertType.WARNING, null, "VEM cadastrado com sucesso!", null, true);
+                            StageTools.alert(Alert.AlertType.WARNING, null, "Operação realizada com sucesso!", null, true);
                         } catch (Exception e) {
                             StageTools.exception(e, true);
                         }
@@ -230,7 +230,7 @@ public class VEMCadastroController implements Initializable {
                                             Date.from(Instant.from(ownerBirthDatePicker.getValue().atStartOfDay(ZoneId.systemDefault()))),
                                             ownerCPFTextField.getText()
                                     ));
-                            StageTools.alert(Alert.AlertType.WARNING, null, "VEM cadastrado com sucesso!", null, true);
+                            StageTools.alert(Alert.AlertType.WARNING, null, "Operação realizada com sucesso!", null, true);
                         } catch (Exception e) {
                             StageTools.exception(e, true);
                         }
@@ -244,7 +244,7 @@ public class VEMCadastroController implements Initializable {
                                             ownerCPFTextField.getText(),
                                             ownerExtraTextField.getText()
                                     ));
-                            StageTools.alert(Alert.AlertType.WARNING, null, "VEM cadastrado com sucesso!", null, true);
+                            StageTools.alert(Alert.AlertType.WARNING, null, "Operação realizada com sucesso!", null, true);
                         } catch (Exception e) {
                             StageTools.exception(e, true);
                         }
