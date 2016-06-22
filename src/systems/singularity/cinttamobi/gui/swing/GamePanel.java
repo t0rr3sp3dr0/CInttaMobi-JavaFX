@@ -2,6 +2,7 @@ package systems.singularity.cinttamobi.gui.swing;
 
 import systems.singularity.cinttamobi.Programa;
 import systems.singularity.cinttamobi.gui.javafx.EventsTimeline;
+import systems.singularity.cinttamobi.gui.javafx.controllers.MainController;
 
 import javax.swing.*;
 import java.awt.*;
