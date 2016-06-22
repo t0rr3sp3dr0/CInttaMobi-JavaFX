@@ -258,8 +258,7 @@ public class GamePanel extends JPanel implements ComponentListener {
             MainController.stageTools.newTab("vemTerminal");
         } else if (presentTileY == 5 && presentTileX == 10) {
             MainController.stageTools.newTab("vemATM");
-        } else
-            MainController.stageTools.close();
+        }
     }
 
     public void startRun() {

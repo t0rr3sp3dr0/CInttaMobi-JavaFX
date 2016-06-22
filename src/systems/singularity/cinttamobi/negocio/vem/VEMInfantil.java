@@ -14,6 +14,8 @@ import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 public class VEMInfantil extends VEM {
 
     public VEMInfantil(String number, Pessoa person) throws TipoVEMInvalidoException, VEMInvalidoException {
+        // Checa se o objeto recebido realmente é criança,
+        // que, assim como idoso, só se permite instanciar a partir de certa idade.
         super(number, person);
         if(!(person instanceof Crianca))
             throw new TipoVEMInvalidoException();
@@ -21,11 +23,13 @@ public class VEMInfantil extends VEM {
 
     @Override
     public void credit(double value) throws OperacaoInvalidaException {
+        // Assim como idoso, VEM Infantil tem "saldo infinito"
         throw new OperacaoInvalidaException();
     }
 
     @Override
     public void debit(double value){
+        // Assim como idoso, VEM Infantil tem "saldo infinito"
     }
 
 

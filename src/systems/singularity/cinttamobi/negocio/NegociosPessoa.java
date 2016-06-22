@@ -14,9 +14,12 @@ import systems.singularity.cinttamobi.negocio.pessoas.Trabalhador;
  */
 public class NegociosPessoa {
 
+    // Objeto a partir da interface, não inicializado
     private RepositoriosPessoa repositorio;
 
     public NegociosPessoa(String tipo) throws RepositorioInvalidoException {
+        // Construtor recebe a string que define o tipo de repositório
+        // o mesmo é então inicializado.
         switch (tipo) {
             case "array":
                 repositorio = new RepositorioPessoaArray();
@@ -29,21 +32,26 @@ public class NegociosPessoa {
         }
     }
 
+    // Checa se a pessoa existe baseado no CPF
     public boolean exists(String id) {
         return repositorio.exists(id);
     }
 
+    // Checa se o estudante existe baseado na carteira de estudante
     public boolean existsID(String id) {
         return repositorio.existsID(id);
     }
 
+    // Checa se o trabalhador existe baseado no NIS
     public boolean existsNIS(String id) {
         return repositorio.existsNIS(id);
     }
 
-
+    // Checa se o objeto pessoa (ou estudante/trabalhador) já existe baseado no CPF e Carteira de Estudante ou NIS
+    // Utilizando os métodos acima, e em seguida insere
     public void insert(Pessoa object) throws PessoaExistenteException, CarteiraEstudanteInvalidaException, NISInvalidoException {
         if (!exists(object.getCPF())) {
+            // Caso estudante..
             if(object instanceof Estudante)
             {
                 Estudante estudante = (Estudante) object;
@@ -52,6 +60,7 @@ public class NegociosPessoa {
                 else
                     throw new CarteiraEstudanteInvalidaException();
             }
+            // Caso trabalhador..
             else if(object instanceof Trabalhador)
             {
                 Trabalhador trabalhador = (Trabalhador) object;
@@ -66,6 +75,7 @@ public class NegociosPessoa {
             throw new PessoaExistenteException();
     }
 
+    // Atualiza a pessoa caso ela exista
     public void update(Pessoa object) throws PessoaInexistenteException {
 
         if (exists(object.getCPF())) {
@@ -73,6 +83,7 @@ public class NegociosPessoa {
         } else throw new PessoaInexistenteException();
     }
 
+    // Remove a pessoa caso ela exista
     public void remove(Pessoa object) throws PessoaInexistenteException {
 
         if (exists(object.getCPF())) {

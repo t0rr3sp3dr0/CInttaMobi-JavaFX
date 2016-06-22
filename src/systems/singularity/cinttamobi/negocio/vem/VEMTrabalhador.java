@@ -15,6 +15,9 @@ import systems.singularity.cinttamobi.negocio.pessoas.Trabalhador;
 public class VEMTrabalhador extends VEM {
 
     public VEMTrabalhador(String number, Pessoa person) throws TipoVEMInvalidoException, VEMInvalidoException {
+        // Assim como nos outros VEMs, checa se o tipo de pessoa é correto.
+        // Não requer filtragem adicional pelo próprio objeto Trabalhador já a fazer, assim como os outros
+        // objetos dos outros VEM.
         super(number, person);
         if(!(person instanceof Trabalhador))
             throw new TipoVEMInvalidoException();
@@ -22,6 +25,7 @@ public class VEMTrabalhador extends VEM {
 
     @Override
     public void credit(double value) throws ValorInvalidoException {
+        // Creditar normal, como em VEM Comum
         if (value <= 0)
             throw new ValorInvalidoException();
         this.balance += value;
@@ -29,6 +33,7 @@ public class VEMTrabalhador extends VEM {
 
     @Override
     public void debit(double value) throws ValorInvalidoException, SaldoInsuficienteException {
+        // Debitar normal, como em VEM Comum
         if (value <= 0)
             throw new ValorInvalidoException();
         else if (value > this.getBalance())

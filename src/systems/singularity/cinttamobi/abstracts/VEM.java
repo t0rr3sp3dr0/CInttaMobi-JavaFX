@@ -26,18 +26,22 @@ public abstract class VEM {
         this.balance = 0;
     }
 
+    // Retorna o número do VEM
     public String getNumber() {
         return number;
     }
 
+    // Retorna o dono
     public Pessoa getPerson() {
         return person;
     }
 
+    // Retorna o saldo
     public double getBalance() {
         return balance;
     }
 
+    // Métodos deixados abstratos pois variam dependendo do tipo de VEM
     public abstract void credit(double value) throws ValorInvalidoException, OperacaoInvalidaException;
 
     public abstract void debit(double value) throws ValorInvalidoException, SaldoInsuficienteException;
