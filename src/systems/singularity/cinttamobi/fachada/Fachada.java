@@ -1,8 +1,10 @@
 package systems.singularity.cinttamobi.fachada;
 
+import javafx.scene.control.Alert;
 import systems.singularity.cinttamobi.Programa;
 import systems.singularity.cinttamobi.abstracts.VEM;
 import systems.singularity.cinttamobi.exceptions.*;
+import systems.singularity.cinttamobi.gui.javafx.StageTools;
 import systems.singularity.cinttamobi.negocio.NegociosOnibus;
 import systems.singularity.cinttamobi.negocio.NegociosPessoa;
 import systems.singularity.cinttamobi.negocio.NegociosVEM;
@@ -31,15 +33,16 @@ public class Fachada {
 
     private Fachada() {
         try {
-
             //Carrega o arquivo de texto
             BufferedReader in = new BufferedReader(new FileReader(Programa.class.getResource("config.txt").getPath()));
             String tipo = in.readLine();
             //implementa o repositório de acordo com o que tem no texto
-            negociosOnibus = new NegociosOnibus(tipo);
-            negociosPessoa = new NegociosPessoa(tipo);
-            negociosVEM = new NegociosVEM(tipo);
-
+            if (tipo.equals("array") || tipo.equals("lista")) {
+                negociosOnibus = new NegociosOnibus(tipo);
+                negociosPessoa = new NegociosPessoa(tipo);
+                negociosVEM = new NegociosVEM(tipo);
+            } else
+                StageTools.exception(new RepositorioInvalidoException(), true);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (RepositorioInvalidoException e) {

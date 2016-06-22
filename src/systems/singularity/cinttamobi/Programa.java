@@ -15,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
+import systems.singularity.cinttamobi.exceptions.RepositorioInvalidoException;
 import systems.singularity.cinttamobi.gui.javafx.AsyncCallable;
 import systems.singularity.cinttamobi.gui.javafx.EventsTimeline;
 import systems.singularity.cinttamobi.gui.javafx.StageTools;
@@ -41,8 +42,19 @@ public class Programa extends Application {
         Thread.setDefaultUncaughtExceptionHandler((t, e) -> {
             if (developerMode)
                 e.printStackTrace();
-
-            StageTools.exception((Exception) e, waitOnExcept);
+            try {
+                StageTools.exception((Exception) e, waitOnExcept);
+            } catch (Exception e1) {
+                EventsTimeline eventsTimeline = new EventsTimeline();
+                eventsTimeline.add(event -> {
+                    StageTools.exception(new RepositorioInvalidoException(), false);
+                }, 2048);
+                for (int i = 0; i < 32; i++)
+                    eventsTimeline.add(event -> {
+                        primaryStage.close();
+                    }, 128);
+                eventsTimeline.play();
+            }
         });
 
         primaryStage.setOnCloseRequest(event -> {
