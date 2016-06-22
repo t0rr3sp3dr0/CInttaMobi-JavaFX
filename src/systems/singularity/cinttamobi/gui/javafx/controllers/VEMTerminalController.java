@@ -102,7 +102,6 @@ public class VEMTerminalController implements Initializable {
                 futureLabel.setVisible(false);
                 futureBallanceLabel.setVisible(false);
             } else {
-
                 double past = vem.getBalance();
 
                 double price = onibusComboBox.getValue().getLine().getRing().getPrice();

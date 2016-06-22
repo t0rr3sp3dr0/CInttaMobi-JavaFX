@@ -45,9 +45,13 @@ public class OnibusCadastroController implements Initializable {
 
         SelectionModel selectionModel = onibusTableView.getSelectionModel();
         selectionModel.selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue == null)
+            if (newValue == null) {
                 clearFields();
-            else {
+
+                deleteOnibusButton.setDisable(true);
+            } else {
+                deleteOnibusButton.setDisable(false);
+
                 numberOnibusTextField.setDisable(true);
 
                 Onibus onibus = (Onibus) newValue;

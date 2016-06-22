@@ -79,7 +79,11 @@ public class VEMCadastroController implements Initializable {
                 ownerCPFLabel.setVisible(false);
                 ownerExtraTextField.setVisible(false);
                 ownerExtraLabel.setVisible(false);
+
+                deleteVEMButton.setDisable(true);
             } else {
+                deleteVEMButton.setDisable(false);
+
                 numberVEMTextField.setDisable(true);
                 typeVEMComboBox.setDisable(true);
                 ownerBirthDatePicker.setDisable(true);
