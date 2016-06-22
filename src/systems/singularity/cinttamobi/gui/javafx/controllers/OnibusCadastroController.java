@@ -17,7 +17,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * Created by Edjan Michiles on 19/06/2016.
+ * Created by Pedro Tôrres on 19/06/2016.
  * © 2016 Singularity Systems
  */
 public class OnibusCadastroController implements Initializable {
