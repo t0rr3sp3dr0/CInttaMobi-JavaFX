@@ -5,10 +5,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
-import javafx.scene.input.KeyCode;
-import systems.singularity.cinttamobi.gui.javafx.EventsTimeline;
-import systems.singularity.cinttamobi.gui.swing.GamePanel;
 import systems.singularity.cinttamobi.gui.javafx.StageTools;
+import systems.singularity.cinttamobi.gui.swing.GamePanel;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -17,10 +15,10 @@ import java.util.Properties;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
-    public TabPane tabPane;
+    public static TabPane tabPane;
+    public static boolean canMove = true;
     public Tab mainTab;
     public SwingNode swingNode;
-
     private GamePanel panel = new GamePanel();
     private Properties messages = new Properties();
     private StageTools stageTools = new StageTools();
@@ -36,14 +34,10 @@ public class MainController implements Initializable {
 
         setPane(swingNode);
 
-        stageTools.newTab("vemCadastro", tabPane);
-        stageTools.newTab("onibusCadastro", tabPane);
-
         tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.SELECTED_TAB);
 
-        // COMO FAZER PRA A GAMEPANEL SER A TELA INICIAL?
-        // VE O METODO checkPortal() da GamePanel
-
+        stageTools.newTab("vemCadastro", tabPane);
+        stageTools.newTab("onibusCadastro", tabPane);
     }
 
     public void setPane(final SwingNode swingNode) {
@@ -56,50 +50,47 @@ public class MainController implements Initializable {
     }
 
     public void onMovement(Scene scene) {
-
-        // É PRA NAO DEIXAR ELE FAZER CARAI NENHUM SE FIZER MENOS DE 450ms QUE FOI CHAMADO DA ULTIMA VEZ
-
-    scene.setOnKeyPressed(event -> {
-                if (tabPane.getSelectionModel().isSelected(0)) {
-                    switch (event.getCode()) {
-                        case W:
-                            panel.moveNorth();
-                            break;
-                        case S:
-                            panel.moveSouth();
-                            break;
-                        case A:
-                            panel.moveWest();
-                            break;
-                        case D:
-                            panel.moveEast();
-                            break;
-                        case SHIFT:
-                            panel.startRun();
-                            break;
-                    }
+        scene.setOnKeyPressed(event -> {
+            if (tabPane.getSelectionModel().isSelected(0) && canMove) {
+                switch (event.getCode()) {
+                    case W:
+                        panel.moveNorth();
+                        break;
+                    case S:
+                        panel.moveSouth();
+                        break;
+                    case A:
+                        panel.moveWest();
+                        break;
+                    case D:
+                        panel.moveEast();
+                        break;
+                    case SHIFT:
+                        panel.startRun();
+                        break;
                 }
-            });
+            }
+        });
 
-            scene.setOnKeyReleased(event -> {
-                if (tabPane.getSelectionModel().isSelected(0))
-                    switch (event.getCode()) {
-                        case W:
-                            panel.stopMoving();
-                            break;
-                        case S:
-                            panel.stopMoving();
-                            break;
-                        case A:
-                            panel.stopMoving();
-                            break;
-                        case D:
-                            panel.stopMoving();
-                            break;
-                        case SHIFT:
-                            panel.stopRun();
-                            break;
-                    }
-            });
-        }
+        scene.setOnKeyReleased(event -> {
+            if (tabPane.getSelectionModel().isSelected(0) && canMove)
+                switch (event.getCode()) {
+                    case W:
+                        panel.stopMoving();
+                        break;
+                    case S:
+                        panel.stopMoving();
+                        break;
+                    case A:
+                        panel.stopMoving();
+                        break;
+                    case D:
+                        panel.stopMoving();
+                        break;
+                    case SHIFT:
+                        panel.stopRun();
+                        break;
+                }
+        });
+    }
 }
