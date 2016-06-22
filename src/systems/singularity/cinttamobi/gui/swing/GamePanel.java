@@ -110,7 +110,7 @@ public class GamePanel extends JPanel implements ComponentListener {
                 isMoving = true;
                 EventsTimeline eventsTimeline = new EventsTimeline();
                 EventsTimeline.setDelay(150 / speedMultiplier);
-                eventsTimeline.add(event -> MainController.canMove = false,10);
+                eventsTimeline.add(event -> MainController.canMove = false, 10);
                 eventsTimeline.add(event -> {
                     character = northWalk1;
                     presentMoveVariantY -= (getHeight() / (ScaleH * 4)) / 2;
@@ -128,7 +128,7 @@ public class GamePanel extends JPanel implements ComponentListener {
                     checkPortal();
                     repaint();
                 }, 10 / speedMultiplier);
-                eventsTimeline.add(event -> MainController.canMove = true,10);
+                eventsTimeline.add(event -> MainController.canMove = true, 10);
                 eventsTimeline.play();
             }
         }
@@ -140,7 +140,7 @@ public class GamePanel extends JPanel implements ComponentListener {
                 isMoving = true;
                 EventsTimeline eventsTimeline = new EventsTimeline();
                 EventsTimeline.setDelay(150 / speedMultiplier);
-                eventsTimeline.add(event -> MainController.canMove = false,10);
+                eventsTimeline.add(event -> MainController.canMove = false, 10);
                 eventsTimeline.add(event -> {
                     character = southWalk1;
                     presentMoveVariantY += (getHeight() / (ScaleH * 4)) / 2;
@@ -157,7 +157,7 @@ public class GamePanel extends JPanel implements ComponentListener {
                     presentTileY++;
                     repaint();
                 }, 10 / speedMultiplier);
-                eventsTimeline.add(event -> MainController.canMove = true,10);
+                eventsTimeline.add(event -> MainController.canMove = true, 10);
                 eventsTimeline.play();
             }
         }
@@ -169,7 +169,7 @@ public class GamePanel extends JPanel implements ComponentListener {
                 isMoving = true;
                 EventsTimeline eventsTimeline = new EventsTimeline();
                 EventsTimeline.setDelay(150 / speedMultiplier);
-                eventsTimeline.add(event -> MainController.canMove = false,10);
+                eventsTimeline.add(event -> MainController.canMove = false, 10);
                 eventsTimeline.add(event -> {
                     character = westWalk1;
                     presentMoveVariantX -= (getHeight() / (ScaleH * 4)) / 2;
@@ -187,7 +187,7 @@ public class GamePanel extends JPanel implements ComponentListener {
                     checkPortal();
                     repaint();
                 }, 10 / speedMultiplier);
-                eventsTimeline.add(event -> MainController.canMove = true,10);
+                eventsTimeline.add(event -> MainController.canMove = true, 10);
                 eventsTimeline.play();
             }
         }
@@ -199,7 +199,7 @@ public class GamePanel extends JPanel implements ComponentListener {
                 isMoving = true;
                 EventsTimeline eventsTimeline = new EventsTimeline();
                 EventsTimeline.setDelay(150 / speedMultiplier);
-                eventsTimeline.add(event -> MainController.canMove = false,10);
+                eventsTimeline.add(event -> MainController.canMove = false, 10);
                 eventsTimeline.add(event -> {
                     character = eastWalk1;
                     presentMoveVariantX += (getHeight() / (ScaleH * 4)) / 2;
@@ -217,7 +217,7 @@ public class GamePanel extends JPanel implements ComponentListener {
                     checkPortal();
                     repaint();
                 }, 10 / speedMultiplier);
-                eventsTimeline.add(event -> MainController.canMove = true,10);
+                eventsTimeline.add(event -> MainController.canMove = true, 10);
                 eventsTimeline.play();
             }
         }
@@ -235,7 +235,7 @@ public class GamePanel extends JPanel implements ComponentListener {
             for (int j = 0; j < ScaleW * 4; j++) {
                 if (i > 3 && j > 4 && j < 11) {
                     blockedTiles[i][j] = true;
-                    if(i == 4 && j == 10){
+                    if (i == 4 && j == 10) {
                         blockedTiles[i][j] = false;
                     }
                 } else if (i > 6 && j > 10 && j < 13) {
@@ -256,9 +256,10 @@ public class GamePanel extends JPanel implements ComponentListener {
             MainController.stageTools.newTab("vemCadastro");
         } else if (presentTileY == 6 && presentTileX == 12) {
             MainController.stageTools.newTab("vemTerminal");
-        } else if(presentTileY == 5 && presentTileX == 10){
+        } else if (presentTileY == 5 && presentTileX == 10) {
             MainController.stageTools.newTab("vemATM");
-        }
+        } else
+            MainController.stageTools.close();
     }
 
     public void startRun() {
@@ -271,7 +272,7 @@ public class GamePanel extends JPanel implements ComponentListener {
 
     public void stopMoving() {
         isMoving = false;
-    };
+    }
 
     public void componentShown(ComponentEvent arg0) {
     }

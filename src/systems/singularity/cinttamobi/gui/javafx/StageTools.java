@@ -10,6 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import systems.singularity.cinttamobi.Programa;
 
 import java.awt.image.BufferedImage;
@@ -92,6 +93,19 @@ public class StageTools {
         ObservableList<T> dest = FXCollections.observableArrayList(scr);
         tableView.getItems().removeAll(scr);
         tableView.getItems().addAll(dest);
+    }
+
+    public void close() {
+        Button button = new Button();
+        button.setOnAction(event ->
+                stage.fireEvent(
+                        new WindowEvent(
+                                stage,
+                                WindowEvent.WINDOW_CLOSE_REQUEST
+                        )
+                )
+        );
+        button.fire();
     }
 
     public Scene getScene() {

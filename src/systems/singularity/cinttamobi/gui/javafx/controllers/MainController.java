@@ -43,9 +43,6 @@ public class MainController implements Initializable {
     }
 
     public void onMovement(Scene scene) {
-   //     if (!canMove) {
-    //        return;
-    //    }
         scene.setOnKeyPressed(event -> {
             if (tabPane.getSelectionModel().isSelected(0) && canMove) {
                 switch (event.getCode()) {
