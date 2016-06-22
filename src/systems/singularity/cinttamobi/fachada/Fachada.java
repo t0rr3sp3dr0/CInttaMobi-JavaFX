@@ -1,6 +1,5 @@
 package systems.singularity.cinttamobi.fachada;
 
-import javafx.scene.control.Alert;
 import systems.singularity.cinttamobi.Programa;
 import systems.singularity.cinttamobi.abstracts.VEM;
 import systems.singularity.cinttamobi.exceptions.*;
@@ -34,7 +33,7 @@ public class Fachada {
     private Fachada() {
         try {
             //Carrega o arquivo de texto
-            BufferedReader in = new BufferedReader(new FileReader(Programa.class.getResource("config.txt").getPath()));
+            BufferedReader in = new BufferedReader(new FileReader(Programa.class.getResource("/values/config.txt").getPath()));
             String tipo = in.readLine();
             //implementa o repositório de acordo com o que tem no texto
             if (tipo.equals("array") || tipo.equals("lista")) {
