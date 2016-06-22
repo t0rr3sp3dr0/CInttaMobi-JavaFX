@@ -36,10 +36,14 @@ public class MainController implements Initializable {
 
         setPane(swingNode);
 
-        tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.SELECTED_TAB);
-
         stageTools.newTab("vemCadastro", tabPane);
         stageTools.newTab("onibusCadastro", tabPane);
+
+        tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.SELECTED_TAB);
+
+        // COMO FAZER PRA A GAMEPANEL SER A TELA INICIAL?
+        // VE O METODO checkPortal() da GamePanel
+
     }
 
     public void setPane(final SwingNode swingNode) {
@@ -52,6 +56,9 @@ public class MainController implements Initializable {
     }
 
     public void onMovement(Scene scene) {
+
+        // É PRA NAO DEIXAR ELE FAZER CARAI NENHUM SE FIZER MENOS DE 450ms QUE FOI CHAMADO DA ULTIMA VEZ
+
     scene.setOnKeyPressed(event -> {
                 if (tabPane.getSelectionModel().isSelected(0)) {
                     switch (event.getCode()) {

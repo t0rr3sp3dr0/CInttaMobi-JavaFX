@@ -235,6 +235,17 @@ public class GamePanel extends JPanel implements ComponentListener {
         }
     }
 
+    public void checkPortal(int x, int y){
+        if(x == 8 && y < 3 && y > 0){
+            // CHAMA TELA CADASTRO ONIBUS
+        } else if(x == 4 && y > 6 && y < 9){
+            // CHAMA TELA CADASTRO DE VEM
+        } else if(x == 6 && y == 12){
+            // CHAMA TELA TERMINAL DE ONIBUS
+            // TAMBEM TEM QUE CHECAR SE JA TA ABERTA PRA N ABRIR MAIS DE UMA
+        }
+    }
+
     public void startRun() {
         this.speedMultiplier = 2;
     }
