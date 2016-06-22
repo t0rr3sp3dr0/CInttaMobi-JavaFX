@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
@@ -26,6 +27,8 @@ import java.util.Properties;
 public class StageTools {
     private static Properties messages = new Properties();
     private static TabPane tabPane;
+    private static Scene scene;
+    private static Stage stage;
 
     public StageTools() {
         try {
@@ -89,6 +92,22 @@ public class StageTools {
         ObservableList<T> dest = FXCollections.observableArrayList(scr);
         tableView.getItems().removeAll(scr);
         tableView.getItems().addAll(dest);
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        StageTools.scene = scene;
+    }
+
+    public Stage getStage() {
+        return stage;
+    }
+
+    public void setStage(Stage stage) {
+        StageTools.stage = stage;
     }
 
     public void newTab(String id, TabPane tabPane) {

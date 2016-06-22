@@ -31,6 +31,7 @@ public class MainController implements Initializable {
             e.printStackTrace();
         }
         stageTools.setTabPane(tabPane);
+        stageTools.setScene(tabPane.getScene());
         tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.SELECTED_TAB);
 
         setPane(swingNode);

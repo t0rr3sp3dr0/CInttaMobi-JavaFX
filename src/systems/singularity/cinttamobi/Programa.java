@@ -107,6 +107,7 @@ public class Programa extends Application {
                     }
                     primaryStage.setMinWidth(Double.parseDouble(messages.getProperty("minWidth")));
                     primaryStage.setMinHeight(Double.parseDouble(messages.getProperty("minHeight")));
+                    MainController.stageTools.setStage(primaryStage);
                     ((MainController) fxmlLoader.getController()).onMovement(scene);
                 } catch (IOException e) {
                     e.printStackTrace();
