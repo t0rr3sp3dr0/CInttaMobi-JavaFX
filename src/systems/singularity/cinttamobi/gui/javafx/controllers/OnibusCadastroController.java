@@ -112,6 +112,8 @@ public class OnibusCadastroController implements Initializable {
             onibusTableView.setItems(FXCollections.observableArrayList(fachada.listOnibus()));
             onibusTableView.getSelectionModel().clearSelection();
         });
+
+        deleteOnibusButton.setDisable(true);
     }
 
     private void clearFields() {
