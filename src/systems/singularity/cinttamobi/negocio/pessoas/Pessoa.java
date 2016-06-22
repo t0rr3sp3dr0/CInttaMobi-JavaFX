@@ -39,7 +39,7 @@ public class Pessoa {
         } else
             throw new CPFInvalidoException();
 
-        name = name.replace("\\W+", "");
+        name = name.replaceAll("[^A-Za-z]+", "");
         this.name = name;
         this.birth = birth;
         this.cpf = cpf;
