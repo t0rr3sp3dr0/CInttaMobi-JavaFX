@@ -127,7 +127,7 @@ public class GamePanel extends JPanel implements ComponentListener {
                     presentTileY--;
                     checkPortal();
                     repaint();
-                }, 50 / speedMultiplier);
+                }, 10 / speedMultiplier);
                 eventsTimeline.add(event -> MainController.canMove = true,10);
                 eventsTimeline.play();
             }
@@ -156,7 +156,7 @@ public class GamePanel extends JPanel implements ComponentListener {
                     presentMoveVariantY = 0;
                     presentTileY++;
                     repaint();
-                }, 50 / speedMultiplier);
+                }, 10 / speedMultiplier);
                 eventsTimeline.add(event -> MainController.canMove = true,10);
                 eventsTimeline.play();
             }
@@ -186,7 +186,7 @@ public class GamePanel extends JPanel implements ComponentListener {
                     presentTileX--;
                     checkPortal();
                     repaint();
-                }, 50 / speedMultiplier);
+                }, 10 / speedMultiplier);
                 eventsTimeline.add(event -> MainController.canMove = true,10);
                 eventsTimeline.play();
             }
@@ -216,7 +216,7 @@ public class GamePanel extends JPanel implements ComponentListener {
                     presentTileX++;
                     checkPortal();
                     repaint();
-                }, 50 / speedMultiplier);
+                }, 10 / speedMultiplier);
                 eventsTimeline.add(event -> MainController.canMove = true,10);
                 eventsTimeline.play();
             }

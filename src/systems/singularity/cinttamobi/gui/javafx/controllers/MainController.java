@@ -49,11 +49,11 @@ public class MainController implements Initializable {
     }
 
     public void onMovement(Scene scene) {
-        if (!canMove) {
-            return;
-        }
+   //     if (!canMove) {
+    //        return;
+    //    }
         scene.setOnKeyPressed(event -> {
-            if (tabPane.getSelectionModel().isSelected(0)) {
+            if (tabPane.getSelectionModel().isSelected(0) && canMove) {
                 switch (event.getCode()) {
                     case W:
                         panel.moveNorth();
@@ -75,7 +75,7 @@ public class MainController implements Initializable {
         });
 
         scene.setOnKeyReleased(event -> {
-            if (tabPane.getSelectionModel().isSelected(0) && canMove)
+            if (tabPane.getSelectionModel().isSelected(0))
                 switch (event.getCode()) {
                     case W:
                         panel.stopMoving();
