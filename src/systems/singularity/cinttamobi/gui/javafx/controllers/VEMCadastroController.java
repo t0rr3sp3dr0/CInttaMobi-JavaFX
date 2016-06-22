@@ -172,6 +172,8 @@ public class VEMCadastroController implements Initializable {
             vemTableView.setItems(FXCollections.observableArrayList(fachada.listVEM()));
             vemTableView.getSelectionModel().clearSelection();
         });
+
+
         saveVEMButton.setOnAction(event -> {
             VEM vem = null;
 
@@ -184,6 +186,8 @@ public class VEMCadastroController implements Initializable {
                 } else if (tipoVEM == TiposVEM.Comum) {
                     try {
                         vem = new VEMComum(numberVEMTextField.getText());
+
+                        StageTools.alert(Alert.AlertType.WARNING, null, "Operação realizada com sucesso!", null, true);
                     } catch (Exception e) {
                         StageTools.exception(e, true);
                     }
@@ -200,6 +204,7 @@ public class VEMCadastroController implements Initializable {
                                             ownerCPFTextField.getText(),
                                             ownerExtraTextField.getText()
                                     ));
+                            StageTools.alert(Alert.AlertType.WARNING, null, "Operação realizada com sucesso!", null, true);
                         } catch (Exception e) {
                             StageTools.exception(e, true);
                         }
@@ -212,6 +217,7 @@ public class VEMCadastroController implements Initializable {
                                             Date.from(Instant.from(ownerBirthDatePicker.getValue().atStartOfDay(ZoneId.systemDefault()))),
                                             ownerCPFTextField.getText()
                                     ));
+                            StageTools.alert(Alert.AlertType.WARNING, null, "Operação realizada com sucesso!", null, true);
                         } catch (Exception e) {
                             StageTools.exception(e, true);
                         }
@@ -224,6 +230,7 @@ public class VEMCadastroController implements Initializable {
                                             Date.from(Instant.from(ownerBirthDatePicker.getValue().atStartOfDay(ZoneId.systemDefault()))),
                                             ownerCPFTextField.getText()
                                     ));
+                            StageTools.alert(Alert.AlertType.WARNING, null, "Operação realizada com sucesso!", null, true);
                         } catch (Exception e) {
                             StageTools.exception(e, true);
                         }
@@ -237,6 +244,7 @@ public class VEMCadastroController implements Initializable {
                                             ownerCPFTextField.getText(),
                                             ownerExtraTextField.getText()
                                     ));
+                            StageTools.alert(Alert.AlertType.WARNING, null, "Operação realizada com sucesso!", null, true);
                         } catch (Exception e) {
                             StageTools.exception(e, true);
                         }
@@ -247,8 +255,10 @@ public class VEMCadastroController implements Initializable {
             try {
                 if (selectionModel.getSelectedItem() != null)
                     fachada.atualizarVEM(vem);
-                else
+                else{
                     fachada.cadastrarVEM(vem);
+
+                }
 
                 clearFields();
                 vemTableView.setItems(FXCollections.observableArrayList(fachada.listVEM()));
@@ -257,6 +267,8 @@ public class VEMCadastroController implements Initializable {
                 StageTools.exception(e, true);
             }
         });
+
+
         deleteVEMButton.setOnAction(event -> {
             try {
                 fachada.removerVEM((VEM) selectionModel.getSelectedItem());
