@@ -27,7 +27,8 @@ public class RepositorioOnibusArray implements RepositoriosOnibus {
     @Override
     public void insert(Onibus object) {
         Onibus[] onibus = new Onibus[this.onibus.length + 1];
-        System.arraycopy(this.onibus, 0, onibus, 0, this.onibus.length);
+        for (int i = 0; i < this.onibus.length; i++)
+            onibus[i] = this.onibus[i];
         onibus[this.onibus.length] = object;
         this.onibus = onibus;
     }

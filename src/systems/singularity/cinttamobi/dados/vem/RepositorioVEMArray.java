@@ -24,7 +24,8 @@ public class RepositorioVEMArray implements RepositoriosVEM {
 
         VEM[] temp = new VEM[array.length + 1];
 
-        System.arraycopy(array, 0, temp, 0, array.length);
+        for (int i = 0; i < array.length; i++)
+            temp[i] = array[i];
 
         temp[array.length] = object;
         array = temp;
@@ -49,7 +50,8 @@ public class RepositorioVEMArray implements RepositoriosVEM {
             if (array[i].getNumber().equals(object.getNumber()))
                 array[i] = array[array.length - 1];
 
-        System.arraycopy(array, 0, temp, 0, array.length - 1);
+        for (int i = 0; i < array.length - 1; i++)
+            temp[i] = array[i];
 
         this.array = temp;
     }
