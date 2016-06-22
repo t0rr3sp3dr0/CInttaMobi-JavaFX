@@ -251,7 +251,9 @@ public class GamePanel extends JPanel implements ComponentListener {
             MainController.mainTabPane.getSelectionModel().select(2);
         } else if (presentTileY == 4 && presentTileX > 6 && presentTileX < 9) {
             MainController.mainTabPane.getSelectionModel().select(1);
-        } else if (presentTileY == 6 && presentTileX == 12) {}
+        } else if (presentTileY == 6 && presentTileX == 12) {
+            MainController.mainTabPane.getSelectionModel().select(3);
+        }
     }
 
     public void startRun() {
