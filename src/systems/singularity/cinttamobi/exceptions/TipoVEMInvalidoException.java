@@ -6,6 +6,7 @@ package systems.singularity.cinttamobi.exceptions;
  */
 public class TipoVEMInvalidoException extends Exception{
     public TipoVEMInvalidoException() {
-        super("Não preenche os requisitos necessários");
+        //A pessoa não preenche os requisitos necessários para o tipo do VEM
+        super("Não preenche os requisitos necessários para este tipo de VEM");
     }
 }
