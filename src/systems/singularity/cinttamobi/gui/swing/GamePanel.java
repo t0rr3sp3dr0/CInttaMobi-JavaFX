@@ -1,13 +1,11 @@
 package systems.singularity.cinttamobi.gui.swing;
 
-import javafx.scene.input.KeyCode;
 import systems.singularity.cinttamobi.Programa;
 import systems.singularity.cinttamobi.gui.javafx.EventsTimeline;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.Arrays;
 
 /**
  * Created by Lucas on 20/06/16.
@@ -22,7 +20,7 @@ public class GamePanel extends JPanel implements ComponentListener {
     private int ScaleH = 3;
     private int speedMultiplier = 1;
     private boolean isMoving = false;
-    private boolean[][] blockedTiles = new boolean[(ScaleW*4)][(ScaleH*4)];
+    private boolean[][] blockedTiles = new boolean[(ScaleH*4)][(ScaleW*4)];
     private int[] tilesX = new int[(ScaleW*4)];
     private int[] tilesY = new int[(ScaleH*4)];
     private int presentTileX = ScaleW+3;
@@ -68,6 +66,7 @@ public class GamePanel extends JPanel implements ComponentListener {
         super();
         this.addComponentListener(this);
         this.setPreferredSize(new Dimension(sizeW, sizeH));
+        populateBooleans();
     }
 
     @Override
@@ -103,7 +102,7 @@ public class GamePanel extends JPanel implements ComponentListener {
     }
 
     public void moveNorth() {
-        if (presentTileY > 0) {
+        if (presentTileY > 0 && blockedTiles[presentTileY-1][presentTileX]) {
             if (!isMoving) {
                 isMoving = true;
                 EventsTimeline eventsTimeline = new EventsTimeline();
@@ -131,7 +130,7 @@ public class GamePanel extends JPanel implements ComponentListener {
     }
 
     public void moveSouth() {
-        if (presentTileY < tilesY.length - 1) {
+        if (presentTileY < tilesY.length - 1 && blockedTiles[presentTileY+1][presentTileX]) {
             if (!isMoving) {
                 isMoving = true;
                 EventsTimeline eventsTimeline = new EventsTimeline();
@@ -159,7 +158,7 @@ public class GamePanel extends JPanel implements ComponentListener {
     }
 
     public void moveWest() {
-        if (presentTileX > 0) {
+        if (presentTileX > 0 && blockedTiles[presentTileY][presentTileX-1]) {
             if (!isMoving) {
                 isMoving = true;
                 EventsTimeline eventsTimeline = new EventsTimeline();
@@ -186,7 +185,7 @@ public class GamePanel extends JPanel implements ComponentListener {
     }
 
     public void moveEast() {
-        if (presentTileX < tilesX.length - 1) {
+        if (presentTileX < tilesX.length - 1 && blockedTiles[presentTileY][presentTileX+1]) {
             if (!isMoving) {
                 isMoving = true;
                 EventsTimeline eventsTimeline = new EventsTimeline();
@@ -213,6 +212,29 @@ public class GamePanel extends JPanel implements ComponentListener {
         }
     }
 
+    private void reTile() {
+        for (int i = 0; i < (ScaleW*4); i++)
+            tilesX[i] = (getWidth() / (ScaleW*4)) * i;
+        for (int j = 0; j < (ScaleH*4); j++)
+            tilesY[j] = (getHeight() / (ScaleH*4)) * j;
+    }
+
+    private void populateBooleans(){
+        for(int i = 0; i < ScaleH*4; i++){
+            for (int j = 0; j < ScaleW*4; j++){
+                if(i > 3 && j > 4 && j < 11){
+                    blockedTiles[i][j] = true;
+                } else if(i > 6 && j > 10 && j < 13){
+                    blockedTiles[i][j] = true;
+                } else if(i > 7 && j < 13){
+                    blockedTiles[i][j] = true;
+                } else if(i == 6 && j == 12){
+                    blockedTiles[i][j] = true;
+                }
+            }
+        }
+    }
+
     public void startRun() {
         this.speedMultiplier = 2;
     }
@@ -224,13 +246,6 @@ public class GamePanel extends JPanel implements ComponentListener {
     public void stopMoving(){
         isMoving = false;
     };
-
-    private void reTile() {
-        for (int i = 0; i < (ScaleW*4); i++)
-            tilesX[i] = (getWidth() / (ScaleW*4)) * i;
-        for (int j = 0; j < (ScaleH*4); j++)
-            tilesY[j] = (getHeight() / (ScaleH*4)) * j;
-    }
 
     public void componentShown(ComponentEvent arg0) {
     }
