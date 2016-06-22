@@ -15,10 +15,10 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
-import systems.singularity.cinttamobi.gui.javafx.controllers.MainController;
 import systems.singularity.cinttamobi.gui.javafx.AsyncCallable;
 import systems.singularity.cinttamobi.gui.javafx.EventsTimeline;
 import systems.singularity.cinttamobi.gui.javafx.StageTools;
+import systems.singularity.cinttamobi.gui.javafx.controllers.MainController;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -85,11 +85,6 @@ public class Programa extends Application {
             Label progressStatus = (Label) splashScreen.lookup("#progressStatus");
             EventsTimeline eventsTimeline = new EventsTimeline();
             EventsTimeline.setDelay(1000);
-            eventsTimeline.add(event -> {
-                ResourceBundle resourceBundle = ResourceBundle.getBundle("values.main");
-                ((Label) splashScreen.lookup("#version")).setText(String.format("Version %s", resourceBundle.getString("app.version")));
-                ((Label) splashScreen.lookup("#licensedTo")).setText(String.format("Licensed to %s", resourceBundle.getString("instance.licensedTo")));
-            });
             eventsTimeline.add(event -> progressStatus.setText("Testando Métodos"), 250);
             eventsTimeline.add(event -> Testes.main(new String[]{}));
             eventsTimeline.add(event -> progressStatus.setText("Carregando User Interface"), 250);

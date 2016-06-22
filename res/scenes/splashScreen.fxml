@@ -14,21 +14,11 @@
                 <Image url="@/images/splashScreen.png"/>
             </image>
         </ImageView>
-        <Label fx:id="progressStatus" alignment="CENTER" layoutY="290.0" prefWidth="480.0" text="Carregando Componentes"
-               textFill="WHITE">
+        <ProgressBar fx:id="progressBar" layoutX="100.0" layoutY="402.0" prefWidth="280.0" progress="-1"/>
+        <Label fx:id="progressStatus" alignment="CENTER" layoutY="400.0" prefWidth="480.0" text="Carregando Componentes"
+               textFill="#515658">
             <font>
                 <Font size="18.0"/>
-            </font>
-        </Label>
-        <ProgressBar fx:id="progressBar" layoutX="80.0" layoutY="320.0" prefWidth="320.0" progress="-1"/>
-        <Label fx:id="version" layoutX="14.0" layoutY="428.0" prefHeight="17.0" prefWidth="320.0" textFill="WHITE">
-            <font>
-                <Font size="14.0"/>
-            </font>
-        </Label>
-        <Label fx:id="licensedTo" layoutX="14.0" layoutY="448.0" prefHeight="17.0" prefWidth="320.0" textFill="WHITE">
-            <font>
-                <Font size="14.0"/>
             </font>
         </Label>
     </children>
