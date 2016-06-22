@@ -5,6 +5,8 @@ package systems.singularity.cinttamobi.enums;
  * © 2016 Singularity Systems
  */
 public enum TiposVEM {
+
+    //ENUM com todos os tipos de VEM no grande recife
     _null,
     Comum,
     Estudante,

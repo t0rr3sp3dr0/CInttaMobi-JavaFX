@@ -5,6 +5,8 @@ package systems.singularity.cinttamobi.enums;
  * © 2016 Singularity Systems
  */
 public enum Linhas {
+
+    //ENUM com todas as linhas do grande recife
     _null(null, null, Aneis._null),
     _1940("1940", "TI PE-15 (Circular)", Aneis.B),
     _1933("1933", "TI Abreu e Lima / TI Pelópidas", Aneis.B),

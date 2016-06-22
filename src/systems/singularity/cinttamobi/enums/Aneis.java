@@ -5,6 +5,8 @@ package systems.singularity.cinttamobi.enums;
  * © 2016 Singularity Systems
  */
 public enum Aneis {
+
+    //ENUM com os valores dos aneis no grande recife
     _null(-1),
     A(2.80),
     B(3.85),
