@@ -95,7 +95,7 @@
                     <children>
                         <StackPane maxHeight="50.0" minHeight="25.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                             <children>
-                                <ComboBox fx:id="onibusComboBox" prefWidth="300.0"/>
+                                <ComboBox fx:id="onibusComboBox" prefWidth="480.0"/>
                             </children>
                         </StackPane>
                     </children>
@@ -104,7 +104,7 @@
                     <children>
                         <StackPane maxHeight="50.0" minHeight="25.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                             <children>
-                                <ComboBox fx:id="vemComboBox" prefWidth="300.0"/>
+                                <ComboBox fx:id="vemComboBox" prefWidth="480.0"/>
                             </children>
                         </StackPane>
                     </children>

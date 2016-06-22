@@ -2,7 +2,10 @@ package systems.singularity.cinttamobi.gui.javafx.controllers;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.util.StringConverter;
 import systems.singularity.cinttamobi.abstracts.VEM;
@@ -40,7 +43,6 @@ public class VEMTerminalController implements Initializable {
         futureLabel.setVisible(false);
         futureBallanceLabel.setVisible(false);
 
-        onibusComboBox.setTooltip(new Tooltip("Selecione um Ônibus"));
         onibusComboBox.setItems(FXCollections.observableArrayList(fachada.listOnibus()));
         onibusComboBox.setConverter(new StringConverter<Onibus>() {
             @Override
@@ -56,7 +58,6 @@ public class VEMTerminalController implements Initializable {
         onibusComboBox.valueProperty().addListener((observable, oldValue, newValue) -> calculate());
         new ComboBoxAutoComplete<>(onibusComboBox);
 
-        onibusComboBox.setTooltip(new Tooltip("Selecione um VEM"));
         vemComboBox.setItems(FXCollections.observableArrayList(fachada.listVEM()));
         vemComboBox.setConverter(new StringConverter<VEM>() {
             @Override
@@ -123,6 +124,11 @@ public class VEMTerminalController implements Initializable {
                 futureLabel.setVisible(true);
                 futureBallanceLabel.setVisible(true);
             }
+        } else {
+            pastLabel.setVisible(false);
+            pastBallanceLabel.setVisible(false);
+            futureLabel.setVisible(false);
+            futureBallanceLabel.setVisible(false);
         }
     }
 }
