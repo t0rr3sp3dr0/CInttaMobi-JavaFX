@@ -15,8 +15,9 @@ import java.util.Properties;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
-    public static TabPane tabPane;
     public static boolean canMove = true;
+    public static TabPane mainTabPane;
+    public TabPane tabPane;
     public Tab mainTab;
     public SwingNode swingNode;
     private GamePanel panel = new GamePanel();
@@ -31,10 +32,10 @@ public class MainController implements Initializable {
             e.printStackTrace();
         }
         stageTools.setTabPane(tabPane);
+        tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.SELECTED_TAB);
+        mainTabPane = tabPane;
 
         setPane(swingNode);
-
-        tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.SELECTED_TAB);
 
         stageTools.newTab("vemCadastro", tabPane);
         stageTools.newTab("onibusCadastro", tabPane);
