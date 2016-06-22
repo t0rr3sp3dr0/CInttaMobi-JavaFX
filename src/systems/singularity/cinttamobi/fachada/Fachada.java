@@ -47,17 +47,16 @@ public class Fachada {
     }
 
     public void cadastrarVEM(VEM vem) throws PessoaExistenteException, VEMExistenteException {
-        if(!(vem instanceof VEMComum))
-        {
-            if(!negociosPessoa.exists(vem.getPerson().getCPF())) {
+        if(vem != null) {
+            if (!(vem instanceof VEMComum)) {
+                if (!negociosPessoa.exists(vem.getPerson().getCPF())) {
+                    negociosVEM.insert(vem);
+                    negociosPessoa.insert(vem.getPerson());
+                } else
+                    throw new PessoaExistenteException();
+            } else
                 negociosVEM.insert(vem);
-                negociosPessoa.insert(vem.getPerson());
-            }
-            else
-                throw new PessoaExistenteException();
         }
-        else
-            negociosVEM.insert(vem);
     }
 
     public void atualizarVEM(VEM vem) throws PessoaInexistenteException, VEMInexistenteException {
