@@ -9,6 +9,7 @@ import java.util.ArrayList;
  * © 2016 Singularity Systems
  */
 public interface RepositoriosPessoa {
+    //Interface de Repositorio de Pessoa
     boolean exists(String id);
     boolean existsID(String id);
     boolean existsNIS(String id);
