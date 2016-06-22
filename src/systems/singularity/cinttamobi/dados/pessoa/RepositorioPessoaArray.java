@@ -32,7 +32,9 @@ public class RepositorioPessoaArray implements RepositoriosPessoa {
 
         Pessoa[] aux = new Pessoa[this.pessoas.length + 1];
 
-        System.arraycopy(this.pessoas, 0, aux, 0, this.pessoas.length);
+        for (int i = 0; i < this.pessoas.length; i++) {
+            aux[i] = this.pessoas[i];
+        }
 
         aux[this.pessoas.length] = object;
         this.pessoas = aux;
