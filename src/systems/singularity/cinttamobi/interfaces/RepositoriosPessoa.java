@@ -5,7 +5,7 @@ import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 import java.util.ArrayList;
 
 /**
- * Created by esvm on 20/06/16.
+ * Created by Edjan Michiles on 20/06/16.
  * © 2016 Singularity Systems
  */
 public interface RepositoriosPessoa {

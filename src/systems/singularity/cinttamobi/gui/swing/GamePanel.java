@@ -10,7 +10,7 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 
 /**
- * Created by Lucas on 20/06/16.
+ * Created by Lucas Valença on 20/06/16.
  * © 2016 Singularity Systems
  */
 public class GamePanel extends JPanel implements ComponentListener {

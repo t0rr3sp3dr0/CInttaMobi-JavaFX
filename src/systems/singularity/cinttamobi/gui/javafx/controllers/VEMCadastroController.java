@@ -26,7 +26,7 @@ import java.util.Date;
 import java.util.ResourceBundle;
 
 /**
- * Created by phts on 02/05/2016.
+ * Created by Lucas Valença on 02/05/2016.
  * © 2016 Singularity Systems
  */
 public class VEMCadastroController implements Initializable {

@@ -5,7 +5,7 @@ import systems.singularity.cinttamobi.abstracts.VEM;
 import java.util.ArrayList;
 
 /**
- * Created by lvrma on 02/05/16.
+ * Created by Lucas Valença on 02/05/16.
  * © 2016 Singularity Systems
  */
 public interface RepositoriosVEM {

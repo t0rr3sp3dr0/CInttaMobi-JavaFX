@@ -8,7 +8,7 @@ import systems.singularity.cinttamobi.exceptions.ValorInvalidoException;
 import systems.singularity.cinttamobi.negocio.pessoas.*;
 
 /**
- * Created by phts on 16/06/16.
+ * Created by Pedro Tôrres on 16/06/16.
  * © 2016 Singularity Systems
  */
 public abstract class VEM {

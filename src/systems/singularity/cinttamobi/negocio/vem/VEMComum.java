@@ -6,7 +6,7 @@ import systems.singularity.cinttamobi.exceptions.VEMInvalidoException;
 import systems.singularity.cinttamobi.exceptions.ValorInvalidoException;
 
 /**
- * Created by phts on 16/06/16.
+ * Created by Pedro Tôrres on 16/06/16.
  * © 2016 Singularity Systems
  */
 public class VEMComum extends VEM {

@@ -9,7 +9,7 @@ import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 import systems.singularity.cinttamobi.negocio.pessoas.Trabalhador;
 
 /**
- * Created by esvm on 17/06/16.
+ * Created by Edjan Michiles on 17/06/16.
  * © 2016 Singularity Systems
  */
 public class VEMTrabalhador extends VEM {

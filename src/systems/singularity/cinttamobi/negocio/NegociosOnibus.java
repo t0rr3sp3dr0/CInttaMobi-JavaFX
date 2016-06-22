@@ -10,7 +10,7 @@ import systems.singularity.cinttamobi.interfaces.RepositoriosOnibus;
 import java.util.List;
 
 /**
- * Created by phts on 19/06/16.
+ * Created by Pedro Tôrres on 19/06/16.
  * © 2016 Singularity Systems
  */
 public class NegociosOnibus {

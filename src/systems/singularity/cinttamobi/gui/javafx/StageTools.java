@@ -22,7 +22,7 @@ import java.lang.reflect.Method;
 import java.util.Properties;
 
 /**
- * Created by pedro on 5/2/16.
+ * Created by Pedro Tôrres on 5/2/16.
  * © 2016 Singularity Systems
  */
 public class StageTools {

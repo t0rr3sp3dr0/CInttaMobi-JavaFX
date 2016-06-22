@@ -8,7 +8,7 @@ import systems.singularity.cinttamobi.exceptions.ParametroNuloException;
 import java.util.Date;
 
 /**
- * Created by pedro on 5/2/16.
+ * Created by Edjan Michiles on 5/2/16.
  * © 2016 Singularity Systems
  */
 public class Pessoa {

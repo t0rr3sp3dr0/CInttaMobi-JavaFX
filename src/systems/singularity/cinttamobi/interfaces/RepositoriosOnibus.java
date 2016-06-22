@@ -5,7 +5,7 @@ import systems.singularity.cinttamobi.negocio.Onibus;
 import java.util.ArrayList;
 
 /**
- * Created by esvm on 20/06/16.
+ * Created by Pedro Tôrres on 20/06/16.
  * © 2016 Singularity Systems
  */
 public interface RepositoriosOnibus {

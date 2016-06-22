@@ -4,7 +4,7 @@ import systems.singularity.cinttamobi.enums.Linhas;
 import systems.singularity.cinttamobi.exceptions.ParametroNuloException;
 
 /**
- * Created by phts on 17/06/16.
+ * Created by Pedro Tôrres on 17/06/16.
  * © 2016 Singularity Systems
  */
 public class Onibus {

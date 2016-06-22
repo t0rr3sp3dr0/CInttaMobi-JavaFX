@@ -8,7 +8,7 @@ import systems.singularity.cinttamobi.negocio.pessoas.Idoso;
 import systems.singularity.cinttamobi.negocio.pessoas.Pessoa;
 
 /**
- * Created by phts on 17/06/16.
+ * Created by Lucas Valença on 17/06/16.
  * © 2016 Singularity Systems
  */
 public class VEMIdoso extends VEM {

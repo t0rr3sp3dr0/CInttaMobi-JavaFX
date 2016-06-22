@@ -11,7 +11,7 @@ import systems.singularity.cinttamobi.interfaces.RepositoriosVEM;
 import java.util.List;
 
 /**
- * Created by lvrma on 19/06/16.
+ * Created by Lucas Valença on 19/06/16.
  * © 2016 Singularity Systems
  */
 public class NegociosVEM {

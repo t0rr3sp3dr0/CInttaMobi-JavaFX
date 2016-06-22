@@ -8,7 +8,7 @@ import systems.singularity.cinttamobi.negocio.pessoas.Trabalhador;
 import java.util.ArrayList;
 
 /**
- * Created by caesa on 19/06/2016.
+ * Created by Edjan Michiles on 19/06/2016.
  * © 2016 Singularity Systems
  */
 public class RepositorioPessoaLista implements RepositoriosPessoa {

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * Created by phts on 19/06/16.
+ * Created by Pedro Tôrres on 19/06/16.
  * © 2016 Singularity Systems
  */
 public class RepositorioOnibusArray implements RepositoriosOnibus {

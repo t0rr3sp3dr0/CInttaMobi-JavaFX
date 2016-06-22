@@ -22,7 +22,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * Created by phts on 02/05/2016.
+ * Created by Pedro Tôrres on 02/05/2016.
  * © 2016 Singularity Systems
  */
 public class VEMTerminalController implements Initializable {

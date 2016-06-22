@@ -6,7 +6,7 @@ import systems.singularity.cinttamobi.Programa;
 import java.util.concurrent.Callable;
 
 /**
- * Created by pedro on 5/10/16.
+ * Created by Pedro Tôrres on 5/10/16.
  * © 2016 Singularity Systems
  */
 public class AsyncCallable extends Thread {

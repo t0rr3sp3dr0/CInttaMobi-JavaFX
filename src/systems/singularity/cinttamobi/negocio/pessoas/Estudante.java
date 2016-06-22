@@ -5,9 +5,8 @@ import systems.singularity.cinttamobi.exceptions.*;
 import java.util.Date;
 
 /**
- * Created by lvrma on 16/06/16.
- * Edited by esvm on 16/06/2016
- * © 2016 Singularity Systems
+ * Created by Edjan Michiles on 16/06/16.
+  * © 2016 Singularity Systems
  */
 
 public class Estudante extends Pessoa {

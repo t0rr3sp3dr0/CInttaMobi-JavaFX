@@ -1,7 +1,7 @@
 package systems.singularity.cinttamobi.enums;
 
 /**
- * Created by phts on 17/06/16.
+ * Created by Edjan Michiles on 17/06/16.
  * © 2016 Singularity Systems
  */
 public enum Linhas {

@@ -14,6 +14,11 @@ import java.net.URL;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
+
+/**
+ * Created by Pedro Tôrres on 19/06/16.
+ * © 2016 Singularity Systems
+ */
 public class MainController implements Initializable {
     public static boolean canMove = true;
     public static StageTools stageTools = new StageTools();

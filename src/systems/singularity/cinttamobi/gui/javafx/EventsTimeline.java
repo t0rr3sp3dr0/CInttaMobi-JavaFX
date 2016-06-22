@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by pedro on 5/30/16.
+ * Created by Pedro Tôrres on 5/30/16.
  * © 2016 Singularity Systems
  */
 public class EventsTimeline {
