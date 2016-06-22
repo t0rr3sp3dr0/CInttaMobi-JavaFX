@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * Created by lvrma on 19/06/16.
+ * Created by Lucas on 19/06/16.
  * © 2016 Singularity Systems
  */
 public class RepositorioVEMArray implements RepositoriosVEM {
