@@ -48,11 +48,11 @@ public class Programa extends Application {
         primaryStage.setOnCloseRequest(event -> {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle(null);
-            alert.setHeaderText("Are you sure you want to exit?");
+            alert.setHeaderText("Você tem certeza que deseja sair?");
             alert.setContentText(null);
 
             Button exitButton = (Button) alert.getDialogPane().lookupButton(ButtonType.OK);
-            exitButton.setText("Exit");
+            exitButton.setText("Sair");
 
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK)
